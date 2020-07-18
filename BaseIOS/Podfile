@@ -10,6 +10,7 @@ target 'BaseIOS' do
   pod 'SDAutoLayout'
 #  pod 'AsyncDisplayKit'
   pod 'YTKNetwork'
+  pod 'FMDB'
 
   # UI_Component
   pod 'MJRefresh'

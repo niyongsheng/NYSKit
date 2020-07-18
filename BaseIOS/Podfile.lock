@@ -7,6 +7,9 @@ PODS:
   - AFNetworking/Security (4.0.1)
   - AFNetworking/Serialization (4.0.1)
   - FLAnimatedImage (1.0.12)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - IQKeyboardManager (6.5.5)
   - JCore (2.2.5)
   - JPush (3.3.3):
@@ -54,6 +57,7 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - FMDB
   - IQKeyboardManager
   - JPush
   - Masonry
@@ -78,6 +82,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - FLAnimatedImage
+    - FMDB
     - IQKeyboardManager
     - JCore
     - JPush
@@ -99,6 +104,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   JCore: d75c0306dc99875d323d23e5a063b3a3ef22335a
   JPush: 61b3dc8c2bdefb7c48e7ca283f9fe42e71bfe063
@@ -117,6 +123,6 @@ SPEC CHECKSUMS:
   YTKNetwork: 0587ce85fda2e2c591405089cc9aaa61649aa5ed
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 81a093577bc915f17062d46e6d7a4f5fa9b53bf6
+PODFILE CHECKSUM: f8a797b9c9c90cb1ae46c3da1169244355be2f11
 
 COCOAPODS: 1.9.1

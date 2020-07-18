@@ -45,7 +45,7 @@
             result = [NSKeyedUnarchiver unarchiveObjectWithData:(__bridge NSData *)keyData];
 //            result = [NSKeyedUnarchiver unarchiveObjectWithData:(__bridge_transfer NSData *)keyData];
         } @catch (NSException *exception) {
-            NSLog(@"Unarchive of %@ failed: %@", service, exception);
+            NLog(@"Unarchive of %@ failed: %@", service, exception);
         } @finally {
             
         }

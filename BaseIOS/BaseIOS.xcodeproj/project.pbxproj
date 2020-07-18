@@ -83,6 +83,7 @@
 		C8C58D5B24B9B16B00CFB68F /* NYSCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D5224B9B16B00CFB68F /* NYSCommunity.m */; };
 		C8C58D5C24B9B16B00CFB68F /* NYSEstate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D5424B9B16B00CFB68F /* NYSEstate.m */; };
 		C8C58D5D24B9B16B00CFB68F /* NYSUpdateUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D5524B9B16B00CFB68F /* NYSUpdateUserInfo.m */; };
+		C8CCB0DE24C2E0A000437E0E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CCB0DD24C2E0A000437E0E /* DBManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -220,6 +221,8 @@
 		C8C58D5624B9B16B00CFB68F /* NYSEstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSEstate.h; sourceTree = "<group>"; };
 		C8C58D5724B9B16B00CFB68F /* NYSUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSUserInfo.h; sourceTree = "<group>"; };
 		C8C58D5824B9B16B00CFB68F /* NYSUpdateUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSUpdateUserInfo.h; sourceTree = "<group>"; };
+		C8CCB0DC24C2E0A000437E0E /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		C8CCB0DD24C2E0A000437E0E /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -578,6 +581,8 @@
 				C891E85D24B8562C00AF0019 /* UMManager.m */,
 				C829957924C05B2600BEA200 /* ADManager.h */,
 				C829957A24C05B2600BEA200 /* ADManager.m */,
+				C8CCB0DC24C2E0A000437E0E /* DBManager.h */,
+				C8CCB0DD24C2E0A000437E0E /* DBManager.m */,
 			);
 			path = AppManager;
 			sourceTree = "<group>";
@@ -940,6 +945,7 @@
 				C891E84E24B8515B00AF0019 /* AppDelegate+AppService.m in Sources */,
 				C86F2D6924BD4E44002F44FD /* NYSBaseTabBarController.m in Sources */,
 				C891E84024B842E000AF0019 /* UITableView+XSAnimationKit.m in Sources */,
+				C8CCB0DE24C2E0A000437E0E /* DBManager.m in Sources */,
 				C891E85824B855B000AF0019 /* AppManager.m in Sources */,
 				C8C58D3E24B94BF200CFB68F /* NYSWebViewController.m in Sources */,
 				C884CAF324C2B11A008774A0 /* CMPopTipView.m in Sources */,

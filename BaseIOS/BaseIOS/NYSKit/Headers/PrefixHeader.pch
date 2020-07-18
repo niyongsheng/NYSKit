@@ -44,6 +44,7 @@
 #import "AppManager.h"
 #import "ThemeManager.h"
 #import "UserManager.h"
+#import "DBManager.h"
 #import "IMManager.h"
 #import "UMManager.h"
 #import "ADManager.h"

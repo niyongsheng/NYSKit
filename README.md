@@ -9,7 +9,7 @@ NYSKit
 
 ## Introduction:
 > 宏+基类+工具+组件 ios应用构建框架<br>
-> Header+BaseClass+Tool+Component IOS App Build Framework
+> Macros+BaseClass+Tool+Component IOS App Build Framework
 
 ## Features:
 - [x] MVC
@@ -18,9 +18,10 @@ NYSKit
 - [x] AD
 - [x] IM
 - [x] UM
-- [x] JPush
-- [x] Sign With Apple\Wechat
-- [x] Dark Mode (support ios 12)
+- [x] DB
+- [x] Rich Text Push
+- [x] Sign With Apple
+- [x] Dark Mode (support < ios 13)
 
 ## ScreenShot：
 ![image](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/base_ios_demo.gif)
@@ -52,6 +53,8 @@ NYSKit
 ├─ AppManager
 │    ├─ AppManager.h
 │    ├─ AppManager.m
+│    ├─ DBManager.h
+│    ├─ DBManager.m
 │    ├─ ADManager.h
 │    ├─ ADManager.m
 │    ├─ ThemeManager
@@ -93,7 +96,7 @@ NYSKit
 │    └─ NYSRequest.m
 ├─ NewFeature
 │    ├─ NYSNewfeatureViewController.h
-│    ├─ NYSNewfeatureViewController.m
+│    └─ NYSNewfeatureViewController.m
 ├─ Resource
 │    ├─ Fonts
 │    │    └─ 04b_03b.TTF

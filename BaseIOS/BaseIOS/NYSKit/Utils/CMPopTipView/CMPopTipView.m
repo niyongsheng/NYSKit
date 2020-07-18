@@ -609,7 +609,7 @@
     UIView *containerView = targetView.window;
 
     if (nil == containerView) {
-        NSLog(@"Cannot determine container view from UIBarButtonItem: %@", barButtonItem);
+        NLog(@"Cannot determine container view from UIBarButtonItem: %@", barButtonItem);
         self.targetObject = nil;
         return;
     }
