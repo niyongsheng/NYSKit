@@ -13,14 +13,14 @@ NYSKit
 
 ## Features:
 - [x] MVC
-- [ ] MVP
+- [x] MVP
 - [x] XIB
 - [x] AD
 - [x] IM
 - [x] UM
 - [x] JPush
-- [x] Dark Mode
-- [ ] Sign With Apple
+- [x] Sign With Apple\Wechat
+- [x] Dark Mode (support ios 12)
 
 ## ScreenShot：
 ![image](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/base_ios_demo.gif)
@@ -52,15 +52,17 @@ NYSKit
 ├─ AppManager
 │    ├─ AppManager.h
 │    ├─ AppManager.m
-│    ├─ IMManager
-│    │    ├─ DataSource
-│    │    ├─ IMManager.h
-│    │    └─ IMManager.m
+│    ├─ ADManager.h
+│    ├─ ADManager.m
 │    ├─ ThemeManager
 │    │    ├─ ThemeManager.h
 │    │    ├─ ThemeManager.m
 │    │    ├─ themejson_day.json
 │    │    └─ themejson_night.json
+│    ├─ IMManager
+│    │    ├─ DataSource
+│    │    ├─ IMManager.h
+│    │    └─ IMManager.m
 │    ├─ UMManager.h
 │    ├─ UMManager.m
 │    └─ UserManager
@@ -74,6 +76,8 @@ NYSKit
 │    ├─ NYSBaseTabBarController.m
 │    ├─ NYSBaseViewController.h
 │    ├─ NYSBaseViewController.m
+│    ├─ NYSBaseProtocol.h
+│    ├─ NYSBaseProtocol.m
 │    ├─ NYSBaseWindow.h
 │    ├─ NYSBaseWindow.m
 │    └─ WebViewController
@@ -95,12 +99,13 @@ NYSKit
 │    │    └─ 04b_03b.TTF
 │    └─ Images
 └─ Utils
-       ├─ FDFullscreenPopGesture
        ├─ FPS
        ├─ LEEBubble
        ├─ LEETheme
        ├─ Memory
+       ├─ CMPopTipView
        ├─ TableViewAnimationKit
+       ├─ FDFullscreenPopGesture
        └─ Tools
 
 ```
