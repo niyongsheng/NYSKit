@@ -40,7 +40,8 @@ pod install
 </p>
 
 ## Architecture:
-![image](https://github.com/niyongsheng/NYSKit/blob/master/class_relation.png)
+<img src="https://github.com/niyongsheng/NYSKit/blob/master/class_relation.png" onerror="https://s1.ax1x.com/2020/07/20/Ufghmn.jpg" onclick="https://www.jianshu.com/p/c42a28d97d50" alt="Github图片无法加载，请自行修改hosts文件。">
+
 ```text
 NYSKit
 ├─ AppDelegate
