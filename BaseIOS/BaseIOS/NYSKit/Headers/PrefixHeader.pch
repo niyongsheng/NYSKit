@@ -18,7 +18,8 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 //#import <AsyncDisplayKit/AsyncDisplayKit.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
-#import <SafariServices/SafariServices.h>
+#import <SafariServices/SFSafariViewController.h>
+#import <NYSTK/NYSTK.h>
 
 #pragma mark -- 宏定义 --
 #import "UtilsMacros.h"

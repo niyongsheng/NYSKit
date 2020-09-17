@@ -17,6 +17,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [NYSTKAlert showColorfulToastWithMessage:@"NYSKit Welcome !" type:NYSTKColorfulToastTypeYellowCat direction:NYSTKComeInDirectionUp onView:self.conversationListTableView themeModel:NYSTKThemeModelLight];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

@@ -26,6 +26,7 @@
 		C829958A24C05EA600BEA200 /* day@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C829958624C05EA600BEA200 /* day@3x.png */; };
 		C829958B24C05EA600BEA200 /* day@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C829958724C05EA600BEA200 /* day@2x.png */; };
 		C829958D24C05FC500BEA200 /* NYSHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C829958C24C05FC500BEA200 /* NYSHomeViewController.swift */; };
+		C84E199225131B3900D320B5 /* NYSBlugeTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C84E199125131B3900D320B5 /* NYSBlugeTabBar.m */; };
 		C86B741024BC3DE400EFACA7 /* NYSBaseWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C86B740F24BC3DE400EFACA7 /* NYSBaseWindow.m */; };
 		C86F2D6424BD3561002F44FD /* new_feature_3.png in Resources */ = {isa = PBXBuildFile; fileRef = C86F2D6124BD3560002F44FD /* new_feature_3.png */; };
 		C86F2D6524BD3561002F44FD /* new_feature_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C86F2D6224BD3561002F44FD /* new_feature_1.png */; };
@@ -111,6 +112,8 @@
 		C829958624C05EA600BEA200 /* day@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "day@3x.png"; sourceTree = "<group>"; };
 		C829958724C05EA600BEA200 /* day@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "day@2x.png"; sourceTree = "<group>"; };
 		C829958C24C05FC500BEA200 /* NYSHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSHomeViewController.swift; sourceTree = "<group>"; };
+		C84E199025131B3900D320B5 /* NYSBlugeTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSBlugeTabBar.h; sourceTree = "<group>"; };
+		C84E199125131B3900D320B5 /* NYSBlugeTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSBlugeTabBar.m; sourceTree = "<group>"; };
 		C86B740E24BC3DE400EFACA7 /* NYSBaseWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSBaseWindow.h; sourceTree = "<group>"; };
 		C86B740F24BC3DE400EFACA7 /* NYSBaseWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYSBaseWindow.m; sourceTree = "<group>"; };
 		C86F2D6124BD3560002F44FD /* new_feature_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_feature_3.png; sourceTree = "<group>"; };
@@ -294,6 +297,15 @@
 			path = Refresh;
 			sourceTree = "<group>";
 		};
+		C84E198F25131B3900D320B5 /* BlugeTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C84E199025131B3900D320B5 /* NYSBlugeTabBar.h */,
+				C84E199125131B3900D320B5 /* NYSBlugeTabBar.m */,
+			);
+			path = BlugeTabBar;
+			sourceTree = "<group>";
+		};
 		C87B220E24BC035400AB643F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +314,7 @@
 				C891E82D24B842E000AF0019 /* FPS */,
 				C87B220F24BC0BFF00AB643F /* Memory */,
 				C884CAF024C2B119008774A0 /* CMPopTipView */,
+				C84E198F25131B3900D320B5 /* BlugeTabBar */,
 				C891E82624B842DF00AF0019 /* TableViewAnimationKit */,
 				C8C431DA24BC39090041311C /* FDFullscreenPopGesture */,
 				C891E83024B842E000AF0019 /* Tools */,
@@ -911,6 +924,7 @@
 				C891E86324B856DF00AF0019 /* UserManager.m in Sources */,
 				C8C58D5C24B9B16B00CFB68F /* NYSEstate.m in Sources */,
 				C891E85B24B8560F00AF0019 /* IMManager.m in Sources */,
+				C84E199225131B3900D320B5 /* NYSBlugeTabBar.m in Sources */,
 				C891E81A24B821E300AF0019 /* NYSBaseNavigationController.m in Sources */,
 				C884CAEF24C2B0CD008774A0 /* NYSSignHandleKeyChain.m in Sources */,
 				C8C431A024BC349C0041311C /* ThemeManager.m in Sources */,

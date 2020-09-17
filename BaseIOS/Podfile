@@ -8,7 +8,7 @@ target 'BaseIOS' do
   pod 'ReactiveObjC'
   pod 'Masonry'
   pod 'SDAutoLayout'
-#  pod 'AsyncDisplayKit'
+#  pod 'AsyncDisplayKit', '2.2'
   pod 'YTKNetwork'
   pod 'FMDB'
 
@@ -18,6 +18,7 @@ target 'BaseIOS' do
   pod 'SVProgressHUD'
   pod 'IQKeyboardManager'
   pod 'XHLaunchAd'
+  pod 'NYSTK','~>0.0.5'
 #  pod 'SGPagingView'
 #  pod 'JXCategoryView'
 #  pod 'JXPagingView/Pager'
@@ -35,10 +36,9 @@ target 'BaseIOS' do
   # Third_Platform
   pod 'JPush'
   pod 'RongCloudIM'
-  pod 'RongCloudRTC/RongCallLib'
+#  pod 'RongCloudRTC/RongCallLib'
   pod 'UMCCommon'
   pod 'UMCCommonLog'
-  pod 'UMCAnalytics'
   pod 'UMengUShare/UI'
   pod 'UMengUShare/Social/ReducedWeChat'
   pod 'UMengUShare/Social/ReducedQQ'

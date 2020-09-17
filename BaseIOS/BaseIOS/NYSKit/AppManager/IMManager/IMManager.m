@@ -61,7 +61,10 @@ SINGLETON_FOR_CLASS(IMManager);
 #pragma mark —- IM登录 --
 - (void)IMLoginCompletion:(loginBlock)completion {
     NSString *imToken = NUpdateUserInfo.rongyunToken;
-    [[RCIM sharedRCIM] connectWithToken:imToken success:^(NSString *userId) {
+    [[RCIM sharedRCIM] connectWithToken:imToken
+                               dbOpened:^(RCDBErrorCode code) {
+        
+    } success:^(NSString *userId) {
         NLog(@"登陆成功。当前登录的用户ID：%@", userId);
         // 设置当前登录的用户的用户信息
         RCUserInfo *RCCurrentUserInfo = [[RCUserInfo alloc] init];
@@ -69,10 +72,8 @@ SINGLETON_FOR_CLASS(IMManager);
         RCCurrentUserInfo.portraitUri = NUpdateUserInfo.profile.headPhoto;
         RCCurrentUserInfo.userId = userId;
         [[RCIM sharedRCIM] setCurrentUserInfo:RCCurrentUserInfo];
-    } error:^(RCConnectErrorCode status) {
-        completion(NO, [NSString stringWithFormat:@"IM登陆错误码:%ld", (long)status]);
-    } tokenIncorrect:^{
-        completion(NO, @"token错误");
+    } error:^(RCConnectErrorCode errorCode) {
+        completion(NO, [NSString stringWithFormat:@"IM登陆错误码:%zd", errorCode]);
     }];
 }
 

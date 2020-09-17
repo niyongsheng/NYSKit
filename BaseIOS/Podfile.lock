@@ -10,33 +10,32 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - IQKeyboardManager (6.5.5)
-  - JCore (2.2.5)
-  - JPush (3.3.3):
+  - IQKeyboardManager (6.5.6)
+  - JCore (2.3.4)
+  - JPush (3.3.6):
     - JCore (< 3.0.0, >= 2.0.0)
   - Masonry (1.1.0)
-  - MJRefresh (3.4.3)
+  - MJRefresh (3.5.0)
+  - NYSTK (0.0.5):
+    - Masonry (>= 1.0.0)
+    - ReactiveObjC (>= 1.0.1)
   - ReactiveObjC (3.1.1)
-  - RongCloudIM (2.10.6):
-    - RongCloudIM/IMKit (= 2.10.6)
-    - RongCloudIM/IMLib (= 2.10.6)
-    - RongCloudIM/RongSticker (= 2.10.6)
-    - RongCloudIM/Sight (= 2.10.6)
-  - RongCloudIM/IMKit (2.10.6):
+  - RongCloudIM (4.0.2):
+    - RongCloudIM/IMKit (= 4.0.2)
+    - RongCloudIM/IMLib (= 4.0.2)
+    - RongCloudIM/RongSticker (= 4.0.2)
+    - RongCloudIM/Sight (= 4.0.2)
+  - RongCloudIM/IMKit (4.0.2):
     - RongCloudIM/IMLib
-  - RongCloudIM/IMLib (2.10.6)
-  - RongCloudIM/RongSticker (2.10.6):
+  - RongCloudIM/IMLib (4.0.2)
+  - RongCloudIM/RongSticker (4.0.2):
     - RongCloudIM/IMKit
-  - RongCloudIM/Sight (2.10.6):
+  - RongCloudIM/Sight (4.0.2):
     - RongCloudIM/IMKit
-  - RongCloudRTC/RongCallLib (2.10.6):
-    - RongCloudIM/IMLib (~> 2.10.6)
   - SDAutoLayout (2.2.1)
   - SVProgressHUD (2.2.5)
-  - UMCAnalytics (6.1.0):
-    - UMCCommon
-  - UMCCommon (2.1.4)
-  - UMCCommonLog (1.0.0)
+  - UMCCommon (7.1.1)
+  - UMCCommonLog (2.0.0)
   - UMengUShare/Core (6.4.8.2):
     - UMengUShare/Network
   - UMengUShare/Network (6.4.8.2)
@@ -50,7 +49,7 @@ PODS:
     - UMengUShare/Core
   - XHLaunchAd (3.9.12):
     - FLAnimatedImage (~> 1.0.12)
-  - YTKNetwork (3.0.0):
+  - YTKNetwork (3.0.4):
     - AFNetworking/NSURLSession (~> 4.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -62,12 +61,11 @@ DEPENDENCIES:
   - JPush
   - Masonry
   - MJRefresh
+  - NYSTK (~> 0.0.5)
   - ReactiveObjC
   - RongCloudIM
-  - RongCloudRTC/RongCallLib
   - SDAutoLayout
   - SVProgressHUD
-  - UMCAnalytics
   - UMCCommon
   - UMCCommonLog
   - UMengUShare/Social/ReducedQQ
@@ -88,12 +86,11 @@ SPEC REPOS:
     - JPush
     - Masonry
     - MJRefresh
+    - NYSTK
     - ReactiveObjC
     - RongCloudIM
-    - RongCloudRTC
     - SDAutoLayout
     - SVProgressHUD
-    - UMCAnalytics
     - UMCCommon
     - UMCCommonLog
     - UMengUShare
@@ -105,24 +102,23 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
-  JCore: d75c0306dc99875d323d23e5a063b3a3ef22335a
-  JPush: 61b3dc8c2bdefb7c48e7ca283f9fe42e71bfe063
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  JCore: 8aa29dc57ba3730dd9fe7544ce1a4e1cbe221135
+  JPush: a401b946dcc76b37335422487201bc1ecc8dd296
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  NYSTK: 9c22a3cc27089b67cacb9d5337782a6f146e7622
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  RongCloudIM: b1768dcb3af90d00ce621f7de4f787285435fbe3
-  RongCloudRTC: 40bca7eda5091f6e391b98943d5565f3913a7931
+  RongCloudIM: 8a068b5c6bd6fb2e770a5f245fcd9d6832296515
   SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  UMCAnalytics: 3503f179f7af932b30af9ac161ac11fb48fa72b6
-  UMCCommon: b0703b0053323f598e01670ea702b8eb1e66e611
-  UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
+  UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
+  UMCCommonLog: 9b7ddde5d14a52fc1986ba5ac3121b8b2f433638
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
   XHLaunchAd: 6320f9c68732667323072fc3a5f104e40fbe9cfe
-  YTKNetwork: 0587ce85fda2e2c591405089cc9aaa61649aa5ed
+  YTKNetwork: a096f80c18c7e7cc0e623a0fbea0a1bfd3f5bcf2
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: f8a797b9c9c90cb1ae46c3da1169244355be2f11
+PODFILE CHECKSUM: 2545ace8aa01e0283dcb649c01a41ca03ac1a6c8
 
 COCOAPODS: 1.9.1

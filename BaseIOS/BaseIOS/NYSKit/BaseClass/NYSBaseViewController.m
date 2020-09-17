@@ -95,7 +95,7 @@
         header.labelLeftInset = 5.f;
         NSMutableArray *refreshingImages = [NSMutableArray array];
         for (int i = 1; i <= 7; i++) {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"an_%01d", i]];
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"an_%03d", i]];
             [refreshingImages addObject:[image imageByResizeToSize:CGSizeMake(RealValue(30), RealValue(30))]];
         }
         [header setImages:refreshingImages forState:MJRefreshStateRefreshing];
@@ -133,7 +133,7 @@
         header.labelLeftInset = 5.f;
         NSMutableArray *refreshingImages = [NSMutableArray array];
         for (int i = 1; i <= 7; i++) {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"an_%01d", i]];
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"an_%03d", i]];
             [refreshingImages addObject:[image imageByResizeToSize:CGSizeMake(RealValue(30), RealValue(30))]];
         }
         [header setImages:refreshingImages forState:MJRefreshStateRefreshing];
