@@ -23,7 +23,7 @@ NYSKit
 - [x] Sign With Apple
 - [x] Dark Mode (support < ios 13)
 
-## ScreenShot：
+## Screenshot：
 ![image](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/base_ios_demo.gif)
 
 ## Usage：
