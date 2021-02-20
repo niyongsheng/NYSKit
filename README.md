@@ -3,7 +3,6 @@
 NYSKit
 ===
 [![](https://img.shields.io/badge/platform-iOS-orange.svg)](https://developer.apple.com/ios/)
-[![](http://img.shields.io/travis/CocoaPods/CocoaPods/master.svg?style=flat)](https://travis-ci.org/CocoaPods/CocoaPods)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/niyongsheng/BaseClass_MVP_IOS/blob/master/LICENSE)
 ===
 
@@ -32,8 +31,8 @@ cd ../NYSKit/BaseIOS
 
 pod install
 ```
-- *直接[改名](https://www.jianshu.com/p/2887d6fb5769)，或者将[NYSKit](https://github.com/niyongsheng/NYSKit/tree/master/BaseIOS/BaseIOS/NYSKit)迁移至你的项目中使用。*
-- *Simply [rename](https://www.jianshu.com/p/2887d6fb5769), or migrate [NYSKit](https://github.com/niyongsheng/NYSKit/tree/master/BaseIOS/BaseIOS/NYSKit) to your project for use.*
+- *直接[改名](http://note.youdao.com/s/2P6PiTG)，或者将[NYSKit](https://github.com/niyongsheng/NYSKit/tree/master/BaseIOS/BaseIOS/NYSKit)迁移至你的项目中使用。*
+- *Simply [rename](http://note.youdao.com/s/2P6PiTG), or migrate [NYSKit](https://github.com/niyongsheng/NYSKit/tree/master/BaseIOS/BaseIOS/NYSKit) to your project for use.*
 
 <p align="right">———— Example Project:
        <a  href="https://github.com/niyongsheng/AppDemo">AppDemo </a>
