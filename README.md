@@ -34,9 +34,7 @@ pod install
 - *直接[改名](http://note.youdao.com/s/2P6PiTG)，或者将[NYSKit](https://github.com/niyongsheng/NYSKit/tree/master/BaseIOS/BaseIOS/NYSKit)迁移至你的项目中使用。*
 - *Simply [rename](http://note.youdao.com/s/2P6PiTG), or migrate [NYSKit](https://github.com/niyongsheng/NYSKit/tree/master/BaseIOS/BaseIOS/NYSKit) to your project for use.*
 
-<p align="right">———— Example Project:
-       <a  href="https://github.com/niyongsheng/AppDemo">AppDemo </a>
-</p>
+`Example Project:[AppDemo](https://github.com/niyongsheng/AppDemo)`
 
 ## Architecture:
 <img src="https://github.com/niyongsheng/NYSKit/blob/master/class_relation.png" onerror="https://s1.ax1x.com/2020/07/20/Ufghmn.jpg" onclick="http://note.youdao.com/s/QfERZJrs" alt="Github图片无法加载，请自行修改hosts文件。">
