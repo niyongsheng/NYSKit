@@ -9,7 +9,7 @@ NYSKit
 ## Introduction:
 > IOS应用快速构建框架。<br>
 > Quick build [framework](#architecture) for IOS apps.
-<img src="./images/nysws.drawio.png">
+<img src="./Images/nysws.drawio.png">
 
 ## Screenshot
 ![image](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/base_ios_demo.gif)
