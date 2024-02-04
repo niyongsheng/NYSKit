@@ -9,6 +9,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/niyongsheng/NYSKit.git', :tag => s.version }
   s.source_files     = 'NYSUIKit/**/*.{h,m}'
   s.resources = [
+  'NYSUIKit/BaseClass/WebViewController/ErrorHtml/WebLoadErrorView.html',
+  'NYSUIKit/BaseClass/WebViewController/ErrorHtml/webloaderrorview.png',
   'NYSUIKit/Resources/NYSUIKit.xcassets',
   'NYSUIKit/Resources/NYSUIKit.bundle',
   'NYSUIKit/Resources/douyuFont.otf'
