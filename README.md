@@ -23,8 +23,10 @@ NYSKit
 
 ## Usage
 ```ruby
-pod 'NYSKit'
-pod 'NYSUIKit'
+  pod 'NYSKit', :git => 'https://github.com/niyongsheng/NYSKit.git', :tag => '0.0.1'
+  pod 'NYSUIKit', :git => 'https://github.com/niyongsheng/NYSKit.git', :tag => '0.0.1'
+
+  pod install
 ```
 `NYSKit Document:` https://niyongsheng.github.io/Document/NYSWS/NYSKit/index.html
 
@@ -102,72 +104,8 @@ NYSUIKit
 ├─ NYSUIKit
 ├─ NYSUIKit.h
 ├─ NYSUIKitPublicHeader.h
-├─ Resources
-│    ├─ NYSUIKit.bundle
-│    │    ├─ Info.plist
-│    │    ├─ en.lproj
-│    │    ├─ lao.lproj
-│    │    ├─ zh-Hans.lproj
-│    │    └─ zh-Hant.lproj
-│    ├─ NYSUIKit.xcassets
-│    │    ├─ Contents.json
-│    │    ├─ EmptyData
-│    │    ├─ Refresh
-│    │    ├─ Theme
-│    │    └─ TopBar
-│    ├─ douyuFont.otf
-│    ├─ en.lproj
-│    ├─ lo.lproj
-│    └─ zh-Hans.lproj
-├─ UI
-│    ├─ BlugeTabBar
-│    │    ├─ NYSBlugeTabBar.h
-│    │    └─ NYSBlugeTabBar.m
-│    ├─ CMPopTipView
-│    │    ├─ CMPopTipView.h
-│    │    └─ CMPopTipView.m
-│    ├─ FIRVersionCheck
-│    │    ├─ FIRVersionCheck.h
-│    │    └─ FIRVersionCheck.m
-│    ├─ FPS
-│    │    ├─ YYFPSLabel.h
-│    │    └─ YYFPSLabel.m
-│    ├─ LEEBubble
-│    │    ├─ LEEBubble.h
-│    │    └─ LEEBubble.m
-│    ├─ LEETheme
-│    │    ├─ LEETheme.h
-│    │    ├─ LEETheme.m
-│    │    └─ LEEThemeHelper.h
-│    ├─ Memory
-│    │    ├─ NYSMemoryLabel.h
-│    │    └─ NYSMemoryLabel.m
-│    ├─ NYSIconLeftButton
-│    │    ├─ NYSIconLeftButton.h
-│    │    └─ NYSIconLeftButton.m
-│    ├─ NYSLabel
-│    │    ├─ NYSLabel.h
-│    │    └─ NYSLabel.m
-│    ├─ NYSLoadingButton
-│    │    ├─ NYSLoadingButton.h
-│    │    └─ NYSLoadingButton.m
-│    ├─ NYSLocation
-│    │    ├─ NYSLocationTransform.h
-│    │    ├─ NYSLocationTransform.m
-│    │    ├─ NYSSystemLocation.h
-│    │    └─ NYSSystemLocation.m
-│    ├─ PopView
-│    │    ├─ PopAnimationTool.h
-│    │    ├─ PopAnimationTool.m
-│    │    ├─ PopView.h
-│    │    └─ PopView.m
-│    ├─ ScrollLabel
-│    │    ├─ WSScrollLabel.h
-│    │    └─ WSScrollLabel.m
-│    └─ TableViewAnimationKit
-│           ├─ TableViewAnimationKit.h
-│           ├─ TableViewAnimationKit.m
-│           └─ TableViewAnimationKitConfig.h
+├─ Resources(资源文件:字体、图片、国际化)
+├─ UI(UI组件库)
 └─ Utilities
        ├─ NYSUIKitUtilities.h
        └─ NYSUIKitUtilities.m
