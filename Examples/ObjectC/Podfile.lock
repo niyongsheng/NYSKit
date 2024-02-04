@@ -1,0 +1,139 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - CocoaDebug (1.7.7)
+  - DZNEmptyDataSet (1.8.1)
+  - FLAnimatedImage (1.0.17)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - IQKeyboardManager (6.5.17)
+  - JCore (4.6.0)
+  - JPush (5.2.0):
+    - JCore (>= 2.0.0)
+  - Masonry (1.1.0)
+  - MJRefresh (3.7.6)
+  - NYSKit (0.0.1):
+    - AFNetworking (~> 4.0)
+    - SVProgressHUD (~> 2.0)
+  - NYSTK (0.0.8):
+    - Masonry (>= 1.0.0)
+  - NYSUIKit (0.0.1):
+    - DZNEmptyDataSet (~> 1.8)
+    - MJRefresh (~> 3.7)
+    - NYSKit (~> 0.0.1)
+  - ReactiveObjC (3.1.1)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
+  - UMAPM (1.8.6)
+  - UMCCommon (7.3.7):
+    - UMAPM
+    - UMDevice
+  - UMCCommonLog (2.0.2)
+  - UMDevice (3.3.0)
+  - UMengUShare/Core (6.4.8.2):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.8.2)
+  - UMengUShare/Social/ReducedQQ (6.4.8.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedSina (6.4.8.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.8.2):
+    - UMengUShare/Core
+  - UMengUShare/UI (6.4.8.2):
+    - UMengUShare/Core
+  - XHLaunchAd (3.9.12):
+    - FLAnimatedImage (~> 1.0.12)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - CocoaDebug
+  - FMDB
+  - IQKeyboardManager
+  - JPush
+  - Masonry
+  - NYSKit (from `../../`)
+  - NYSTK (~> 0.0.5)
+  - NYSUIKit (from `../../`)
+  - ReactiveObjC
+  - UMCCommon
+  - UMCCommonLog
+  - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedSina
+  - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/UI
+  - XHLaunchAd
+  - YYKit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - CocoaDebug
+    - DZNEmptyDataSet
+    - FLAnimatedImage
+    - FMDB
+    - IQKeyboardManager
+    - JCore
+    - JPush
+    - Masonry
+    - MJRefresh
+    - NYSTK
+    - ReactiveObjC
+    - SVProgressHUD
+    - UMAPM
+    - UMCCommon
+    - UMCCommonLog
+    - UMDevice
+    - UMengUShare
+    - XHLaunchAd
+    - YYKit
+
+EXTERNAL SOURCES:
+  NYSKit:
+    :path: "../../"
+  NYSUIKit:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  CocoaDebug: b38d31464b91a9775928f8667d114db07b136565
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FLAnimatedImage: bbf914596368867157cc71b38a8ec834b3eeb32b
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  IQKeyboardManager: 904d013844bbae0abe073f015487bfebe5476335
+  JCore: bfb281ba5fbf3d3e50ccb36bb41d54e0e99312df
+  JPush: 76668b765fcfd7c15f86b05ca0e5cdc01945ce23
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
+  NYSKit: 5de54de2720a7c4df1e4fe860d06adb34f85331c
+  NYSTK: 2a3ed92c57614cce6fc20ed21cf82db2d9146217
+  NYSUIKit: c72193bec11a1e45afd3f61444cf1f98e1e43aa9
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+  UMAPM: e69eb6542a7c98f31a0d177d31ecfa1a2ceee1c3
+  UMCCommon: aac337052f23b0e08c0f3cf021d3bb209f2c49bd
+  UMCCommonLog: bea707e50c85cef4b0eb47cc5c7226bb843245ca
+  UMDevice: f67106f8f1a8bc465ba20d376d896e178be66ba7
+  UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
+  XHLaunchAd: 6320f9c68732667323072fc3a5f104e40fbe9cfe
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: fad8bcecd9a2956818ed0792204bf10fa9682f73
+
+COCOAPODS: 1.12.0

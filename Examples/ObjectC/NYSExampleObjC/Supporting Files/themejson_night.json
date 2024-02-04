@@ -1,0 +1,31 @@
+{
+    "color": {
+        "app_theme_color" : "#006FF9",
+        
+        "title_label_color"             : "#ffffff",
+        "subtitle_label_color"          : "#f0f0f0",
+        "footer_state_label_color"      : "#646267",
+        "text_field_placeholder_color"  : "#ffffff",
+        
+        "white_black_color"             : "#000000",
+        "controller_view_bg_color"      : "#000000",
+        "alert_view_bg_color"           : "#18181A",
+        "normal_corner_style_bg_color"  : "#101010",
+        "rounded_corner_style_bg_color" : "#000000",
+        
+        "default_nav_bar_bar_tint_color": "#2D65FE",
+        "default_nav_bar_tint_color"    : "#ffffff",
+        "default_nav_bar_title_color"   : "#ffffff",
+    },
+    
+    "image": {
+        "prefix_image"          : "night_",
+        "no_data_image"         : "no_data_image",
+        "loading_image"         : "loading_image",
+        "placeholder_image"     : "placeholder_image",
+    },
+    
+    "other": {
+        
+    }
+}

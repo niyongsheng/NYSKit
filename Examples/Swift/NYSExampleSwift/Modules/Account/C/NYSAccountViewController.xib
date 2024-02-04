@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NYSAccountViewController" customModule="NYSExampleSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="contenView" destination="AWK-H7-Xq4" id="jnW-ds-g79"/>
+                <outlet property="contentViewH" destination="d4g-2B-UxR" id="FUq-fh-p8L"/>
+                <outlet property="oneKeyBtn" destination="GPI-7R-6jV" id="6UO-h8-bna"/>
+                <outlet property="otherAccountBtn" destination="934-hl-94V" id="cep-q3-n4o"/>
+                <outlet property="protocolT" destination="0xh-fw-Qph" id="h9Z-3l-Wr0"/>
+                <outlet property="scrollView" destination="Svp-Ls-rLO" id="Lxq-NM-Bc6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Svp-Ls-rLO">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWK-H7-Xq4" userLabel="ContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-top-bg" translatesAutoresizingMaskIntoConstraints="NO" id="pP2-Pr-pCP">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="220"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎登录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zrn-w3-P4p">
+                                    <rect key="frame" x="15" y="100" width="97.333333333333329" height="28.666666666666657"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="软件定义物流，数字成就未来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bs9-iJ-Xv1">
+                                    <rect key="frame" x="15" y="133.66666666666666" width="199" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" name="fontColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPI-7R-6jV">
+                                    <rect key="frame" x="15" y="527" width="363" height="46"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="46" id="Su5-7a-4oA"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="一键登录">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="oneKeyBtnOnclicked:" destination="-1" eventType="touchUpInside" id="cpe-xd-6Cd"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="934-hl-94V">
+                                    <rect key="frame" x="15" y="583" width="363" height="46"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="其他账号登录">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="otherAccountBtnOnclicked:" destination="-1" eventType="touchUpInside" id="cff-1L-sJT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awg-11-eNK">
+                                    <rect key="frame" x="136.66666666666666" y="719" width="40" height="40"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="login-icon-wechat"/>
+                                    <connections>
+                                        <action selector="wechatBtnOnclicked:" destination="-1" eventType="touchUpInside" id="KJm-dT-ZpA"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAN-rF-yZM">
+                                    <rect key="frame" x="216.66666666666666" y="719" width="39.999999999999972" height="40"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="login-icon-apple"/>
+                                    <connections>
+                                        <action selector="appleBtnOnclicked:" destination="-1" eventType="touchUpInside" id="0b0-vg-wyd"/>
+                                    </connections>
+                                </button>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="阅读并同意《服务协议》《隐私政策》" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0xh-fw-Qph">
+                                    <rect key="frame" x="90" y="639" width="253" height="70"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="70" id="IC9-7F-Hwa"/>
+                                    </constraints>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="934-hl-94V" firstAttribute="centerX" secondItem="AWK-H7-Xq4" secondAttribute="centerX" id="0A8-0W-CG2"/>
+                                <constraint firstItem="bs9-iJ-Xv1" firstAttribute="leading" secondItem="Zrn-w3-P4p" secondAttribute="leading" id="1S1-lr-RSX"/>
+                                <constraint firstItem="aAN-rF-yZM" firstAttribute="centerX" secondItem="AWK-H7-Xq4" secondAttribute="centerX" constant="40" id="FUR-TQ-L7Q"/>
+                                <constraint firstItem="pP2-Pr-pCP" firstAttribute="leading" secondItem="AWK-H7-Xq4" secondAttribute="leading" id="KSj-H0-k14"/>
+                                <constraint firstItem="Zrn-w3-P4p" firstAttribute="leading" secondItem="AWK-H7-Xq4" secondAttribute="leading" constant="15" id="Kkv-wc-z53"/>
+                                <constraint firstAttribute="trailing" secondItem="pP2-Pr-pCP" secondAttribute="trailing" id="Oc4-I2-mhN"/>
+                                <constraint firstItem="934-hl-94V" firstAttribute="top" secondItem="GPI-7R-6jV" secondAttribute="bottom" constant="10" id="QxJ-6k-lfQ"/>
+                                <constraint firstItem="934-hl-94V" firstAttribute="height" secondItem="GPI-7R-6jV" secondAttribute="height" id="SFE-hx-X6e"/>
+                                <constraint firstAttribute="trailing" secondItem="0xh-fw-Qph" secondAttribute="trailing" constant="50" id="YNu-Iq-CXr"/>
+                                <constraint firstItem="Awg-11-eNK" firstAttribute="centerX" secondItem="AWK-H7-Xq4" secondAttribute="centerX" constant="-40" id="ZSs-I0-moJ"/>
+                                <constraint firstItem="GPI-7R-6jV" firstAttribute="centerX" secondItem="AWK-H7-Xq4" secondAttribute="centerX" id="aeI-Xf-sDc"/>
+                                <constraint firstItem="aAN-rF-yZM" firstAttribute="centerY" secondItem="Awg-11-eNK" secondAttribute="centerY" id="b4X-FX-6pe"/>
+                                <constraint firstItem="pP2-Pr-pCP" firstAttribute="top" secondItem="AWK-H7-Xq4" secondAttribute="top" id="cUW-Ge-ibs"/>
+                                <constraint firstAttribute="height" constant="1000" id="d4g-2B-UxR"/>
+                                <constraint firstItem="Awg-11-eNK" firstAttribute="top" secondItem="0xh-fw-Qph" secondAttribute="bottom" constant="10" id="eec-HK-vcq"/>
+                                <constraint firstItem="0xh-fw-Qph" firstAttribute="centerX" secondItem="AWK-H7-Xq4" secondAttribute="centerX" constant="20" id="fWi-cj-Irg"/>
+                                <constraint firstItem="GPI-7R-6jV" firstAttribute="centerY" secondItem="AWK-H7-Xq4" secondAttribute="centerY" constant="50" id="gNs-y1-b1d"/>
+                                <constraint firstItem="Zrn-w3-P4p" firstAttribute="top" secondItem="AWK-H7-Xq4" secondAttribute="top" constant="100" id="pnK-NM-hJY"/>
+                                <constraint firstItem="GPI-7R-6jV" firstAttribute="leading" secondItem="AWK-H7-Xq4" secondAttribute="leading" constant="15" id="qBv-6r-ZFz"/>
+                                <constraint firstItem="bs9-iJ-Xv1" firstAttribute="top" secondItem="Zrn-w3-P4p" secondAttribute="bottom" constant="5" id="r0r-F9-dJO"/>
+                                <constraint firstItem="0xh-fw-Qph" firstAttribute="top" secondItem="934-hl-94V" secondAttribute="bottom" constant="10" id="wrg-Ji-wn5"/>
+                                <constraint firstItem="934-hl-94V" firstAttribute="width" secondItem="GPI-7R-6jV" secondAttribute="width" id="zrr-6n-oDr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="AWK-H7-Xq4" firstAttribute="leading" secondItem="UDg-M7-DgA" secondAttribute="leading" id="7Fh-lk-mXt"/>
+                        <constraint firstItem="AWK-H7-Xq4" firstAttribute="top" secondItem="UDg-M7-DgA" secondAttribute="top" id="Abt-vn-KU7"/>
+                        <constraint firstItem="AWK-H7-Xq4" firstAttribute="width" secondItem="M0u-FW-m9p" secondAttribute="width" id="MNt-QE-1bZ"/>
+                        <constraint firstItem="AWK-H7-Xq4" firstAttribute="trailing" secondItem="UDg-M7-DgA" secondAttribute="trailing" id="PXN-An-s0z"/>
+                        <constraint firstItem="AWK-H7-Xq4" firstAttribute="bottom" secondItem="UDg-M7-DgA" secondAttribute="bottom" id="pDg-Jq-ihk"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="UDg-M7-DgA"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="M0u-FW-m9p"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Svp-Ls-rLO" secondAttribute="trailing" id="7DV-Yb-qK9"/>
+                <constraint firstAttribute="bottom" secondItem="Svp-Ls-rLO" secondAttribute="bottom" id="IQL-9f-eIm"/>
+                <constraint firstItem="Svp-Ls-rLO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ivk-rt-RV9"/>
+                <constraint firstItem="Svp-Ls-rLO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nBh-8S-cwc"/>
+            </constraints>
+            <point key="canvasLocation" x="125.95419847328243" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login-icon-apple" width="40" height="40"/>
+        <image name="login-icon-wechat" width="40" height="40"/>
+        <image name="login-top-bg" width="375" height="220"/>
+        <namedColor name="fontColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

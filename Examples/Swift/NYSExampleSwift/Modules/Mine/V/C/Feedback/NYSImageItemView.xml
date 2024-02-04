@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView layout="flex:1" attr="borderColor:lightGray,borderWidth:1,borderRadius:10, clipsToBounds:true">
+    <UIImageView name="selectedIV" layout="flex:1, flexDirection:row, justifyContent:flex-end" attr="userInteractionEnabled:true">
+        <FlexTouchView name="" layout="width:15, height:15, marginRight:5, marginTop:5" onPress="delTouchVOnpress">
+            <UIImageView name="" layout="flex:1" attr="source:delete_icon_red, contentMode:fill"/>
+        </FlexTouchView>
+    </UIImageView>
+</UIView>

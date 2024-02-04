@@ -1,0 +1,48 @@
+# NYSExampleSwift
+# https://github.com/niyongsheng/NYSKit
+platform :ios, '13.0'
+inhibit_all_warnings!
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'NYSExampleSwift' do
+  use_frameworks!
+  pod 'NYSKit', :path => "../../"
+  pod 'NYSUIKit', :path => "../../"
+  pod 'CocoaDebug', :configurations => ['Debug']
+    
+  pod 'Disk', '0.6.4'
+  pod 'RxSwift', '6.6.0'
+  pod 'RxCocoa', '6.6.0'
+  pod 'AcknowList', '3.0.1'
+  pod 'Kingfisher', '7.10.1'
+  pod 'ExCodable'
+  pod 'YYModel', '1.0.4'
+  pod 'FlexLib', '3.1.6'
+  pod 'SnapKit', '5.6.0'
+  pod 'FFPopup', '1.1.5'
+  pod 'SGQRCode', '4.1.0'
+  pod 'ZCycleView', '1.0.4'
+  pod 'lottie-ios', '2.5.3'
+  pod 'SGPagingView', '2.1.0'
+  pod 'BRPickerView', '2.8.1'
+  pod 'ZLPhotoBrowser', '4.4.0'
+  pod 'JDStatusBarNotification', '2.2.1'
+  pod 'IQKeyboardManagerSwift', '6.5.11'
+  
+  # Third
+  pod 'AMapLocation'
+  pod 'AMapTrack'
+  pod 'JPush'
+  
+  post_install do |installer|
+    installer.generated_projects.each do |project|
+      project.targets.each do |target|
+        target.build_configurations.each do |config|
+          config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+        end
+      end
+    end
+  end
+
+end

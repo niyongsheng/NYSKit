@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  NYSExampleObjC
+//
+//  Created by 倪永胜 on 2020/7/10.
+//  Copyright © 2020 niyongsheng. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#pragma mark -- 第三方框架 --
+#import <YYKit/YYKit.h>
+#import <NYSKit/NYSKit.h>
+#import <NYSUIKit/NYSUIKit.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <SafariServices/SFSafariViewController.h>
+#import <Masonry/Masonry.h>
+#import <NYSTK/NYSTK.h>
+
+#pragma mark -- 宏定义 --
+#import "UtilsMacros.h"
+#import "ThemeMacros.h"
+#import "CommonMacros.h"
+
+#pragma mark -- 服务类 --
+#import "AppDelegate+AppService.h"
+#import "AppDelegate+PushService.h"
+
+#pragma mark -- 管理类 --
+#import "AppManager.h"
+#import "ThemeManager.h"
+#import "UserManager.h"
+#import "DBManager.h"
+#import "UMManager.h"
+#import "ADManager.h"
+
+#endif /* PrefixHeader_pch */

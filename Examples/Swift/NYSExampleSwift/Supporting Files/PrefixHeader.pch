@@ -1,0 +1,13 @@
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//
+// Swift 项目默认是不支持 .pch 预编译头文件方式导入。
+// 如果你的 Swift 项目中有 Objective-C 代码，并且希望在这些 Objective-C 代码中使用 .pch 文件
+//
+
+#import <UIKit/UIKit.h>
+#import <SGQRCode/SGQRCode.h>
+#import "NYSExampleSwift-Swift.h"
+
+#endif /* PrefixHeader_pch */

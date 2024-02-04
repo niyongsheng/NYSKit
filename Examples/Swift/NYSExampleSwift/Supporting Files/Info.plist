@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>douyuFont.otf</string>
+	</array>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>location</string>
+        <string>remote-notification</string>
+    </array>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>iosamap</string>
+        <string>baidumap</string>
+    </array>
+    <key>NSCameraUsageDescription</key>
+    <string>是否允许此APP，访问相机进行扫码或者拍照？</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>是否允许此APP，访问相册进行修改头像或者上传图片？</string>
+    <key>NSLocationTemporaryUsageDescriptionDictionary</key>
+    <dict>
+        <key>AMapTrackKitScene</key>
+        <string>记录轨迹点，需要精确定位权限才可以正常使用</string>
+    </dict>
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>是否允许此 App，使用网络权限来扫描附近货源信息？</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>是否允许此APP，使用后台定持续定位权限，用来记录和上报您的行驶轨迹,用于方便客户查找货物运输的路径和运输速度？</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>是否允许此APP，使用后台定持续定位权限，用来记录和上报您的行驶轨迹,用于方便客户查找货物运输的路径和运输速度？</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>是否允许此APP，在使用APP时打开后台定位权限，用来记录和上报您的行驶轨迹,用于方便客户查找货物运输的路径和运输速度？</string>
+</dict>
+</plist>

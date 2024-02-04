@@ -1,0 +1,183 @@
+PODS:
+  - AcknowList (3.0.1)
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - AMapFoundation (1.8.2)
+  - AMapLocation (2.10.0):
+    - AMapFoundation (>= 1.8.0)
+  - AMapTrack (1.4.2):
+    - AMapFoundation (>= 1.6.4)
+    - AMapLocation (>= 2.6.7)
+  - BRPickerView (2.8.1):
+    - BRPickerView/AddressPickerView (= 2.8.1)
+    - BRPickerView/Base (= 2.8.1)
+    - BRPickerView/DatePickerView (= 2.8.1)
+    - BRPickerView/StringPickerView (= 2.8.1)
+  - BRPickerView/AddressPickerView (2.8.1):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.8.1)
+  - BRPickerView/DatePickerView (2.8.1):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.8.1):
+    - BRPickerView/Base
+  - CocoaDebug (1.7.7)
+  - Disk (0.6.4)
+  - DZNEmptyDataSet (1.8.1)
+  - ExCodable (0.6.0)
+  - FFPopup (1.1.5)
+  - FlexLib (3.1.6):
+    - FlexLib/standard (= 3.1.6)
+  - FlexLib/standard (3.1.6):
+    - FlexLib/standard/no-arc (= 3.1.6)
+    - Yoga (= 1.14.0)
+  - FlexLib/standard/no-arc (3.1.6):
+    - Yoga (= 1.14.0)
+  - IQKeyboardManagerSwift (6.5.11)
+  - JCore (4.4.2)
+  - JDStatusBarNotification (2.2.1)
+  - JPush (5.2.0):
+    - JCore (>= 2.0.0)
+  - Kingfisher (7.10.1)
+  - lottie-ios (2.5.3)
+  - MJRefresh (3.7.6)
+  - NYSKit (0.0.1):
+    - AFNetworking (~> 4.0)
+    - SVProgressHUD (~> 2.0)
+  - NYSUIKit (0.0.1):
+    - DZNEmptyDataSet (~> 1.8)
+    - MJRefresh (~> 3.7)
+    - NYSKit (~> 0.0.1)
+  - RxCocoa (6.6.0):
+    - RxRelay (= 6.6.0)
+    - RxSwift (= 6.6.0)
+  - RxRelay (6.6.0):
+    - RxSwift (= 6.6.0)
+  - RxSwift (6.6.0)
+  - SGPagingView (2.1.0)
+  - SGQRCode (4.1.0)
+  - SnapKit (5.6.0)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
+  - Yoga (1.14.0)
+  - YYModel (1.0.4)
+  - ZCycleView (1.0.4)
+  - ZLPhotoBrowser (4.4.0):
+    - ZLPhotoBrowser/Core (= 4.4.0)
+  - ZLPhotoBrowser/Core (4.4.0)
+
+DEPENDENCIES:
+  - AcknowList (= 3.0.1)
+  - AMapLocation
+  - AMapTrack
+  - BRPickerView (= 2.8.1)
+  - CocoaDebug
+  - Disk (= 0.6.4)
+  - ExCodable
+  - FFPopup (= 1.1.5)
+  - FlexLib (= 3.1.6)
+  - IQKeyboardManagerSwift (= 6.5.11)
+  - JDStatusBarNotification (= 2.2.1)
+  - JPush
+  - Kingfisher (= 7.10.1)
+  - lottie-ios (= 2.5.3)
+  - NYSKit (from `../../`)
+  - NYSUIKit (from `../../`)
+  - RxCocoa (= 6.6.0)
+  - RxSwift (= 6.6.0)
+  - SGPagingView (= 2.1.0)
+  - SGQRCode (= 4.1.0)
+  - SnapKit (= 5.6.0)
+  - YYModel (= 1.0.4)
+  - ZCycleView (= 1.0.4)
+  - ZLPhotoBrowser (= 4.4.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AcknowList
+    - AFNetworking
+    - AMapFoundation
+    - AMapLocation
+    - AMapTrack
+    - BRPickerView
+    - CocoaDebug
+    - Disk
+    - DZNEmptyDataSet
+    - ExCodable
+    - FFPopup
+    - FlexLib
+    - IQKeyboardManagerSwift
+    - JCore
+    - JDStatusBarNotification
+    - JPush
+    - Kingfisher
+    - lottie-ios
+    - MJRefresh
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SGPagingView
+    - SGQRCode
+    - SnapKit
+    - SVProgressHUD
+    - Yoga
+    - YYModel
+    - ZCycleView
+    - ZLPhotoBrowser
+
+EXTERNAL SOURCES:
+  NYSKit:
+    :path: "../../"
+  NYSUIKit:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  AcknowList: 1aca788e5f1fae79d671c9c48d83ef21027232c0
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  AMapFoundation: 9885c48fc3a78fdfb84a0299a2293e56ea3c9fec
+  AMapLocation: 5248aec2455ebb5d104b367813c946430a2ee033
+  AMapTrack: e95862d44af9c7fd0cc755b7a96622f35bf3764c
+  BRPickerView: 2531a2d4d0fea0b57a1c738de215af0f88863a2f
+  CocoaDebug: b38d31464b91a9775928f8667d114db07b136565
+  Disk: dcee5c2e98fb72f9a924cde8da8435b08244a80e
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  ExCodable: bffaf3d9623fc0ee464a07441a1711ea9860c0f7
+  FFPopup: a208dcee8db3e54ec4a88fcd6481f6f5d85b7a83
+  FlexLib: 11124863c7f197423b46d0593f2cd95c7ca0c0a5
+  IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
+  JCore: 2e7dd256415fb32398489968202c0066ad5c13db
+  JDStatusBarNotification: d43e8481174a2c5f195d16ce65c611f4a12bf507
+  JPush: 76668b765fcfd7c15f86b05ca0e5cdc01945ce23
+  Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
+  MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
+  NYSKit: 5de54de2720a7c4df1e4fe860d06adb34f85331c
+  NYSUIKit: c72193bec11a1e45afd3f61444cf1f98e1e43aa9
+  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
+  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  SGPagingView: fb90c03c809363ea340189053c5635a128e1ef84
+  SGQRCode: 6ad664d63f38f2842503bc5087812c5a3136d924
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+  Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZCycleView: 7826fb8439486339ed099b0979d9b564a2937ab0
+  ZLPhotoBrowser: fb978a8ea6ed228a146694cd475c9642f0cb7c91
+
+PODFILE CHECKSUM: 7fc1745bf62b9c237436501a2671f868f4126386
+
+COCOAPODS: 1.12.0

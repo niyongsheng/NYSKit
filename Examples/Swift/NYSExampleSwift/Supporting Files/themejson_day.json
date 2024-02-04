@@ -1,0 +1,33 @@
+{
+    "color": {
+        "app_theme_color" : "#006FF9",
+        
+        "title_label_color"             : "#4B4B4B",
+        "subtitle_label_color"          : "#A0A0A0",
+        "footer_state_label_color"      : "#B5B5B5",
+        "text_field_placeholder_color"  : "#F8F8F8",
+        
+        "white_black_color"             : "#FFFFFF",
+        "controller_view_bg_color"      : "#FEFEFE",
+        "alert_view_bg_color"           : "#FFFFFF",
+        "normal_corner_style_bg_color"  : "#ffffff",
+        "rounded_corner_style_bg_color" : "#f6f6f6",
+        
+        "default_nav_bar_bar_tint_color": "#FFFFFF",
+        "default_nav_bar_tint_color"    : "#000000",
+        "default_nav_bar_title_color"   : "#000000",
+    },
+    
+    "image": {
+        "prefix_image"                  : "day_",
+        "no_data_image"                 : "error",
+        "loading_image"                 : "linkedin_binding_magnifier",
+        "placeholder_image"             : "placeholder_image",
+        "placeholder_image_fillet"      : "placeholder_image_fillet",
+    },
+    
+    "other": {
+        
+    }
+}
+

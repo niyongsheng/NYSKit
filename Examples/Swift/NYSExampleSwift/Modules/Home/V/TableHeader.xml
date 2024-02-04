@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView layout="padding:15" attr="">
+    <UILabel name="contentL" layout="width:100%" attr="fontSize:18,text:,linesNum:0,lineBreakMode:truncatingTail"/>
+</UIView>

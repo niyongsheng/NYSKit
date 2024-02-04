@@ -1,0 +1,8 @@
+NoMore = "沒有更多了";
+NoData = "暫無數據";
+NetErr = "網絡錯誤";
+Retry = "重試";
+Loading = "加載中...";
+
+TipsAppUpdate = "新測試版本";
+AppUpdate = "立即更新";

@@ -1,0 +1,1303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68925094E59C80611C4293FC /* Pods_NYSExampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD6325981766CA451F44293 /* Pods_NYSExampleSwift.framework */; };
+		C806A5D62B672E5600D6FFE1 /* UIKitBridgeSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806A5D52B672E5600D6FFE1 /* UIKitBridgeSwiftUI.swift */; };
+		C806A5DD2B67722F00D6FFE1 /* PandaCollectionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806A5D82B67722E00D6FFE1 /* PandaCollectionFetcher.swift */; };
+		C806A5DE2B67722F00D6FFE1 /* MemeCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806A5D92B67722E00D6FFE1 /* MemeCreator.swift */; };
+		C806A5DF2B67722F00D6FFE1 /* LoadableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806A5DA2B67722E00D6FFE1 /* LoadableImage.swift */; };
+		C806A5E12B67722F00D6FFE1 /* Panda.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806A5DC2B67722E00D6FFE1 /* Panda.swift */; };
+		C806A5E32B6777B600D6FFE1 /* NYSPandaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C806A5E22B6777B600D6FFE1 /* NYSPandaViewController.swift */; };
+		C806A5E82B67AB4700D6FFE1 /* NYSAMapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C806A5E42B67AB4600D6FFE1 /* NYSAMapLocation.m */; };
+		C806A5E92B67AB4700D6FFE1 /* NYSAMapTrackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C806A5E52B67AB4600D6FFE1 /* NYSAMapTrackManager.m */; };
+		C80EE9E52B3ECE2900F79AD0 /* NYSSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80EE9E32B3ECE2900F79AD0 /* NYSSettingViewController.swift */; };
+		C80EE9E62B3ECE2900F79AD0 /* NYSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80EE9E42B3ECE2900F79AD0 /* NYSSettingViewController.xib */; };
+		C80EE9EB2B43963800F79AD0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80EE9EA2B43963800F79AD0 /* UIColor+Extension.swift */; };
+		C80EE9ED2B439E3B00F79AD0 /* UIControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80EE9EC2B439E3B00F79AD0 /* UIControl+Extension.swift */; };
+		C816B6652B4F7B6F00256E58 /* NYSWeaterAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B65F2B4F7B6E00256E58 /* NYSWeaterAlarm.swift */; };
+		C816B6662B4F7B6F00256E58 /* NYSWeaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B6602B4F7B6E00256E58 /* NYSWeaterData.swift */; };
+		C816B6672B4F7B6F00256E58 /* NYSWeaterIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B6612B4F7B6F00256E58 /* NYSWeaterIndex.swift */; };
+		C816B6682B4F7B6F00256E58 /* NYSWeaterHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B6622B4F7B6F00256E58 /* NYSWeaterHour.swift */; };
+		C816B6692B4F7B6F00256E58 /* NYSWeaterAqi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B6632B4F7B6F00256E58 /* NYSWeaterAqi.swift */; };
+		C816B66A2B4F7B6F00256E58 /* NYSWeater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B6642B4F7B6F00256E58 /* NYSWeater.swift */; };
+		C816B66E2B4F7C4E00256E58 /* NYSMissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816B66D2B4F7C4E00256E58 /* NYSMissionViewModel.swift */; };
+		C8200B2B2B609B7C00580A1F /* NYSFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8200B2A2B609B7C00580A1F /* NYSFeedbackViewController.swift */; };
+		C8200B2E2B609D8400580A1F /* NYSMineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8200B2D2B609D8400580A1F /* NYSMineViewModel.swift */; };
+		C8200B302B609E4600580A1F /* NYSFeedbackView.xml in Resources */ = {isa = PBXBuildFile; fileRef = C8200B2F2B609E4600580A1F /* NYSFeedbackView.xml */; };
+		C821AAAF2B4694C4003C0968 /* AppAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C821AAAD2B4694C4003C0968 /* AppAlertView.xib */; };
+		C821AAB02B4694C4003C0968 /* AppAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C821AAAE2B4694C4003C0968 /* AppAlertView.swift */; };
+		C821AAB32B46B29E003C0968 /* NYSScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C821AAB22B46B29E003C0968 /* NYSScanViewController.m */; };
+		C821AAB72B46B2CA003C0968 /* NYSToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C821AAB52B46B2CA003C0968 /* NYSToolBar.m */; };
+		C821AAB92B46B930003C0968 /* NYSQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C821AAB82B46B930003C0968 /* NYSQRCodeViewController.swift */; };
+		C82F2FC12B6E265F00A8F816 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82F2FC02B6E265E00A8F816 /* UIImageView+Extension.swift */; };
+		C82F2FC32B6E28A900A8F816 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82F2FC22B6E28A900A8F816 /* UIButton+Extension.swift */; };
+		C82F2FC82B6E39FC00A8F816 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82F2FC72B6E39FC00A8F816 /* String+Extension.swift */; };
+		C83162A42B4CE2750014CFE1 /* TypeNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83162A32B4CE2750014CFE1 /* TypeNameProtocol.swift */; };
+		C83162A72B4CE5160014CFE1 /* UIScrollView+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83162A62B4CE5160014CFE1 /* UIScrollView+RxSwift.swift */; };
+		C83C18692B33E438002FD985 /* bill.json in Resources */ = {isa = PBXBuildFile; fileRef = C83C18652B33E438002FD985 /* bill.json */; };
+		C83C186A2B33E438002FD985 /* service.json in Resources */ = {isa = PBXBuildFile; fileRef = C83C18662B33E438002FD985 /* service.json */; };
+		C83C186B2B33E438002FD985 /* goods.json in Resources */ = {isa = PBXBuildFile; fileRef = C83C18672B33E438002FD985 /* goods.json */; };
+		C83C186C2B33E438002FD985 /* myself.json in Resources */ = {isa = PBXBuildFile; fileRef = C83C18682B33E438002FD985 /* myself.json */; };
+		C83EC4942B4FB1F3008FBE68 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83EC4932B4FB1F3008FBE68 /* API.swift */; };
+		C83EC4962B50CB8C008FBE68 /* NYSWeaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83EC4952B50CB8C008FBE68 /* NYSWeaterCell.swift */; };
+		C843D14F2B5E4EC4003B23B7 /* NYSMineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C843D14E2B5E4EC4003B23B7 /* NYSMineModel.swift */; };
+		C843D1512B5E50B5003B23B7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C843D1502B5E50B5003B23B7 /* UIImage+Extension.swift */; };
+		C843D1532B5E5F40003B23B7 /* NYSRootAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C843D1522B5E5F40003B23B7 /* NYSRootAlertView.swift */; };
+		C843D1552B5E68CA003B23B7 /* NYSOverdueAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C843D1542B5E68CA003B23B7 /* NYSOverdueAlertView.swift */; };
+		C843D1572B5E6921003B23B7 /* NYSOverdueAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C843D1562B5E6921003B23B7 /* NYSOverdueAlertView.xib */; };
+		C843D1592B5E6FC1003B23B7 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C843D1582B5E6FC0003B23B7 /* AlertManager.swift */; };
+		C8469F002B50FB6F00B8A1E4 /* NYSContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8469EFF2B50FB6F00B8A1E4 /* NYSContentViewController.swift */; };
+		C8469F022B5103F400B8A1E4 /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8469F012B5103F400B8A1E4 /* MarqueeLabel.swift */; };
+		C8474E532B43DD54001DE04A /* NYSRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8474E522B43DD54001DE04A /* NYSRootViewController.swift */; };
+		C858480E2B4797FC00B27086 /* NYSQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C858480D2B4797FC00B27086 /* NYSQRCodeViewController.xib */; };
+		C85848102B47A40D00B27086 /* NYSInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C858480F2B47A40D00B27086 /* NYSInstructionViewController.swift */; };
+		C8597A8229F5119E008BEE7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8597A8129F5119E008BEE7F /* AppDelegate.swift */; };
+		C8597A8629F5119E008BEE7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8597A8529F5119E008BEE7F /* ViewController.swift */; };
+		C8597A8929F5119E008BEE7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8597A8729F5119E008BEE7F /* Main.storyboard */; };
+		C8597A8B29F511A0008BEE7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8597A8A29F511A0008BEE7F /* Assets.xcassets */; };
+		C8597A8E29F511A0008BEE7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8597A8C29F511A0008BEE7F /* LaunchScreen.storyboard */; };
+		C85D7E7C2B60F34300C4BC93 /* NYSImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85D7E7B2B60F34300C4BC93 /* NYSImageItemView.swift */; };
+		C85D7E7E2B60F39700C4BC93 /* NYSImageItemView.xml in Resources */ = {isa = PBXBuildFile; fileRef = C85D7E7D2B60F39700C4BC93 /* NYSImageItemView.xml */; };
+		C8621DE82B316F5A00F90DF0 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = C8621DE72B316F5A00F90DF0 /* LaunchImage.png */; };
+		C8621DEE2B31845300F90DF0 /* NYSTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8621DED2B31845300F90DF0 /* NYSTabBarViewController.swift */; };
+		C86B02AF2B56017C00B359EA /* login_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C86B02AE2B56017C00B359EA /* login_data.json */; };
+		C86B02B12B56028B00B359EA /* userinfo_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C86B02B02B56028B00B359EA /* userinfo_data.json */; };
+		C86B02B72B56487500B359EA /* douyuFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = C86B02B62B56487500B359EA /* douyuFont.otf */; };
+		C86DB2122B3E8D61002126F5 /* NYSScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86DB2112B3E8D61002126F5 /* NYSScrollViewController.xib */; };
+		C86DB2172B3E8DBC002126F5 /* NYSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86DB2132B3E8DBB002126F5 /* NYSLoginViewController.xib */; };
+		C86DB2182B3E8DBC002126F5 /* NYSAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86DB2142B3E8DBB002126F5 /* NYSAccountViewController.xib */; };
+		C86DB2192B3E8DBC002126F5 /* NYSAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DB2152B3E8DBB002126F5 /* NYSAccountViewController.swift */; };
+		C86DB21A2B3E8DBC002126F5 /* NYSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DB2162B3E8DBC002126F5 /* NYSLoginViewController.swift */; };
+		C86DB21F2B3E9E22002126F5 /* WRNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DB21D2B3E9E22002126F5 /* WRNavigationBar.swift */; };
+		C86DB2202B3E9E22002126F5 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DB21E2B3E9E22002126F5 /* WRCustomNavigationBar.swift */; };
+		C8713F4A2B69E5690090B289 /* PullUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8713F492B69E5690090B289 /* PullUpController.swift */; };
+		C8713F4E2B69EC420090B289 /* NYSPullerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8713F4C2B69EC420090B289 /* NYSPullerViewController.swift */; };
+		C8713F4F2B69EC420090B289 /* NYSPullerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8713F4D2B69EC420090B289 /* NYSPullerViewController.xib */; };
+		C874B9A72B4B8BB8009CC627 /* AppShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874B9A52B4B8BB7009CC627 /* AppShareView.swift */; };
+		C874B9A82B4B8BB8009CC627 /* AppShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C874B9A62B4B8BB8009CC627 /* AppShareView.xib */; };
+		C87CAB752B46773600C84E8E /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CAB732B46773600C84E8E /* PropertyWrapper.swift */; };
+		C87CAB762B46773600C84E8E /* Rx+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CAB742B46773600C84E8E /* Rx+Operators.swift */; };
+		C87CAB7A2B467B2900C84E8E /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CAB792B467B2900C84E8E /* AppManager.swift */; };
+		C87CAB7D2B467C8E00C84E8E /* NYSUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87CAB7C2B467C8E00C84E8E /* NYSUserInfo.swift */; };
+		C88BC8AB2B3CF90900676632 /* NYSScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88BC8A92B3CF90900676632 /* NYSScrollViewController.swift */; };
+		C893E3EC2B5F54FB0087AB36 /* NYSTextAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C893E3EB2B5F54FB0087AB36 /* NYSTextAlertView.swift */; };
+		C893E3EE2B5F552F0087AB36 /* NYSTextAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C893E3ED2B5F552F0087AB36 /* NYSTextAlertView.xib */; };
+		C8958BB02B6B5FE400693DAE /* NYSPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8958BAE2B6B5FE400693DAE /* NYSPreviewViewController.swift */; };
+		C8958BB12B6B5FE400693DAE /* NYSPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8958BAF2B6B5FE400693DAE /* NYSPreviewViewController.xib */; };
+		C8A00F272B464CBD00245D94 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A00F262B464CBD00245D94 /* Transform.swift */; };
+		C8A4BE292B4B99E500152E14 /* system.style in Resources */ = {isa = PBXBuildFile; fileRef = C8A4BE282B4B99E400152E14 /* system.style */; };
+		C8A4BE2B2B4B9E5600152E14 /* NYSHomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A4BE2A2B4B9E5600152E14 /* NYSHomeListCell.swift */; };
+		C8A4BE2D2B4B9E7900152E14 /* NYSHomeListCell.xml in Resources */ = {isa = PBXBuildFile; fileRef = C8A4BE2C2B4B9E7900152E14 /* NYSHomeListCell.xml */; };
+		C8A4BE2F2B4BA0F100152E14 /* TableHeader.xml in Resources */ = {isa = PBXBuildFile; fileRef = C8A4BE2E2B4BA0F100152E14 /* TableHeader.xml */; };
+		C8A4BE312B4BBA1800152E14 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A4BE302B4BBA1700152E14 /* UITableView+Extension.swift */; };
+		C8A4BE3E2B4BD45400152E14 /* NYSHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A4BE3D2B4BD45400152E14 /* NYSHomeModel.swift */; };
+		C8A4BE412B4BDE9100152E14 /* NYSHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A4BE402B4BDE9100152E14 /* NYSHomeViewModel.swift */; };
+		C8A4BE432B4BDF4300152E14 /* NYSRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A4BE422B4BDF4300152E14 /* NYSRootViewModel.swift */; };
+		C8BC5E952B3A84B100814C2B /* NYSHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC5E942B3A84B100814C2B /* NYSHomeViewController.swift */; };
+		C8BC5E982B3A852200814C2B /* NYSMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC5E962B3A852200814C2B /* NYSMineViewController.swift */; };
+		C8BC5E992B3A852200814C2B /* NYSMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8BC5E972B3A852200814C2B /* NYSMineViewController.xib */; };
+		C8BC5E9C2B3A9E9400814C2B /* NYSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC5E9B2B3A9E9400814C2B /* NYSSearchView.swift */; };
+		C8BC5EA02B3AA41200814C2B /* NYSAdaptScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC5E9F2B3AA41200814C2B /* NYSAdaptScreen.swift */; };
+		C8BC5EA22B3AA6C400814C2B /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC5EA12B3AA6C400814C2B /* UIDevice+Extension.swift */; };
+		C8BC5EA42B3AAEA500814C2B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC5EA32B3AAEA500814C2B /* UIView+Extension.swift */; };
+		C8BC5EA62B3AB14400814C2B /* APPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC5EA52B3AB14400814C2B /* APPConfig.swift */; };
+		C8BC5EAD2B3AC1FD00814C2B /* themejson_night.json in Resources */ = {isa = PBXBuildFile; fileRef = C8BC5EAB2B3AC1FC00814C2B /* themejson_night.json */; };
+		C8BC5EAE2B3AC1FD00814C2B /* themejson_day.json in Resources */ = {isa = PBXBuildFile; fileRef = C8BC5EAC2B3AC1FC00814C2B /* themejson_day.json */; };
+		C8C5D2372B3E48EB00117F58 /* NYSRootScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C5D2362B3E48EB00117F58 /* NYSRootScrollViewController.swift */; };
+		C8C5D2392B3E490C00117F58 /* NYSServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C5D2382B3E490B00117F58 /* NYSServiceViewController.swift */; };
+		C8C5D23B2B3E4FF800117F58 /* NYSSubScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C5D23A2B3E4FF800117F58 /* NYSSubScrollViewController.swift */; };
+		C8C5D2432B3E628600117F58 /* NYSBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C5D2412B3E628600117F58 /* NYSBannerCollectionViewCell.swift */; };
+		C8D0AF792B49222A002C18E6 /* NYSThirdPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0AF782B49222A002C18E6 /* NYSThirdPartyViewController.swift */; };
+		C8D0AF7B2B4923C3002C18E6 /* NYSThirdPartyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0AF7A2B4923C3002C18E6 /* NYSThirdPartyDetailViewController.swift */; };
+		C8D3E21C2B3BB1E700B77DEA /* NYSHomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D3E21B2B3BB1E700B77DEA /* NYSHomeListViewController.swift */; };
+		C8D3E21F2B3BC6F800B77DEA /* NYSRootWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D3E21E2B3BC6F800B77DEA /* NYSRootWindow.swift */; };
+		C8D3E2212B3BEAAF00B77DEA /* NYSMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D3E2202B3BEAAF00B77DEA /* NYSMissionViewController.swift */; };
+		C8E6C5772B6F5E2100F885E0 /* Pods-NYSExampleSwift-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8E6C5762B6F5E2100F885E0 /* Pods-NYSExampleSwift-acknowledgements.plist */; };
+		C8ED431A2B6126EE00342153 /* NYSLogoffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED43192B6126EE00342153 /* NYSLogoffViewController.swift */; };
+		C8ED6DDB2B51494D000F2268 /* NYSRootWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED6DDA2B51494D000F2268 /* NYSRootWebViewController.swift */; };
+		C8ED6DDD2B54CD14000F2268 /* weather_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C8ED6DDC2B54CD13000F2268 /* weather_data.json */; };
+		C8ED6DE02B550A61000F2268 /* NYSRootCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED6DDF2B550A61000F2268 /* NYSRootCodable.swift */; };
+		C8ED6DE42B5513C6000F2268 /* service_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C8ED6DE32B5513C6000F2268 /* service_data.json */; };
+		C8ED6DE62B55164F000F2268 /* NYSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED6DE52B55164F000F2268 /* NYSService.swift */; };
+		C8ED6DE92B551939000F2268 /* NYSServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED6DE72B551939000F2268 /* NYSServiceCollectionViewCell.swift */; };
+		C8ED6DEA2B551939000F2268 /* NYSServiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8ED6DE82B551939000F2268 /* NYSServiceCollectionViewCell.xib */; };
+		C8ED6DEC2B551B5C000F2268 /* NYSWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED6DEB2B551B5C000F2268 /* NYSWaterfallLayout.swift */; };
+		C8ED6DEF2B551D9B000F2268 /* NYSServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED6DEE2B551D9B000F2268 /* NYSServiceViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		42B8AE32A210E967EC38270B /* Pods-NYSExampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYSExampleSwift.debug.xcconfig"; path = "Target Support Files/Pods-NYSExampleSwift/Pods-NYSExampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		C806A5D52B672E5600D6FFE1 /* UIKitBridgeSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitBridgeSwiftUI.swift; sourceTree = "<group>"; };
+		C806A5D82B67722E00D6FFE1 /* PandaCollectionFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PandaCollectionFetcher.swift; sourceTree = "<group>"; };
+		C806A5D92B67722E00D6FFE1 /* MemeCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCreator.swift; sourceTree = "<group>"; };
+		C806A5DA2B67722E00D6FFE1 /* LoadableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableImage.swift; sourceTree = "<group>"; };
+		C806A5DC2B67722E00D6FFE1 /* Panda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panda.swift; sourceTree = "<group>"; };
+		C806A5E22B6777B600D6FFE1 /* NYSPandaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSPandaViewController.swift; sourceTree = "<group>"; };
+		C806A5E42B67AB4600D6FFE1 /* NYSAMapLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSAMapLocation.m; sourceTree = "<group>"; };
+		C806A5E52B67AB4600D6FFE1 /* NYSAMapTrackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSAMapTrackManager.m; sourceTree = "<group>"; };
+		C806A5E62B67AB4600D6FFE1 /* NYSAMapTrackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSAMapTrackManager.h; sourceTree = "<group>"; };
+		C806A5E72B67AB4600D6FFE1 /* NYSAMapLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSAMapLocation.h; sourceTree = "<group>"; };
+		C80EE9E32B3ECE2900F79AD0 /* NYSSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSSettingViewController.swift; sourceTree = "<group>"; };
+		C80EE9E42B3ECE2900F79AD0 /* NYSSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NYSSettingViewController.xib; sourceTree = "<group>"; };
+		C80EE9EA2B43963800F79AD0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		C80EE9EC2B439E3B00F79AD0 /* UIControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extension.swift"; sourceTree = "<group>"; };
+		C816B65F2B4F7B6E00256E58 /* NYSWeaterAlarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYSWeaterAlarm.swift; sourceTree = "<group>"; };
+		C816B6602B4F7B6E00256E58 /* NYSWeaterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYSWeaterData.swift; sourceTree = "<group>"; };
+		C816B6612B4F7B6F00256E58 /* NYSWeaterIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYSWeaterIndex.swift; sourceTree = "<group>"; };
+		C816B6622B4F7B6F00256E58 /* NYSWeaterHour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYSWeaterHour.swift; sourceTree = "<group>"; };
+		C816B6632B4F7B6F00256E58 /* NYSWeaterAqi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYSWeaterAqi.swift; sourceTree = "<group>"; };
+		C816B6642B4F7B6F00256E58 /* NYSWeater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYSWeater.swift; sourceTree = "<group>"; };
+		C816B66D2B4F7C4E00256E58 /* NYSMissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSMissionViewModel.swift; sourceTree = "<group>"; };
+		C8200B2A2B609B7C00580A1F /* NYSFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSFeedbackViewController.swift; sourceTree = "<group>"; };
+		C8200B2D2B609D8400580A1F /* NYSMineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSMineViewModel.swift; sourceTree = "<group>"; };
+		C8200B2F2B609E4600580A1F /* NYSFeedbackView.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NYSFeedbackView.xml; sourceTree = "<group>"; };
+		C821AAAD2B4694C4003C0968 /* AppAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppAlertView.xib; sourceTree = "<group>"; };
+		C821AAAE2B4694C4003C0968 /* AppAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAlertView.swift; sourceTree = "<group>"; };
+		C821AAB12B46B29E003C0968 /* NYSScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSScanViewController.h; sourceTree = "<group>"; };
+		C821AAB22B46B29E003C0968 /* NYSScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYSScanViewController.m; sourceTree = "<group>"; };
+		C821AAB52B46B2CA003C0968 /* NYSToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSToolBar.m; sourceTree = "<group>"; };
+		C821AAB62B46B2CA003C0968 /* NYSToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSToolBar.h; sourceTree = "<group>"; };
+		C821AAB82B46B930003C0968 /* NYSQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSQRCodeViewController.swift; sourceTree = "<group>"; };
+		C82F2FC02B6E265E00A8F816 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		C82F2FC22B6E28A900A8F816 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		C82F2FC72B6E39FC00A8F816 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C83162A32B4CE2750014CFE1 /* TypeNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeNameProtocol.swift; sourceTree = "<group>"; };
+		C83162A62B4CE5160014CFE1 /* UIScrollView+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+RxSwift.swift"; sourceTree = "<group>"; };
+		C83C18652B33E438002FD985 /* bill.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bill.json; sourceTree = "<group>"; };
+		C83C18662B33E438002FD985 /* service.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = service.json; sourceTree = "<group>"; };
+		C83C18672B33E438002FD985 /* goods.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goods.json; sourceTree = "<group>"; };
+		C83C18682B33E438002FD985 /* myself.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = myself.json; sourceTree = "<group>"; };
+		C83EC4932B4FB1F3008FBE68 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C83EC4952B50CB8C008FBE68 /* NYSWeaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSWeaterCell.swift; sourceTree = "<group>"; };
+		C843D14E2B5E4EC4003B23B7 /* NYSMineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSMineModel.swift; sourceTree = "<group>"; };
+		C843D1502B5E50B5003B23B7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		C843D1522B5E5F40003B23B7 /* NYSRootAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSRootAlertView.swift; sourceTree = "<group>"; };
+		C843D1542B5E68CA003B23B7 /* NYSOverdueAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSOverdueAlertView.swift; sourceTree = "<group>"; };
+		C843D1562B5E6921003B23B7 /* NYSOverdueAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYSOverdueAlertView.xib; sourceTree = "<group>"; };
+		C843D1582B5E6FC0003B23B7 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		C8469EFF2B50FB6F00B8A1E4 /* NYSContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSContentViewController.swift; sourceTree = "<group>"; };
+		C8469F012B5103F400B8A1E4 /* MarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
+		C8474E522B43DD54001DE04A /* NYSRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSRootViewController.swift; sourceTree = "<group>"; };
+		C858480D2B4797FC00B27086 /* NYSQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYSQRCodeViewController.xib; sourceTree = "<group>"; };
+		C858480F2B47A40D00B27086 /* NYSInstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSInstructionViewController.swift; sourceTree = "<group>"; };
+		C8597A7E29F5119E008BEE7F /* NYSExampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYSExampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8597A8129F5119E008BEE7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8597A8529F5119E008BEE7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C8597A8829F5119E008BEE7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C8597A8A29F511A0008BEE7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8597A8D29F511A0008BEE7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C8597A8F29F511A0008BEE7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8597AC929F522D9008BEE7F /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C85D7E7B2B60F34300C4BC93 /* NYSImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSImageItemView.swift; sourceTree = "<group>"; };
+		C85D7E7D2B60F39700C4BC93 /* NYSImageItemView.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NYSImageItemView.xml; sourceTree = "<group>"; };
+		C8621DE72B316F5A00F90DF0 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
+		C8621DEC2B3182EE00F90DF0 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		C8621DED2B31845300F90DF0 /* NYSTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSTabBarViewController.swift; sourceTree = "<group>"; };
+		C86B02AE2B56017C00B359EA /* login_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login_data.json; sourceTree = "<group>"; };
+		C86B02B02B56028B00B359EA /* userinfo_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userinfo_data.json; sourceTree = "<group>"; };
+		C86B02B62B56487500B359EA /* douyuFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = douyuFont.otf; sourceTree = "<group>"; };
+		C86DB2112B3E8D61002126F5 /* NYSScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYSScrollViewController.xib; sourceTree = "<group>"; };
+		C86DB2132B3E8DBB002126F5 /* NYSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYSLoginViewController.xib; sourceTree = "<group>"; };
+		C86DB2142B3E8DBB002126F5 /* NYSAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYSAccountViewController.xib; sourceTree = "<group>"; };
+		C86DB2152B3E8DBB002126F5 /* NYSAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYSAccountViewController.swift; sourceTree = "<group>"; };
+		C86DB2162B3E8DBC002126F5 /* NYSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYSLoginViewController.swift; sourceTree = "<group>"; };
+		C86DB21D2B3E9E22002126F5 /* WRNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
+		C86DB21E2B3E9E22002126F5 /* WRCustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCustomNavigationBar.swift; sourceTree = "<group>"; };
+		C8713F492B69E5690090B289 /* PullUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullUpController.swift; sourceTree = "<group>"; };
+		C8713F4C2B69EC420090B289 /* NYSPullerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSPullerViewController.swift; sourceTree = "<group>"; };
+		C8713F4D2B69EC420090B289 /* NYSPullerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NYSPullerViewController.xib; sourceTree = "<group>"; };
+		C874B9A52B4B8BB7009CC627 /* AppShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppShareView.swift; sourceTree = "<group>"; };
+		C874B9A62B4B8BB8009CC627 /* AppShareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppShareView.xib; sourceTree = "<group>"; };
+		C87CAB732B46773600C84E8E /* PropertyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyWrapper.swift; sourceTree = "<group>"; };
+		C87CAB742B46773600C84E8E /* Rx+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx+Operators.swift"; sourceTree = "<group>"; };
+		C87CAB792B467B2900C84E8E /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		C87CAB7C2B467C8E00C84E8E /* NYSUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSUserInfo.swift; sourceTree = "<group>"; };
+		C88BC8A92B3CF90900676632 /* NYSScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSScrollViewController.swift; sourceTree = "<group>"; };
+		C893E3EB2B5F54FB0087AB36 /* NYSTextAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSTextAlertView.swift; sourceTree = "<group>"; };
+		C893E3ED2B5F552F0087AB36 /* NYSTextAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYSTextAlertView.xib; sourceTree = "<group>"; };
+		C8958BAE2B6B5FE400693DAE /* NYSPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSPreviewViewController.swift; sourceTree = "<group>"; };
+		C8958BAF2B6B5FE400693DAE /* NYSPreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NYSPreviewViewController.xib; sourceTree = "<group>"; };
+		C8A00F262B464CBD00245D94 /* Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
+		C8A4BE282B4B99E400152E14 /* system.style */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = system.style; sourceTree = "<group>"; };
+		C8A4BE2A2B4B9E5600152E14 /* NYSHomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSHomeListCell.swift; sourceTree = "<group>"; };
+		C8A4BE2C2B4B9E7900152E14 /* NYSHomeListCell.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NYSHomeListCell.xml; sourceTree = "<group>"; };
+		C8A4BE2E2B4BA0F100152E14 /* TableHeader.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TableHeader.xml; sourceTree = "<group>"; };
+		C8A4BE302B4BBA1700152E14 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		C8A4BE3D2B4BD45400152E14 /* NYSHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSHomeModel.swift; sourceTree = "<group>"; };
+		C8A4BE402B4BDE9100152E14 /* NYSHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSHomeViewModel.swift; sourceTree = "<group>"; };
+		C8A4BE422B4BDF4300152E14 /* NYSRootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSRootViewModel.swift; sourceTree = "<group>"; };
+		C8A4BE442B4BF16D00152E14 /* NYSExampleSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NYSExampleSwift.entitlements; sourceTree = "<group>"; };
+		C8BC5E942B3A84B100814C2B /* NYSHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSHomeViewController.swift; sourceTree = "<group>"; };
+		C8BC5E962B3A852200814C2B /* NYSMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSMineViewController.swift; sourceTree = "<group>"; };
+		C8BC5E972B3A852200814C2B /* NYSMineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NYSMineViewController.xib; sourceTree = "<group>"; };
+		C8BC5E9B2B3A9E9400814C2B /* NYSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSSearchView.swift; sourceTree = "<group>"; };
+		C8BC5E9F2B3AA41200814C2B /* NYSAdaptScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSAdaptScreen.swift; sourceTree = "<group>"; };
+		C8BC5EA12B3AA6C400814C2B /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		C8BC5EA32B3AAEA500814C2B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C8BC5EA52B3AB14400814C2B /* APPConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPConfig.swift; sourceTree = "<group>"; };
+		C8BC5EAB2B3AC1FC00814C2B /* themejson_night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = themejson_night.json; sourceTree = "<group>"; };
+		C8BC5EAC2B3AC1FC00814C2B /* themejson_day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = themejson_day.json; sourceTree = "<group>"; };
+		C8C5D2362B3E48EB00117F58 /* NYSRootScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSRootScrollViewController.swift; sourceTree = "<group>"; };
+		C8C5D2382B3E490B00117F58 /* NYSServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYSServiceViewController.swift; sourceTree = "<group>"; };
+		C8C5D23A2B3E4FF800117F58 /* NYSSubScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSSubScrollViewController.swift; sourceTree = "<group>"; };
+		C8C5D2412B3E628600117F58 /* NYSBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		C8D0AF782B49222A002C18E6 /* NYSThirdPartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSThirdPartyViewController.swift; sourceTree = "<group>"; };
+		C8D0AF7A2B4923C3002C18E6 /* NYSThirdPartyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSThirdPartyDetailViewController.swift; sourceTree = "<group>"; };
+		C8D3E21B2B3BB1E700B77DEA /* NYSHomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSHomeListViewController.swift; sourceTree = "<group>"; };
+		C8D3E21E2B3BC6F800B77DEA /* NYSRootWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSRootWindow.swift; sourceTree = "<group>"; };
+		C8D3E2202B3BEAAF00B77DEA /* NYSMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSMissionViewController.swift; sourceTree = "<group>"; };
+		C8E6C5762B6F5E2100F885E0 /* Pods-NYSExampleSwift-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-NYSExampleSwift-acknowledgements.plist"; sourceTree = "<group>"; };
+		C8ED43192B6126EE00342153 /* NYSLogoffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSLogoffViewController.swift; sourceTree = "<group>"; };
+		C8ED6DDA2B51494D000F2268 /* NYSRootWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSRootWebViewController.swift; sourceTree = "<group>"; };
+		C8ED6DDC2B54CD13000F2268 /* weather_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weather_data.json; sourceTree = "<group>"; };
+		C8ED6DDF2B550A61000F2268 /* NYSRootCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSRootCodable.swift; sourceTree = "<group>"; };
+		C8ED6DE32B5513C6000F2268 /* service_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = service_data.json; sourceTree = "<group>"; };
+		C8ED6DE52B55164F000F2268 /* NYSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSService.swift; sourceTree = "<group>"; };
+		C8ED6DE72B551939000F2268 /* NYSServiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSServiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		C8ED6DE82B551939000F2268 /* NYSServiceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NYSServiceCollectionViewCell.xib; sourceTree = "<group>"; };
+		C8ED6DEB2B551B5C000F2268 /* NYSWaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSWaterfallLayout.swift; sourceTree = "<group>"; };
+		C8ED6DEE2B551D9B000F2268 /* NYSServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSServiceViewModel.swift; sourceTree = "<group>"; };
+		EFD6325981766CA451F44293 /* Pods_NYSExampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYSExampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE820DDF695C567CF3A650BC /* Pods-NYSExampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYSExampleSwift.release.xcconfig"; path = "Target Support Files/Pods-NYSExampleSwift/Pods-NYSExampleSwift.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C8597A7B29F5119E008BEE7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68925094E59C80611C4293FC /* Pods_NYSExampleSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C806A5D72B67721600D6FFE1 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				C806A5DA2B67722E00D6FFE1 /* LoadableImage.swift */,
+				C806A5D92B67722E00D6FFE1 /* MemeCreator.swift */,
+				C806A5DC2B67722E00D6FFE1 /* Panda.swift */,
+				C806A5D82B67722E00D6FFE1 /* PandaCollectionFetcher.swift */,
+				C806A5E22B6777B600D6FFE1 /* NYSPandaViewController.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		C806A5EA2B67AB4E00D6FFE1 /* MapLocation */ = {
+			isa = PBXGroup;
+			children = (
+				C806A5E72B67AB4600D6FFE1 /* NYSAMapLocation.h */,
+				C806A5E42B67AB4600D6FFE1 /* NYSAMapLocation.m */,
+				C806A5E62B67AB4600D6FFE1 /* NYSAMapTrackManager.h */,
+				C806A5E52B67AB4600D6FFE1 /* NYSAMapTrackManager.m */,
+			);
+			path = MapLocation;
+			sourceTree = "<group>";
+		};
+		C80EE9E92B43954400F79AD0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C83162A52B4CE4F70014CFE1 /* RxSwift */,
+				C8BC5EA12B3AA6C400814C2B /* UIDevice+Extension.swift */,
+				C8BC5EA32B3AAEA500814C2B /* UIView+Extension.swift */,
+				C80EE9EA2B43963800F79AD0 /* UIColor+Extension.swift */,
+				C80EE9EC2B439E3B00F79AD0 /* UIControl+Extension.swift */,
+				C8A4BE302B4BBA1700152E14 /* UITableView+Extension.swift */,
+				C843D1502B5E50B5003B23B7 /* UIImage+Extension.swift */,
+				C82F2FC02B6E265E00A8F816 /* UIImageView+Extension.swift */,
+				C82F2FC22B6E28A900A8F816 /* UIButton+Extension.swift */,
+				C82F2FC72B6E39FC00A8F816 /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C816B65E2B4F7A8E00256E58 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				C816B6642B4F7B6F00256E58 /* NYSWeater.swift */,
+				C816B65F2B4F7B6E00256E58 /* NYSWeaterAlarm.swift */,
+				C816B6632B4F7B6F00256E58 /* NYSWeaterAqi.swift */,
+				C816B6602B4F7B6E00256E58 /* NYSWeaterData.swift */,
+				C816B6622B4F7B6F00256E58 /* NYSWeaterHour.swift */,
+				C816B6612B4F7B6F00256E58 /* NYSWeaterIndex.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		C816B66B2B4F7BFB00256E58 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				C83EC4952B50CB8C008FBE68 /* NYSWeaterCell.swift */,
+				C8D3E2202B3BEAAF00B77DEA /* NYSMissionViewController.swift */,
+				C8469EFF2B50FB6F00B8A1E4 /* NYSContentViewController.swift */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		C816B66C2B4F7C0300256E58 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				C816B66D2B4F7C4E00256E58 /* NYSMissionViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		C8200B292B60985900580A1F /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				C8200B2A2B609B7C00580A1F /* NYSFeedbackViewController.swift */,
+				C8200B2F2B609E4600580A1F /* NYSFeedbackView.xml */,
+				C85D7E7B2B60F34300C4BC93 /* NYSImageItemView.swift */,
+				C85D7E7D2B60F39700C4BC93 /* NYSImageItemView.xml */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		C8200B2C2B609BA500580A1F /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				C8200B2D2B609D8400580A1F /* NYSMineViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		C821AAB42B46B2CA003C0968 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				C821AAB62B46B2CA003C0968 /* NYSToolBar.h */,
+				C821AAB52B46B2CA003C0968 /* NYSToolBar.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		C83162A52B4CE4F70014CFE1 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				C87CAB742B46773600C84E8E /* Rx+Operators.swift */,
+				C83162A62B4CE5160014CFE1 /* UIScrollView+RxSwift.swift */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		C83C18642B33E438002FD985 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C83C18652B33E438002FD985 /* bill.json */,
+				C83C18662B33E438002FD985 /* service.json */,
+				C83C18672B33E438002FD985 /* goods.json */,
+				C83C18682B33E438002FD985 /* myself.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C8597A7529F5119E008BEE7F = {
+			isa = PBXGroup;
+			children = (
+				C8597A8029F5119E008BEE7F /* NYSExampleSwift */,
+				C8597A7F29F5119E008BEE7F /* Products */,
+				C8597A9B29F5191A008BEE7F /* Frameworks */,
+				F5130B3339FFA0131A3A5058 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		C8597A7F29F5119E008BEE7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C8597A7E29F5119E008BEE7F /* NYSExampleSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8597A8029F5119E008BEE7F /* NYSExampleSwift */ = {
+			isa = PBXGroup;
+			children = (
+				C8A4BE442B4BF16D00152E14 /* NYSExampleSwift.entitlements */,
+				C87CAB722B465D0F00C84E8E /* Manager */,
+				C80EE9E92B43954400F79AD0 /* Extension */,
+				C86DB21B2B3E9E0C002126F5 /* Lib */,
+				C8D3E21D2B3BC6CA00B77DEA /* RootClass */,
+				C8BC5E9E2B3AA3A400814C2B /* Utils */,
+				C8621DE92B31744D00F90DF0 /* Modules */,
+				C8597A9829F51257008BEE7F /* Supporting Files */,
+			);
+			path = NYSExampleSwift;
+			sourceTree = "<group>";
+		};
+		C8597A9829F51257008BEE7F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C86B02B52B56487500B359EA /* Fonts */,
+				C83C18642B33E438002FD985 /* Resources */,
+				C8BC5EAC2B3AC1FC00814C2B /* themejson_day.json */,
+				C8BC5EAB2B3AC1FC00814C2B /* themejson_night.json */,
+				C8A4BE282B4B99E400152E14 /* system.style */,
+				C8597AC929F522D9008BEE7F /* PrefixHeader.pch */,
+				C8621DEC2B3182EE00F90DF0 /* Bridging-Header.h */,
+				C8597A8129F5119E008BEE7F /* AppDelegate.swift */,
+				C8597A8529F5119E008BEE7F /* ViewController.swift */,
+				C8597A8729F5119E008BEE7F /* Main.storyboard */,
+				C8597A8C29F511A0008BEE7F /* LaunchScreen.storyboard */,
+				C8E6C5762B6F5E2100F885E0 /* Pods-NYSExampleSwift-acknowledgements.plist */,
+				C8597A8F29F511A0008BEE7F /* Info.plist */,
+				C8597A8A29F511A0008BEE7F /* Assets.xcassets */,
+				C8621DE72B316F5A00F90DF0 /* LaunchImage.png */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C8597A9B29F5191A008BEE7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFD6325981766CA451F44293 /* Pods_NYSExampleSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C8621DE92B31744D00F90DF0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C8ED6DDE2B54F657000F2268 /* Mock */,
+				C86DB20F2B3E8CB7002126F5 /* Account */,
+				C8621DEB2B3175CC00F90DF0 /* TarBar */,
+				C8621DEA2B31745A00F90DF0 /* Home */,
+				C8BC5E8F2B3A82DC00814C2B /* Mission */,
+				C86DB2102B3E8CE8002126F5 /* Scan */,
+				C8BC5E902B3A82E700814C2B /* Service */,
+				C8BC5E912B3A839B00814C2B /* Mine */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C8621DEA2B31745A00F90DF0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C8A4BE382B4BD2FD00152E14 /* M */,
+				C8BC5E9A2B3A9CD900814C2B /* V */,
+				C8A4BE3F2B4BDC3C00152E14 /* VM */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C8621DEB2B3175CC00F90DF0 /* TarBar */ = {
+			isa = PBXGroup;
+			children = (
+				C8621DED2B31845300F90DF0 /* NYSTabBarViewController.swift */,
+			);
+			path = TarBar;
+			sourceTree = "<group>";
+		};
+		C86B02B52B56487500B359EA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C86B02B62B56487500B359EA /* douyuFont.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C86DB20E2B3E8CA9002126F5 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				C843D14E2B5E4EC4003B23B7 /* NYSMineModel.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		C86DB20F2B3E8CB7002126F5 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				C87CAB712B465CB900C84E8E /* V */,
+				C8A4BE3C2B4BD3B600152E14 /* C */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		C86DB2102B3E8CE8002126F5 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				C821AAB42B46B2CA003C0968 /* V */,
+				C821AAB12B46B29E003C0968 /* NYSScanViewController.h */,
+				C821AAB22B46B29E003C0968 /* NYSScanViewController.m */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		C86DB21B2B3E9E0C002126F5 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C8713F482B69E5690090B289 /* PullUpController */,
+				C86DB21C2B3E9E22002126F5 /* WRNavigationBar */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		C86DB21C2B3E9E22002126F5 /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				C86DB21D2B3E9E22002126F5 /* WRNavigationBar.swift */,
+				C86DB21E2B3E9E22002126F5 /* WRCustomNavigationBar.swift */,
+			);
+			path = WRNavigationBar;
+			sourceTree = "<group>";
+		};
+		C8713F482B69E5690090B289 /* PullUpController */ = {
+			isa = PBXGroup;
+			children = (
+				C8713F492B69E5690090B289 /* PullUpController.swift */,
+			);
+			path = PullUpController;
+			sourceTree = "<group>";
+		};
+		C8713F4B2B69EB680090B289 /* PullUp */ = {
+			isa = PBXGroup;
+			children = (
+				C8713F4C2B69EC420090B289 /* NYSPullerViewController.swift */,
+				C8713F4D2B69EC420090B289 /* NYSPullerViewController.xib */,
+			);
+			path = PullUp;
+			sourceTree = "<group>";
+		};
+		C87CAB712B465CB900C84E8E /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		C87CAB722B465D0F00C84E8E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C87CAB7B2B467C2A00C84E8E /* M */,
+				C87CAB7E2B46813700C84E8E /* V */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C87CAB7B2B467C2A00C84E8E /* M */ = {
+			isa = PBXGroup;
+			children = (
+				C87CAB7C2B467C8E00C84E8E /* NYSUserInfo.swift */,
+				C87CAB792B467B2900C84E8E /* AppManager.swift */,
+				C843D1582B5E6FC0003B23B7 /* AlertManager.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		C87CAB7E2B46813700C84E8E /* V */ = {
+			isa = PBXGroup;
+			children = (
+				C821AAAE2B4694C4003C0968 /* AppAlertView.swift */,
+				C821AAAD2B4694C4003C0968 /* AppAlertView.xib */,
+				C874B9A52B4B8BB7009CC627 /* AppShareView.swift */,
+				C874B9A62B4B8BB8009CC627 /* AppShareView.xib */,
+				C843D1542B5E68CA003B23B7 /* NYSOverdueAlertView.swift */,
+				C843D1562B5E6921003B23B7 /* NYSOverdueAlertView.xib */,
+				C893E3EB2B5F54FB0087AB36 /* NYSTextAlertView.swift */,
+				C893E3ED2B5F552F0087AB36 /* NYSTextAlertView.xib */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		C88BC8A82B3CF8E200676632 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				C88BC8A92B3CF90900676632 /* NYSScrollViewController.swift */,
+				C86DB2112B3E8D61002126F5 /* NYSScrollViewController.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		C8958BAD2B6B5F6C00693DAE /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				C8958BAE2B6B5FE400693DAE /* NYSPreviewViewController.swift */,
+				C8958BAF2B6B5FE400693DAE /* NYSPreviewViewController.xib */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		C8A4BE382B4BD2FD00152E14 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				C8A4BE3D2B4BD45400152E14 /* NYSHomeModel.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		C8A4BE392B4BD31300152E14 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				C8BC5E942B3A84B100814C2B /* NYSHomeViewController.swift */,
+				C8D3E21B2B3BB1E700B77DEA /* NYSHomeListViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		C8A4BE3A2B4BD36A00152E14 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				C8713F4B2B69EB680090B289 /* PullUp */,
+				C8C5D2382B3E490B00117F58 /* NYSServiceViewController.swift */,
+				C8C5D2362B3E48EB00117F58 /* NYSRootScrollViewController.swift */,
+				C8C5D23A2B3E4FF800117F58 /* NYSSubScrollViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		C8A4BE3B2B4BD38800152E14 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				C806A5D72B67721600D6FFE1 /* SwiftUI */,
+				C8ED43182B61269C00342153 /* Logoff */,
+				C8200B292B60985900580A1F /* Feedback */,
+				C8958BAD2B6B5F6C00693DAE /* Preview */,
+				C8D0AF7E2B493315002C18E6 /* Setting */,
+				C8BC5E962B3A852200814C2B /* NYSMineViewController.swift */,
+				C8BC5E972B3A852200814C2B /* NYSMineViewController.xib */,
+				C821AAB82B46B930003C0968 /* NYSQRCodeViewController.swift */,
+				C858480D2B4797FC00B27086 /* NYSQRCodeViewController.xib */,
+				C858480F2B47A40D00B27086 /* NYSInstructionViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		C8A4BE3C2B4BD3B600152E14 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				C86DB2152B3E8DBB002126F5 /* NYSAccountViewController.swift */,
+				C86DB2142B3E8DBB002126F5 /* NYSAccountViewController.xib */,
+				C86DB2162B3E8DBC002126F5 /* NYSLoginViewController.swift */,
+				C86DB2132B3E8DBB002126F5 /* NYSLoginViewController.xib */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		C8A4BE3F2B4BDC3C00152E14 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				C8A4BE402B4BDE9100152E14 /* NYSHomeViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		C8BC5E8F2B3A82DC00814C2B /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				C816B65E2B4F7A8E00256E58 /* M */,
+				C816B66B2B4F7BFB00256E58 /* V */,
+				C816B66C2B4F7C0300256E58 /* VM */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		C8BC5E902B3A82E700814C2B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C8ED6DE12B5511D6000F2268 /* M */,
+				C8C5D23C2B3E5FCB00117F58 /* V */,
+				C8ED6DED2B551D3A000F2268 /* VM */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C8BC5E912B3A839B00814C2B /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				C86DB20E2B3E8CA9002126F5 /* M */,
+				C8ED6DE22B551220000F2268 /* V */,
+				C8200B2C2B609BA500580A1F /* VM */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		C8BC5E9A2B3A9CD900814C2B /* V */ = {
+			isa = PBXGroup;
+			children = (
+				C8A4BE392B4BD31300152E14 /* C */,
+				C8BC5E9B2B3A9E9400814C2B /* NYSSearchView.swift */,
+				C8A4BE2A2B4B9E5600152E14 /* NYSHomeListCell.swift */,
+				C8A4BE2C2B4B9E7900152E14 /* NYSHomeListCell.xml */,
+				C8A4BE2E2B4BA0F100152E14 /* TableHeader.xml */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		C8BC5E9E2B3AA3A400814C2B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C806A5EA2B67AB4E00D6FFE1 /* MapLocation */,
+				C83EC4932B4FB1F3008FBE68 /* API.swift */,
+				C8BC5EA52B3AB14400814C2B /* APPConfig.swift */,
+				C8A00F262B464CBD00245D94 /* Transform.swift */,
+				C8BC5E9F2B3AA41200814C2B /* NYSAdaptScreen.swift */,
+				C87CAB732B46773600C84E8E /* PropertyWrapper.swift */,
+				C83162A32B4CE2750014CFE1 /* TypeNameProtocol.swift */,
+				C8469F012B5103F400B8A1E4 /* MarqueeLabel.swift */,
+				C8ED6DEB2B551B5C000F2268 /* NYSWaterfallLayout.swift */,
+				C806A5D52B672E5600D6FFE1 /* UIKitBridgeSwiftUI.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C8C5D23C2B3E5FCB00117F58 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				C8A4BE3A2B4BD36A00152E14 /* C */,
+				C8C5D2412B3E628600117F58 /* NYSBannerCollectionViewCell.swift */,
+				C8ED6DE72B551939000F2268 /* NYSServiceCollectionViewCell.swift */,
+				C8ED6DE82B551939000F2268 /* NYSServiceCollectionViewCell.xib */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		C8D0AF7E2B493315002C18E6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C80EE9E32B3ECE2900F79AD0 /* NYSSettingViewController.swift */,
+				C80EE9E42B3ECE2900F79AD0 /* NYSSettingViewController.xib */,
+				C8D0AF782B49222A002C18E6 /* NYSThirdPartyViewController.swift */,
+				C8D0AF7A2B4923C3002C18E6 /* NYSThirdPartyDetailViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		C8D3E21D2B3BC6CA00B77DEA /* RootClass */ = {
+			isa = PBXGroup;
+			children = (
+				C88BC8A82B3CF8E200676632 /* xib */,
+				C8A4BE422B4BDF4300152E14 /* NYSRootViewModel.swift */,
+				C8D3E21E2B3BC6F800B77DEA /* NYSRootWindow.swift */,
+				C8474E522B43DD54001DE04A /* NYSRootViewController.swift */,
+				C8ED6DDA2B51494D000F2268 /* NYSRootWebViewController.swift */,
+				C8ED6DDF2B550A61000F2268 /* NYSRootCodable.swift */,
+				C843D1522B5E5F40003B23B7 /* NYSRootAlertView.swift */,
+			);
+			path = RootClass;
+			sourceTree = "<group>";
+		};
+		C8ED43182B61269C00342153 /* Logoff */ = {
+			isa = PBXGroup;
+			children = (
+				C8ED43192B6126EE00342153 /* NYSLogoffViewController.swift */,
+			);
+			path = Logoff;
+			sourceTree = "<group>";
+		};
+		C8ED6DDE2B54F657000F2268 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				C8ED6DDC2B54CD13000F2268 /* weather_data.json */,
+				C8ED6DE32B5513C6000F2268 /* service_data.json */,
+				C86B02AE2B56017C00B359EA /* login_data.json */,
+				C86B02B02B56028B00B359EA /* userinfo_data.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		C8ED6DE12B5511D6000F2268 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				C8ED6DE52B55164F000F2268 /* NYSService.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		C8ED6DE22B551220000F2268 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				C8A4BE3B2B4BD38800152E14 /* C */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		C8ED6DED2B551D3A000F2268 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				C8ED6DEE2B551D9B000F2268 /* NYSServiceViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		F5130B3339FFA0131A3A5058 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42B8AE32A210E967EC38270B /* Pods-NYSExampleSwift.debug.xcconfig */,
+				FE820DDF695C567CF3A650BC /* Pods-NYSExampleSwift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C8597A7D29F5119E008BEE7F /* NYSExampleSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8597A9229F511A0008BEE7F /* Build configuration list for PBXNativeTarget "NYSExampleSwift" */;
+			buildPhases = (
+				C1831D385453AAE0FFB3790E /* [CP] Check Pods Manifest.lock */,
+				C8597A7A29F5119E008BEE7F /* Sources */,
+				C8597A7B29F5119E008BEE7F /* Frameworks */,
+				C8597A7C29F5119E008BEE7F /* Resources */,
+				35E3D97B7CFACEF9F3B90811 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NYSExampleSwift;
+			productName = NYSExampleSwift;
+			productReference = C8597A7E29F5119E008BEE7F /* NYSExampleSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C8597A7629F5119E008BEE7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				CLASSPREFIX = NYS;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				ORGANIZATIONNAME = niyongsheng;
+				TargetAttributes = {
+					C8597A7D29F5119E008BEE7F = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = C8597A7929F5119E008BEE7F /* Build configuration list for PBXProject "NYSExampleSwift" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C8597A7529F5119E008BEE7F;
+			productRefGroup = C8597A7F29F5119E008BEE7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C8597A7D29F5119E008BEE7F /* NYSExampleSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C8597A7C29F5119E008BEE7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8A4BE2D2B4B9E7900152E14 /* NYSHomeListCell.xml in Resources */,
+				C8ED6DE42B5513C6000F2268 /* service_data.json in Resources */,
+				C893E3EE2B5F552F0087AB36 /* NYSTextAlertView.xib in Resources */,
+				C8E6C5772B6F5E2100F885E0 /* Pods-NYSExampleSwift-acknowledgements.plist in Resources */,
+				C8A4BE292B4B99E500152E14 /* system.style in Resources */,
+				C86B02B72B56487500B359EA /* douyuFont.otf in Resources */,
+				C86DB2122B3E8D61002126F5 /* NYSScrollViewController.xib in Resources */,
+				C8621DE82B316F5A00F90DF0 /* LaunchImage.png in Resources */,
+				C8597A8E29F511A0008BEE7F /* LaunchScreen.storyboard in Resources */,
+				C8BC5EAE2B3AC1FD00814C2B /* themejson_day.json in Resources */,
+				C86B02AF2B56017C00B359EA /* login_data.json in Resources */,
+				C874B9A82B4B8BB8009CC627 /* AppShareView.xib in Resources */,
+				C85D7E7E2B60F39700C4BC93 /* NYSImageItemView.xml in Resources */,
+				C8200B302B609E4600580A1F /* NYSFeedbackView.xml in Resources */,
+				C843D1572B5E6921003B23B7 /* NYSOverdueAlertView.xib in Resources */,
+				C8597A8B29F511A0008BEE7F /* Assets.xcassets in Resources */,
+				C8A4BE2F2B4BA0F100152E14 /* TableHeader.xml in Resources */,
+				C821AAAF2B4694C4003C0968 /* AppAlertView.xib in Resources */,
+				C8958BB12B6B5FE400693DAE /* NYSPreviewViewController.xib in Resources */,
+				C83C186C2B33E438002FD985 /* myself.json in Resources */,
+				C83C186B2B33E438002FD985 /* goods.json in Resources */,
+				C8BC5E992B3A852200814C2B /* NYSMineViewController.xib in Resources */,
+				C80EE9E62B3ECE2900F79AD0 /* NYSSettingViewController.xib in Resources */,
+				C8BC5EAD2B3AC1FD00814C2B /* themejson_night.json in Resources */,
+				C8ED6DEA2B551939000F2268 /* NYSServiceCollectionViewCell.xib in Resources */,
+				C86DB2182B3E8DBC002126F5 /* NYSAccountViewController.xib in Resources */,
+				C8597A8929F5119E008BEE7F /* Main.storyboard in Resources */,
+				C86B02B12B56028B00B359EA /* userinfo_data.json in Resources */,
+				C86DB2172B3E8DBC002126F5 /* NYSLoginViewController.xib in Resources */,
+				C8713F4F2B69EC420090B289 /* NYSPullerViewController.xib in Resources */,
+				C8ED6DDD2B54CD14000F2268 /* weather_data.json in Resources */,
+				C83C18692B33E438002FD985 /* bill.json in Resources */,
+				C858480E2B4797FC00B27086 /* NYSQRCodeViewController.xib in Resources */,
+				C83C186A2B33E438002FD985 /* service.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35E3D97B7CFACEF9F3B90811 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYSExampleSwift/Pods-NYSExampleSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYSExampleSwift/Pods-NYSExampleSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYSExampleSwift/Pods-NYSExampleSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1831D385453AAE0FFB3790E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYSExampleSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C8597A7A29F5119E008BEE7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8BC5E952B3A84B100814C2B /* NYSHomeViewController.swift in Sources */,
+				C8ED6DE92B551939000F2268 /* NYSServiceCollectionViewCell.swift in Sources */,
+				C8C5D2432B3E628600117F58 /* NYSBannerCollectionViewCell.swift in Sources */,
+				C821AAB72B46B2CA003C0968 /* NYSToolBar.m in Sources */,
+				C82F2FC12B6E265F00A8F816 /* UIImageView+Extension.swift in Sources */,
+				C816B6662B4F7B6F00256E58 /* NYSWeaterData.swift in Sources */,
+				C87CAB7D2B467C8E00C84E8E /* NYSUserInfo.swift in Sources */,
+				C85848102B47A40D00B27086 /* NYSInstructionViewController.swift in Sources */,
+				C8C5D2372B3E48EB00117F58 /* NYSRootScrollViewController.swift in Sources */,
+				C816B6672B4F7B6F00256E58 /* NYSWeaterIndex.swift in Sources */,
+				C806A5D62B672E5600D6FFE1 /* UIKitBridgeSwiftUI.swift in Sources */,
+				C806A5E12B67722F00D6FFE1 /* Panda.swift in Sources */,
+				C843D1512B5E50B5003B23B7 /* UIImage+Extension.swift in Sources */,
+				C86DB21F2B3E9E22002126F5 /* WRNavigationBar.swift in Sources */,
+				C8D3E21C2B3BB1E700B77DEA /* NYSHomeListViewController.swift in Sources */,
+				C8ED431A2B6126EE00342153 /* NYSLogoffViewController.swift in Sources */,
+				C8ED6DEF2B551D9B000F2268 /* NYSServiceViewModel.swift in Sources */,
+				C8D0AF792B49222A002C18E6 /* NYSThirdPartyViewController.swift in Sources */,
+				C8469F022B5103F400B8A1E4 /* MarqueeLabel.swift in Sources */,
+				C8C5D2392B3E490C00117F58 /* NYSServiceViewController.swift in Sources */,
+				C8D3E2212B3BEAAF00B77DEA /* NYSMissionViewController.swift in Sources */,
+				C87CAB7A2B467B2900C84E8E /* AppManager.swift in Sources */,
+				C843D14F2B5E4EC4003B23B7 /* NYSMineModel.swift in Sources */,
+				C843D1552B5E68CA003B23B7 /* NYSOverdueAlertView.swift in Sources */,
+				C8A4BE412B4BDE9100152E14 /* NYSHomeViewModel.swift in Sources */,
+				C816B6652B4F7B6F00256E58 /* NYSWeaterAlarm.swift in Sources */,
+				C821AAB92B46B930003C0968 /* NYSQRCodeViewController.swift in Sources */,
+				C86DB2192B3E8DBC002126F5 /* NYSAccountViewController.swift in Sources */,
+				C8ED6DE62B55164F000F2268 /* NYSService.swift in Sources */,
+				C8BC5EA42B3AAEA500814C2B /* UIView+Extension.swift in Sources */,
+				C80EE9EB2B43963800F79AD0 /* UIColor+Extension.swift in Sources */,
+				C816B66A2B4F7B6F00256E58 /* NYSWeater.swift in Sources */,
+				C8A00F272B464CBD00245D94 /* Transform.swift in Sources */,
+				C8713F4A2B69E5690090B289 /* PullUpController.swift in Sources */,
+				C80EE9E52B3ECE2900F79AD0 /* NYSSettingViewController.swift in Sources */,
+				C8597A8629F5119E008BEE7F /* ViewController.swift in Sources */,
+				C8A4BE2B2B4B9E5600152E14 /* NYSHomeListCell.swift in Sources */,
+				C806A5E32B6777B600D6FFE1 /* NYSPandaViewController.swift in Sources */,
+				C83162A42B4CE2750014CFE1 /* TypeNameProtocol.swift in Sources */,
+				C821AAB32B46B29E003C0968 /* NYSScanViewController.m in Sources */,
+				C806A5E82B67AB4700D6FFE1 /* NYSAMapLocation.m in Sources */,
+				C8469F002B50FB6F00B8A1E4 /* NYSContentViewController.swift in Sources */,
+				C8D3E21F2B3BC6F800B77DEA /* NYSRootWindow.swift in Sources */,
+				C893E3EC2B5F54FB0087AB36 /* NYSTextAlertView.swift in Sources */,
+				C806A5DD2B67722F00D6FFE1 /* PandaCollectionFetcher.swift in Sources */,
+				C8713F4E2B69EC420090B289 /* NYSPullerViewController.swift in Sources */,
+				C8A4BE312B4BBA1800152E14 /* UITableView+Extension.swift in Sources */,
+				C8474E532B43DD54001DE04A /* NYSRootViewController.swift in Sources */,
+				C8958BB02B6B5FE400693DAE /* NYSPreviewViewController.swift in Sources */,
+				C83162A72B4CE5160014CFE1 /* UIScrollView+RxSwift.swift in Sources */,
+				C85D7E7C2B60F34300C4BC93 /* NYSImageItemView.swift in Sources */,
+				C8ED6DDB2B51494D000F2268 /* NYSRootWebViewController.swift in Sources */,
+				C8ED6DE02B550A61000F2268 /* NYSRootCodable.swift in Sources */,
+				C8D0AF7B2B4923C3002C18E6 /* NYSThirdPartyDetailViewController.swift in Sources */,
+				C86DB2202B3E9E22002126F5 /* WRCustomNavigationBar.swift in Sources */,
+				C806A5DE2B67722F00D6FFE1 /* MemeCreator.swift in Sources */,
+				C8BC5EA02B3AA41200814C2B /* NYSAdaptScreen.swift in Sources */,
+				C8BC5E982B3A852200814C2B /* NYSMineViewController.swift in Sources */,
+				C8BC5EA62B3AB14400814C2B /* APPConfig.swift in Sources */,
+				C82F2FC32B6E28A900A8F816 /* UIButton+Extension.swift in Sources */,
+				C87CAB752B46773600C84E8E /* PropertyWrapper.swift in Sources */,
+				C87CAB762B46773600C84E8E /* Rx+Operators.swift in Sources */,
+				C816B6692B4F7B6F00256E58 /* NYSWeaterAqi.swift in Sources */,
+				C8ED6DEC2B551B5C000F2268 /* NYSWaterfallLayout.swift in Sources */,
+				C816B66E2B4F7C4E00256E58 /* NYSMissionViewModel.swift in Sources */,
+				C874B9A72B4B8BB8009CC627 /* AppShareView.swift in Sources */,
+				C8621DEE2B31845300F90DF0 /* NYSTabBarViewController.swift in Sources */,
+				C8A4BE3E2B4BD45400152E14 /* NYSHomeModel.swift in Sources */,
+				C83EC4942B4FB1F3008FBE68 /* API.swift in Sources */,
+				C8C5D23B2B3E4FF800117F58 /* NYSSubScrollViewController.swift in Sources */,
+				C806A5DF2B67722F00D6FFE1 /* LoadableImage.swift in Sources */,
+				C816B6682B4F7B6F00256E58 /* NYSWeaterHour.swift in Sources */,
+				C8BC5EA22B3AA6C400814C2B /* UIDevice+Extension.swift in Sources */,
+				C83EC4962B50CB8C008FBE68 /* NYSWeaterCell.swift in Sources */,
+				C8597A8229F5119E008BEE7F /* AppDelegate.swift in Sources */,
+				C843D1532B5E5F40003B23B7 /* NYSRootAlertView.swift in Sources */,
+				C8200B2B2B609B7C00580A1F /* NYSFeedbackViewController.swift in Sources */,
+				C8200B2E2B609D8400580A1F /* NYSMineViewModel.swift in Sources */,
+				C86DB21A2B3E8DBC002126F5 /* NYSLoginViewController.swift in Sources */,
+				C80EE9ED2B439E3B00F79AD0 /* UIControl+Extension.swift in Sources */,
+				C843D1592B5E6FC1003B23B7 /* AlertManager.swift in Sources */,
+				C8BC5E9C2B3A9E9400814C2B /* NYSSearchView.swift in Sources */,
+				C8A4BE432B4BDF4300152E14 /* NYSRootViewModel.swift in Sources */,
+				C88BC8AB2B3CF90900676632 /* NYSScrollViewController.swift in Sources */,
+				C806A5E92B67AB4700D6FFE1 /* NYSAMapTrackManager.m in Sources */,
+				C82F2FC82B6E39FC00A8F816 /* String+Extension.swift in Sources */,
+				C821AAB02B4694C4003C0968 /* AppAlertView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C8597A8729F5119E008BEE7F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8597A8829F5119E008BEE7F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C8597A8C29F511A0008BEE7F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8597A8D29F511A0008BEE7F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C8597A9029F511A0008BEE7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C8597A9129F511A0008BEE7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C8597A9329F511A0008BEE7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42B8AE32A210E967EC38270B /* Pods-NYSExampleSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NYSExampleSwift/NYSExampleSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F9J739W8Y4;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NYSExampleSwift/Supporting Files/PrefixHeader.pch";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NYSExampleSwift/Supporting Files/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nys.example.swift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/NYSExampleSwift/Supporting Files/Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C8597A9429F511A0008BEE7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE820DDF695C567CF3A650BC /* Pods-NYSExampleSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NYSExampleSwift/NYSExampleSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F9J739W8Y4;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NYSExampleSwift/Supporting Files/PrefixHeader.pch";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NYSExampleSwift/Supporting Files/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nys.example.swift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/NYSExampleSwift/Supporting Files/Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C8597A7929F5119E008BEE7F /* Build configuration list for PBXProject "NYSExampleSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8597A9029F511A0008BEE7F /* Debug */,
+				C8597A9129F511A0008BEE7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8597A9229F511A0008BEE7F /* Build configuration list for PBXNativeTarget "NYSExampleSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8597A9329F511A0008BEE7F /* Debug */,
+				C8597A9429F511A0008BEE7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C8597A7629F5119E008BEE7F /* Project object */;
+}

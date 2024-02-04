@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView layout=" flexDirection:row, margin:8" attr="">
+    <UIImageView name="headIV" layout="width:40,height:40,marginLeft:10,marginRight:10"  attr="source:hand"/>
+    <UIView layout="flex:1">
+        <UIView layout="flexDirection:row">
+            <UILabel name="nameL" attr="font:bold|15,color:#555555,text:--,linesNum:1"/>
+            <UILabel name="typeL" layout="flex:1, marginLeft:10" attr="@:system/themeColor,fontSize:14,text:--,linesNum:1"/>
+            <UILabel name="dateL" attr="fontSize:14,color:#999999,text:5-11,linesNum:1"/>
+        </UIView>
+        <UIView layout="height:8"/>
+        <UILabel name="titleL" attr="fontSize:18,color:#333333,text:title,linesNum:1"/>
+        <UIView layout="height:8"/>
+        <UILabel name="contentL" layout="width:100%" attr="fontSize:*14,text:content,linesNum:0,lineBreakMode:truncatingTail"/>
+        <UIView layout="height:8"/>
+    </UIView>
+</UIView> 

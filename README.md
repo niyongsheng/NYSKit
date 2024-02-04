@@ -7,120 +7,182 @@ NYSKit
 ===
 
 ## Introduction:
-> 宏+基类+工具+组件 ios应用构建框架<br>
-> Macros+BaseClass+Tool+Component IOS App Build Framework
+> IOS应用快速构建框架。<br>
+> Quick build [framework](#architecture) for IOS apps.
+<img src="./images/nysws.drawio.png">
 
-## Features:
-- [x] MVC
-- [x] MVP
-- [x] XIB
-- [x] AD
-- [x] IM
-- [x] UM
-- [x] DB
-- [x] Rich Text Push
-- [x] Sign With Apple
-- [x] Dark Mode (support < ios 13)
-
-## Screenshot：
+## Screenshot
 ![image](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/base_ios_demo.gif)
 
-## Usage：
+## Features
+- [x] [mvvm](https://en.wikipedia.org/wiki/Model–view–viewmodel)
+- [x] [swiftUI](https://developer.apple.com/tutorials/sample-apps/)
+- [x] [dark-mode](https://developer.apple.com/design/human-interface-guidelines/dark-mode/)
+- [x] [localization](https://developer.apple.com/localization/)
+- [x] [ad/qr/nav/net/map/mock/codable/cache/theme manager](https://github.com/niyongsheng/NYSWS/blob/main/NYSWS/NYSAppSwift/NYSAppSwift/README.md)
+
+## Usage
 ```ruby
-cd ../NYSKit/BaseIOS
-
-pod install
+pod 'NYSKit'
+pod 'NYSUIKit'
 ```
-- *直接[改名](https://github.com/niyongsheng/EasyRelease)，或者将[NYSKit](https://github.com/niyongsheng/NYSKit/tree/master/BaseIOS/BaseIOS/NYSKit)迁移至你的项目中使用。*
-- *Simply [rename](http://note.youdao.com/s/2P6PiTG), or migrate [NYSKit](https://github.com/niyongsheng/NYSKit/tree/master/BaseIOS/BaseIOS/NYSKit) to your project for use.*
+`NYSKit Document:` https://niyongsheng.github.io/Document/NYSWS/NYSKit/index.html
 
-`Example Project:`[AppDemo](https://github.com/niyongsheng/AppDemo)
+`NYSUIKit Document:` https://niyongsheng.github.io/Document/NYSWS/NYSUIKit/index.html
 
-## Architecture:
-<img src="https://github.com/niyongsheng/NYSKit/blob/master/class_relation.png" onerror="https://s1.ax1x.com/2020/07/20/Ufghmn.jpg" onclick="http://note.youdao.com/s/QfERZJrs" alt="Github图片无法加载，请自行修改hosts文件。">
+`Example Project:`[NYSWS](https://github.com/niyongsheng/NYSWS)
 
+## Architecture
 ```text
 NYSKit
-├─ AppDelegate
-│    ├─ AppDelegate+AppService.h
-│    ├─ AppDelegate+AppService.m
-│    ├─ AppDelegate+PushService.h
-│    ├─ AppDelegate+PushService.m
-│    ├─ AppDelegate.h
-│    └─ AppDelegate.m
-├─ AppManager
-│    ├─ AppManager.h
-│    ├─ AppManager.m
-│    ├─ DBManager.h
-│    ├─ DBManager.m
-│    ├─ ADManager.h
-│    ├─ ADManager.m
-│    ├─ ThemeManager
-│    │    ├─ ThemeManager.h
-│    │    ├─ ThemeManager.m
-│    │    ├─ themejson_day.json
-│    │    └─ themejson_night.json
-│    ├─ IMManager
-│    │    ├─ DataSource
-│    │    ├─ IMManager.h
-│    │    └─ IMManager.m
-│    ├─ UMManager.h
-│    ├─ UMManager.m
-│    └─ UserManager
-│           ├─ UserManager.h
-│           ├─ UserManager.m
-│           └─ UserModel
+├─ NYSError.h
+├─ NYSError.m
+├─ NYSKeyChain.h
+├─ NYSKeyChain.m
+├─ NYSKit.h
+├─ NYSKitManager.h
+├─ NYSKitManager.m
+├─ NYSKitPublicHeader.h
+├─ NYSNetRequest.h
+├─ NYSNetRequest.m
+├─ NYSRegularCheck.h
+├─ NYSRegularCheck.m
+├─ NYSTools.h
+└─ NYSTools.m
+```
+```text
+NYSUIKit
 ├─ BaseClass
 │    ├─ NYSBaseNavigationController.h
 │    ├─ NYSBaseNavigationController.m
+│    ├─ NYSBaseObject.h
+│    ├─ NYSBaseObject.m
+│    ├─ NYSBasePresenter.h
+│    ├─ NYSBasePresenter.m
 │    ├─ NYSBaseTabBarController.h
 │    ├─ NYSBaseTabBarController.m
+│    ├─ NYSBaseView.h
+│    ├─ NYSBaseView.m
 │    ├─ NYSBaseViewController.h
 │    ├─ NYSBaseViewController.m
-│    ├─ NYSBaseProtocol.h
-│    ├─ NYSBaseProtocol.m
 │    ├─ NYSBaseWindow.h
 │    ├─ NYSBaseWindow.m
 │    └─ WebViewController
+│           ├─ ErrorHtml
+│           ├─ NYSJSHandler.h
+│           ├─ NYSJSHandler.m
+│           ├─ NYSWebViewController.h
+│           └─ NYSWebViewController.m
 ├─ Category
-├─ Headers
-│    ├─ Bridging-Header.h
-│    ├─ CommonMacros.h
-│    ├─ PrefixHeader.pch
-│    ├─ ThemeMacros.h
-│    └─ UtilsMacros.h
-├─ Network
-│    ├─ NYSRequest.h
-│    └─ NYSRequest.m
-├─ NewFeature
-│    ├─ NYSNewfeatureViewController.h
-│    └─ NYSNewfeatureViewController.m
-├─ Resource
-│    ├─ Fonts
-│    │    └─ 04b_03b.TTF
-│    └─ Images
-└─ Utils
-       ├─ FPS
-       ├─ LEEBubble
-       ├─ LEETheme
-       ├─ Memory
-       ├─ CMPopTipView
-       ├─ TableViewAnimationKit
-       ├─ FDFullscreenPopGesture
-       └─ Tools
-
+│    ├─ NSBundle+NYSFramework.h
+│    ├─ NSBundle+NYSFramework.m
+│    ├─ NSBundle+NYSLanguageSwitch.h
+│    ├─ NSBundle+NYSLanguageSwitch.m
+│    ├─ NSDictionary+NilSafe.h
+│    ├─ NSDictionary+NilSafe.m
+│    ├─ NSError+NYS.h
+│    ├─ NSError+NYS.m
+│    ├─ UIButton+NYS.h
+│    ├─ UIButton+NYS.m
+│    ├─ UIImage+NYS.h
+│    ├─ UIImage+NYS.m
+│    ├─ UINavigationController+FDFullscreenPopGesture.h
+│    ├─ UINavigationController+FDFullscreenPopGesture.m
+│    ├─ UINavigationController+NYSUIKit.h
+│    ├─ UINavigationController+NYSUIKit.m
+│    ├─ UITextField+NYS.h
+│    ├─ UITextField+NYS.m
+│    ├─ UIView+NYS.h
+│    └─ UIView+NYS.m
+├─ Manager
+│    └─ ThemeManager
+│           ├─ README.md
+│           ├─ ThemeManager.h
+│           └─ ThemeManager.m
+├─ NYSUIKit
+├─ NYSUIKit.h
+├─ NYSUIKitPublicHeader.h
+├─ Resources
+│    ├─ NYSUIKit.bundle
+│    │    ├─ Info.plist
+│    │    ├─ en.lproj
+│    │    ├─ lao.lproj
+│    │    ├─ zh-Hans.lproj
+│    │    └─ zh-Hant.lproj
+│    ├─ NYSUIKit.xcassets
+│    │    ├─ Contents.json
+│    │    ├─ EmptyData
+│    │    ├─ Refresh
+│    │    ├─ Theme
+│    │    └─ TopBar
+│    ├─ douyuFont.otf
+│    ├─ en.lproj
+│    ├─ lo.lproj
+│    └─ zh-Hans.lproj
+├─ UI
+│    ├─ BlugeTabBar
+│    │    ├─ NYSBlugeTabBar.h
+│    │    └─ NYSBlugeTabBar.m
+│    ├─ CMPopTipView
+│    │    ├─ CMPopTipView.h
+│    │    └─ CMPopTipView.m
+│    ├─ FIRVersionCheck
+│    │    ├─ FIRVersionCheck.h
+│    │    └─ FIRVersionCheck.m
+│    ├─ FPS
+│    │    ├─ YYFPSLabel.h
+│    │    └─ YYFPSLabel.m
+│    ├─ LEEBubble
+│    │    ├─ LEEBubble.h
+│    │    └─ LEEBubble.m
+│    ├─ LEETheme
+│    │    ├─ LEETheme.h
+│    │    ├─ LEETheme.m
+│    │    └─ LEEThemeHelper.h
+│    ├─ Memory
+│    │    ├─ NYSMemoryLabel.h
+│    │    └─ NYSMemoryLabel.m
+│    ├─ NYSIconLeftButton
+│    │    ├─ NYSIconLeftButton.h
+│    │    └─ NYSIconLeftButton.m
+│    ├─ NYSLabel
+│    │    ├─ NYSLabel.h
+│    │    └─ NYSLabel.m
+│    ├─ NYSLoadingButton
+│    │    ├─ NYSLoadingButton.h
+│    │    └─ NYSLoadingButton.m
+│    ├─ NYSLocation
+│    │    ├─ NYSLocationTransform.h
+│    │    ├─ NYSLocationTransform.m
+│    │    ├─ NYSSystemLocation.h
+│    │    └─ NYSSystemLocation.m
+│    ├─ PopView
+│    │    ├─ PopAnimationTool.h
+│    │    ├─ PopAnimationTool.m
+│    │    ├─ PopView.h
+│    │    └─ PopView.m
+│    ├─ ScrollLabel
+│    │    ├─ WSScrollLabel.h
+│    │    └─ WSScrollLabel.m
+│    └─ TableViewAnimationKit
+│           ├─ TableViewAnimationKit.h
+│           ├─ TableViewAnimationKit.m
+│           └─ TableViewAnimationKitConfig.h
+└─ Utilities
+       ├─ NYSUIKitUtilities.h
+       └─ NYSUIKitUtilities.m
 ```
 
 ## Remind
 ① `ARC`<br>
 ② `Cocoapods`<br>
-② `iPhone\iPad`<br>
-④ `iOS >= 10.0`<br>
-⑤ `Xcode >= 9.3`<br>
+③ `iPhone\iPad`<br>
+④ `iOS >= 13.0`<br>
+⑤ `Xcode >= 14.0`<br>
 
 ## Contribution
 Reward[:lollipop:](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Beg/README.md)  Encourage[:heart:](https://github.com/niyongsheng/NYSKit/stargazers)
 
-## Contact Me [:octocat:](https://niyongsheng.github.io)
+## Contact Me
 * E-mail: niyongsheng@Outlook.com
 * Weibo: [@Ni永胜](https://weibo.com/u/7317805089)

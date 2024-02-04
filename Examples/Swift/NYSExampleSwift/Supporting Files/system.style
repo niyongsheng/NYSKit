@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- https://yogalayout.dev/playground/ -->
+<!-- https://github.com/zhenglibao/FlexLib/wiki/Layout-Attributes -->
+<styles>
+    <!--  主题色  -->
+    <style name="themeColor">
+        <attr name="color">#006FF9</attr>
+    </style>
+    
+    <!-- 背景色 -->
+    <style name="bgThemeColor">
+        <attr name="bgColor">#006FF9</attr>
+    </style>
+    
+    <!-- 字体色 -->
+    <style name="drakTextColor">
+        <attr name="color">#A0A0A0</attr>
+    </style>
+
+    <!--  行高  -->
+    <style name="rowHeight">
+        <attr name="height">44</attr>
+    </style>
+    
+    <!--  分割线  -->
+    <style name="lineSep">
+        <attr name="height">0.75</attr>
+        <attr name="bgColor">#e6e6e6</attr>
+        <attr name="margin">0/15/0/15</attr>
+    </style>
+    
+    <!--  内边距 左/上/右/下 -->
+    <style name="padding15">
+        <attr name="padding">15</attr>
+    </style>
+    
+    <!--  外边距 左/上/右/下 -->
+    <style name="margin15">
+        <attr name="margin">15</attr>
+    </style>
+        
+    <!--  表单行  -->
+    <style name="formRow">
+        <attr name="height">44</attr>
+        <attr name="flexDirection">row</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="paddingLeft">15</attr>
+        <attr name="paddingRight">15</attr>
+        <attr name="justifyContent">space-between</attr>
+    </style>
+    
+    <!--  圆角样式  -->
+    <style name="roundedCorner">
+        <attr name="borderWidth">1</attr>
+        <attr name="borderColor">#e6e6e6</attr>
+    </style>
+    
+    <!--  圆角按钮  -->
+    <style name="commitBtn">
+        <attr name="height">44</attr>
+        <attr name="width">80%</attr>
+        <attr name="borderRadius">22</attr>
+        <attr name="clipsToBounds">true</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="justifyContent">center</attr>
+    </style>
+    
+</styles>

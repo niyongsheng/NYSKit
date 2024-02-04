@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIView class="padding15" layout="flex:1" attr="">
+    <UIView class="" layout="flex:1 ,flexDirection:row ,alignItems:center" attr="">
+        <UILabel layout="minWidth:22%" name="" attr="">
+            <Text attr="text:* ,color:red" />
+            <Text attr="font:bold|16, text:反馈类型:" />
+        </UILabel>
+    </UIView>
+    
+    <FlexScrollView name="" class="" layout="flex:1, height:70 margin:0/15/0/15, flexDirection:row, alignItems:center" attr="horzScroll:true, horzIndicator:false">
+
+        <FlexTouchView name="typeItem0" onPress="typeItem0Onpress" layout="padding:10/0/10/0, marginRight:15, height:45%" attr="@:system/roundedCorner">
+            <UILabel name="typeL0" layout="flex:1" attr="@:system/drakTextColor, text:功能使用, fontSize:15, textAlign:center" />
+        </FlexTouchView>
+        
+        <FlexTouchView name="typeItem1" onPress="typeItem1Onpress" layout="padding:10/0/10/0, marginRight:15, height:45%" attr="@:system/roundedCorner">
+            <UILabel name="typeL1" layout="flex:1" attr="@:system/drakTextColor, text:问题咨询, fontSize:15, textAlign:center" />
+        </FlexTouchView>
+        
+        <FlexTouchView name="typeItem2" onPress="typeItem2Onpress" layout="padding:10/0/10/0, marginRight:15, height:45%" attr="@:system/roundedCorner">
+            <UILabel name="typeL2" layout="flex:1" attr="@:system/drakTextColor, text:数据错误, fontSize:15, textAlign:center" />
+        </FlexTouchView>
+        
+        <FlexTouchView name="typeItem3" onPress="typeItem3Onpress" layout="padding:10/0/10/0, marginRight:15, height:45%" attr="@:system/roundedCorner">
+            <UILabel name="typeL3" layout="flex:1" attr="@:system/drakTextColor, text:bug上报, fontSize:15, textAlign:center" />
+        </FlexTouchView>
+        
+        <FlexTouchView name="typeItem4" onPress="typeItem4Onpress" layout="padding:10/0/10/0, marginRight:15, height:45%" attr="@:system/roundedCorner">
+            <UILabel name="typeL4" layout="flex:1" attr="@:system/drakTextColor, text:投诉建议, fontSize:15, textAlign:center" />
+        </FlexTouchView>
+        
+    </FlexScrollView>
+    
+    <UIView class="lineSep" />
+    
+    <UIView class="" layout="flex:1 ,flexDirection:row ,alignItems:center" attr="">
+        <UILabel layout="minWidth:22%" name="" attr="">
+            <Text attr="text:* ,color:red" />
+            <Text attr="font:bold|16, text:反馈内容:" />
+        </UILabel>
+    </UIView>
+    
+    <UIView class="" layout="flex:1, height:200, margin:0/15/0/15, padding:5" attr="@:system/roundedCorner, borderRadius:10">
+        <UITextView name="contentTV" layout="flex:1" attr="@:system/drakTextColor, fontSize:15, textAlign:left" />
+    </UIView>
+    
+    <UIView class="lineSep" />
+    
+    <UIView class="" layout="flex:1 ,flexDirection:row ,alignItems:center" attr="">
+        <UILabel layout="minWidth:22%" name="" attr="">
+            <Text attr="text:* ,color:red" />
+            <Text attr="font:bold|16, text:添加图片:" />
+        </UILabel>
+    </UIView>
+    
+    <UIView layout="marginTop:10">
+        <FlexContainerView name="imgParentContainer" layout="flexWrap:wrap,flexDirection:row,justifyContent:flex-start">
+            <FlexTouchView name="addTouchV" onPress="addImageTouchVOnpress" layout="width:80, height:80, margin:2, justifyContent:center, alignItems:center" attr="borderRadius:10,borderWidth:1,borderColor:#e5e5e5,underlayColor:#e5e5e5">
+                <UILabel attr="text:+,fontSize:20,color:#999999"/>
+            </FlexTouchView>
+        </FlexContainerView>
+    </UIView>
+
+    <UIView class="lineSep" />
+    
+    <UIView class="" layout="flex:1, flexDirection:row, alignItems:center, justifyContent:center" attr="">
+        <FlexTouchView name="commitTouchV" class="commitBtn" onPress="commitTouchVOnpress" layout="" attr="@:system/bgThemeColor">
+            <UILabel layout="flex:1" attr="text:确定, color:white, fontSize:17, textAlign:center" />
+        </FlexTouchView>
+    </UIView>
+    
+</UIView>

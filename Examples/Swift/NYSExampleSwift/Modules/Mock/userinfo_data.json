@@ -1,0 +1,28 @@
+{
+  "code": 200,
+  "msg": "登录成功",
+  "data": {
+    "id": 1,
+    "isBan": false,
+    "tagArr": [
+      "111",
+      "222",
+      "333"
+    ],
+    "alias": "000",
+    "tel": "400-123-4567",
+    "email": "niyongsheng@outlook.com",
+    "icon": "https://avatars.githubusercontent.com/u/28373699?v=4",
+    "roleArr": [
+      "开发者",
+      "司机",
+      "经理"
+    ],
+    "permissionArr": [],
+    "nickname": "NYSWS",
+    "password": "",
+    "trueName": "Nico",
+    "type": 1,
+    "username": "18888888888"
+  }
+}

@@ -1,0 +1,759 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A645FB570D3CA5A5562C466 /* Pods_NYSExampleObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649C6B37949275784284599F /* Pods_NYSExampleObjC.framework */; };
+		C829957B24C05B2600BEA200 /* ADManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C829957A24C05B2600BEA200 /* ADManager.m */; };
+		C82DD0F72B6F48ED00FD2BD8 /* NYSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82DD0F62B6F48ED00FD2BD8 /* NYSHomeViewController.m */; };
+		C86F2D6424BD3561002F44FD /* new_feature_3.png in Resources */ = {isa = PBXBuildFile; fileRef = C86F2D6124BD3560002F44FD /* new_feature_3.png */; };
+		C86F2D6524BD3561002F44FD /* new_feature_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C86F2D6224BD3561002F44FD /* new_feature_1.png */; };
+		C86F2D6624BD3561002F44FD /* new_feature_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C86F2D6324BD3561002F44FD /* new_feature_2.png */; };
+		C884CAFD24C2CC85008774A0 /* NYSOpenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C884CAFC24C2CC85008774A0 /* NYSOpenPresenter.m */; };
+		C891E7D324B8082000AF0019 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E7D224B8082000AF0019 /* AppDelegate.m */; };
+		C891E7DC24B8082000AF0019 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C891E7DA24B8082000AF0019 /* Main.storyboard */; };
+		C891E7DE24B8082000AF0019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C891E7DD24B8082000AF0019 /* Assets.xcassets */; };
+		C891E7E124B8082000AF0019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C891E7DF24B8082000AF0019 /* LaunchScreen.storyboard */; };
+		C891E7E424B8082000AF0019 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E7E324B8082000AF0019 /* main.m */; };
+		C891E80224B8110400AF0019 /* NYSTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E80124B8110400AF0019 /* NYSTabBarViewController.m */; };
+		C891E80624B8112200AF0019 /* NYSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E80424B8112200AF0019 /* NYSLoginViewController.m */; };
+		C891E80724B8112200AF0019 /* NYSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C891E80524B8112200AF0019 /* NYSLoginViewController.xib */; };
+		C891E83B24B842E000AF0019 /* 04b_03b.TTF in Resources */ = {isa = PBXBuildFile; fileRef = C891E82224B842DF00AF0019 /* 04b_03b.TTF */; };
+		C891E84E24B8515B00AF0019 /* AppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E84D24B8515B00AF0019 /* AppDelegate+AppService.m */; };
+		C891E85124B853CA00AF0019 /* AppDelegate+PushService.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E85024B853CA00AF0019 /* AppDelegate+PushService.m */; };
+		C891E85824B855B000AF0019 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E85724B855B000AF0019 /* AppManager.m */; };
+		C891E85E24B8562C00AF0019 /* UMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E85D24B8562C00AF0019 /* UMManager.m */; };
+		C891E86324B856DF00AF0019 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E86224B856DF00AF0019 /* UserManager.m */; };
+		C891E86824B85C0900AF0019 /* NYSNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E86724B85C0900AF0019 /* NYSNewfeatureViewController.m */; };
+		C8C431A724BC351E0041311C /* themejson_night.json in Resources */ = {isa = PBXBuildFile; fileRef = C8C431A424BC351E0041311C /* themejson_night.json */; };
+		C8C431A824BC351E0041311C /* themejson_day.json in Resources */ = {isa = PBXBuildFile; fileRef = C8C431A624BC351E0041311C /* themejson_day.json */; };
+		C8C58D2B24B94A1200CFB68F /* NYSOpenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D2924B94A1200CFB68F /* NYSOpenViewController.m */; };
+		C8C58D2C24B94A1200CFB68F /* NYSOpenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C58D2A24B94A1200CFB68F /* NYSOpenViewController.xib */; };
+		C8C58D4A24B9647500CFB68F /* NYSNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D4924B9647500CFB68F /* NYSNewViewController.m */; };
+		C8C58D5924B9B16B00CFB68F /* NYSUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D4F24B9B16A00CFB68F /* NYSUserInfo.m */; };
+		C8C58D5A24B9B16B00CFB68F /* NYSProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D5124B9B16A00CFB68F /* NYSProfile.m */; };
+		C8C58D5B24B9B16B00CFB68F /* NYSCommunity.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D5224B9B16B00CFB68F /* NYSCommunity.m */; };
+		C8C58D5C24B9B16B00CFB68F /* NYSEstate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D5424B9B16B00CFB68F /* NYSEstate.m */; };
+		C8C58D5D24B9B16B00CFB68F /* NYSUpdateUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D5524B9B16B00CFB68F /* NYSUpdateUserInfo.m */; };
+		C8CCB0DE24C2E0A000437E0E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CCB0DD24C2E0A000437E0E /* DBManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		649C6B37949275784284599F /* Pods_NYSExampleObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYSExampleObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A88D5801D580A30C3C462B7 /* Pods-NYSExampleObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYSExampleObjC.debug.xcconfig"; path = "Target Support Files/Pods-NYSExampleObjC/Pods-NYSExampleObjC.debug.xcconfig"; sourceTree = "<group>"; };
+		909CB5CB8F276E93802BA4D8 /* Pods-NYSExampleObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYSExampleObjC.release.xcconfig"; path = "Target Support Files/Pods-NYSExampleObjC/Pods-NYSExampleObjC.release.xcconfig"; sourceTree = "<group>"; };
+		C8253D3F24B8844200BA4291 /* ThemeMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeMacros.h; sourceTree = "<group>"; };
+		C829957924C05B2600BEA200 /* ADManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADManager.h; sourceTree = "<group>"; };
+		C829957A24C05B2600BEA200 /* ADManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADManager.m; sourceTree = "<group>"; };
+		C82DD0F52B6F48ED00FD2BD8 /* NYSHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSHomeViewController.h; sourceTree = "<group>"; };
+		C82DD0F62B6F48ED00FD2BD8 /* NYSHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYSHomeViewController.m; sourceTree = "<group>"; };
+		C86F2D6124BD3560002F44FD /* new_feature_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_feature_3.png; sourceTree = "<group>"; };
+		C86F2D6224BD3561002F44FD /* new_feature_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_feature_1.png; sourceTree = "<group>"; };
+		C86F2D6324BD3561002F44FD /* new_feature_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_feature_2.png; sourceTree = "<group>"; };
+		C884CAF424C2C266008774A0 /* NYSExampleObjC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NYSExampleObjC.entitlements; sourceTree = "<group>"; };
+		C884CAFB24C2CC85008774A0 /* NYSOpenPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSOpenPresenter.h; sourceTree = "<group>"; };
+		C884CAFC24C2CC85008774A0 /* NYSOpenPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYSOpenPresenter.m; sourceTree = "<group>"; };
+		C884CAFF24C2D53D008774A0 /* NYSOpenViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSOpenViewProtocol.h; sourceTree = "<group>"; };
+		C891E7CE24B8082000AF0019 /* NYSExampleObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYSExampleObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C891E7D124B8082000AF0019 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C891E7D224B8082000AF0019 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C891E7DB24B8082000AF0019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C891E7DD24B8082000AF0019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C891E7E024B8082000AF0019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C891E7E224B8082000AF0019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C891E7E324B8082000AF0019 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C891E80024B8110400AF0019 /* NYSTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSTabBarViewController.h; sourceTree = "<group>"; };
+		C891E80124B8110400AF0019 /* NYSTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYSTabBarViewController.m; sourceTree = "<group>"; };
+		C891E80324B8112200AF0019 /* NYSLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSLoginViewController.h; sourceTree = "<group>"; };
+		C891E80424B8112200AF0019 /* NYSLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYSLoginViewController.m; sourceTree = "<group>"; };
+		C891E80524B8112200AF0019 /* NYSLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NYSLoginViewController.xib; sourceTree = "<group>"; };
+		C891E81124B8152D00AF0019 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C891E81224B8152E00AF0019 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		C891E81424B8173E00AF0019 /* CommonMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMacros.h; sourceTree = "<group>"; };
+		C891E81624B8176200AF0019 /* UtilsMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsMacros.h; sourceTree = "<group>"; };
+		C891E82224B842DF00AF0019 /* 04b_03b.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04b_03b.TTF; sourceTree = "<group>"; };
+		C891E84C24B8515B00AF0019 /* AppDelegate+AppService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+AppService.h"; sourceTree = "<group>"; };
+		C891E84D24B8515B00AF0019 /* AppDelegate+AppService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppService.m"; sourceTree = "<group>"; };
+		C891E84F24B853CA00AF0019 /* AppDelegate+PushService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+PushService.h"; sourceTree = "<group>"; };
+		C891E85024B853CA00AF0019 /* AppDelegate+PushService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PushService.m"; sourceTree = "<group>"; };
+		C891E85624B855B000AF0019 /* AppManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		C891E85724B855B000AF0019 /* AppManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
+		C891E85C24B8562C00AF0019 /* UMManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMManager.h; sourceTree = "<group>"; };
+		C891E85D24B8562C00AF0019 /* UMManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMManager.m; sourceTree = "<group>"; };
+		C891E86124B856DF00AF0019 /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		C891E86224B856DF00AF0019 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		C891E86624B85C0900AF0019 /* NYSNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSNewfeatureViewController.h; sourceTree = "<group>"; };
+		C891E86724B85C0900AF0019 /* NYSNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSNewfeatureViewController.m; sourceTree = "<group>"; };
+		C8C431A424BC351E0041311C /* themejson_night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = themejson_night.json; sourceTree = "<group>"; };
+		C8C431A624BC351E0041311C /* themejson_day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = themejson_day.json; sourceTree = "<group>"; };
+		C8C58D2824B94A1200CFB68F /* NYSOpenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSOpenViewController.h; sourceTree = "<group>"; };
+		C8C58D2924B94A1200CFB68F /* NYSOpenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYSOpenViewController.m; sourceTree = "<group>"; };
+		C8C58D2A24B94A1200CFB68F /* NYSOpenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NYSOpenViewController.xib; sourceTree = "<group>"; };
+		C8C58D4824B9647500CFB68F /* NYSNewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSNewViewController.h; sourceTree = "<group>"; };
+		C8C58D4924B9647500CFB68F /* NYSNewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYSNewViewController.m; sourceTree = "<group>"; };
+		C8C58D4F24B9B16A00CFB68F /* NYSUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSUserInfo.m; sourceTree = "<group>"; };
+		C8C58D5024B9B16A00CFB68F /* NYSCommunity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSCommunity.h; sourceTree = "<group>"; };
+		C8C58D5124B9B16A00CFB68F /* NYSProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSProfile.m; sourceTree = "<group>"; };
+		C8C58D5224B9B16B00CFB68F /* NYSCommunity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSCommunity.m; sourceTree = "<group>"; };
+		C8C58D5324B9B16B00CFB68F /* NYSProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSProfile.h; sourceTree = "<group>"; };
+		C8C58D5424B9B16B00CFB68F /* NYSEstate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSEstate.m; sourceTree = "<group>"; };
+		C8C58D5524B9B16B00CFB68F /* NYSUpdateUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSUpdateUserInfo.m; sourceTree = "<group>"; };
+		C8C58D5624B9B16B00CFB68F /* NYSEstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSEstate.h; sourceTree = "<group>"; };
+		C8C58D5724B9B16B00CFB68F /* NYSUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSUserInfo.h; sourceTree = "<group>"; };
+		C8C58D5824B9B16B00CFB68F /* NYSUpdateUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSUpdateUserInfo.h; sourceTree = "<group>"; };
+		C8CCB0DC24C2E0A000437E0E /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		C8CCB0DD24C2E0A000437E0E /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C891E7CB24B8082000AF0019 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A645FB570D3CA5A5562C466 /* Pods_NYSExampleObjC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		444BF6CC791EEF38411493CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				649C6B37949275784284599F /* Pods_NYSExampleObjC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5634E91343C765184B9BBB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A88D5801D580A30C3C462B7 /* Pods-NYSExampleObjC.debug.xcconfig */,
+				909CB5CB8F276E93802BA4D8 /* Pods-NYSExampleObjC.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C8253D2D24B875AF00BA4291 /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				C8C58D5024B9B16A00CFB68F /* NYSCommunity.h */,
+				C8C58D5224B9B16B00CFB68F /* NYSCommunity.m */,
+				C8C58D5624B9B16B00CFB68F /* NYSEstate.h */,
+				C8C58D5424B9B16B00CFB68F /* NYSEstate.m */,
+				C8C58D5324B9B16B00CFB68F /* NYSProfile.h */,
+				C8C58D5124B9B16A00CFB68F /* NYSProfile.m */,
+				C8C58D5824B9B16B00CFB68F /* NYSUpdateUserInfo.h */,
+				C8C58D5524B9B16B00CFB68F /* NYSUpdateUserInfo.m */,
+				C8C58D5724B9B16B00CFB68F /* NYSUserInfo.h */,
+				C8C58D4F24B9B16A00CFB68F /* NYSUserInfo.m */,
+			);
+			path = UserModel;
+			sourceTree = "<group>";
+		};
+		C82DD0F42B6F383800FD2BD8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C891E86424B85C0900AF0019 /* NewFeature */,
+				C891E7FC24B80FFD00AF0019 /* TabBar */,
+				C891E7EA24B80B1900AF0019 /* Login */,
+				C891E7EB24B80D3800AF0019 /* Home */,
+				C8C58D4724B9645600CFB68F /* New */,
+				C891E7EC24B80D7200AF0019 /* Open */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C884CAF824C2CC15008774A0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C884CAFB24C2CC85008774A0 /* NYSOpenPresenter.h */,
+				C884CAFC24C2CC85008774A0 /* NYSOpenPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C884CAF924C2CC20008774A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C884CAFA24C2CC35008774A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C884CAFE24C2D388008774A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C8C58D2824B94A1200CFB68F /* NYSOpenViewController.h */,
+				C8C58D2924B94A1200CFB68F /* NYSOpenViewController.m */,
+				C8C58D2A24B94A1200CFB68F /* NYSOpenViewController.xib */,
+				C884CAFF24C2D53D008774A0 /* NYSOpenViewProtocol.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C891E7C524B8082000AF0019 = {
+			isa = PBXGroup;
+			children = (
+				C891E7D024B8082000AF0019 /* NYSExampleObjC */,
+				C891E7CF24B8082000AF0019 /* Products */,
+				C5634E91343C765184B9BBB2 /* Pods */,
+				444BF6CC791EEF38411493CC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C891E7CF24B8082000AF0019 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C891E7CE24B8082000AF0019 /* NYSExampleObjC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C891E7D024B8082000AF0019 /* NYSExampleObjC */ = {
+			isa = PBXGroup;
+			children = (
+				C884CAF424C2C266008774A0 /* NYSExampleObjC.entitlements */,
+				C82DD0F42B6F383800FD2BD8 /* Modules */,
+				C891E81024B814EA00AF0019 /* Headers */,
+				C891E85524B8550700AF0019 /* AppManager */,
+				C891E80F24B8149300AF0019 /* AppDelegate */,
+				C891E80D24B8126D00AF0019 /* Supporting Files */,
+			);
+			path = NYSExampleObjC;
+			sourceTree = "<group>";
+		};
+		C891E7EA24B80B1900AF0019 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C891E80324B8112200AF0019 /* NYSLoginViewController.h */,
+				C891E80424B8112200AF0019 /* NYSLoginViewController.m */,
+				C891E80524B8112200AF0019 /* NYSLoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C891E7EB24B80D3800AF0019 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C891E87324B8661E00AF0019 /* Model */,
+				C891E87224B8661400AF0019 /* View */,
+				C891E87124B8660500AF0019 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C891E7EC24B80D7200AF0019 /* Open */ = {
+			isa = PBXGroup;
+			children = (
+				C884CAFE24C2D388008774A0 /* Controller */,
+				C884CAFA24C2CC35008774A0 /* Model */,
+				C884CAF924C2CC20008774A0 /* View */,
+				C884CAF824C2CC15008774A0 /* Presenter */,
+			);
+			path = Open;
+			sourceTree = "<group>";
+		};
+		C891E7FC24B80FFD00AF0019 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C891E80024B8110400AF0019 /* NYSTabBarViewController.h */,
+				C891E80124B8110400AF0019 /* NYSTabBarViewController.m */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C891E80D24B8126D00AF0019 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8C431A624BC351E0041311C /* themejson_day.json */,
+				C8C431A424BC351E0041311C /* themejson_night.json */,
+				C891E81224B8152E00AF0019 /* Bridging-Header.h */,
+				C891E81124B8152D00AF0019 /* PrefixHeader.pch */,
+				C891E82224B842DF00AF0019 /* 04b_03b.TTF */,
+				C891E7DA24B8082000AF0019 /* Main.storyboard */,
+				C891E7DD24B8082000AF0019 /* Assets.xcassets */,
+				C891E7DF24B8082000AF0019 /* LaunchScreen.storyboard */,
+				C891E7E224B8082000AF0019 /* Info.plist */,
+				C891E7E324B8082000AF0019 /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C891E80F24B8149300AF0019 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C891E7D124B8082000AF0019 /* AppDelegate.h */,
+				C891E7D224B8082000AF0019 /* AppDelegate.m */,
+				C891E84C24B8515B00AF0019 /* AppDelegate+AppService.h */,
+				C891E84D24B8515B00AF0019 /* AppDelegate+AppService.m */,
+				C891E84F24B853CA00AF0019 /* AppDelegate+PushService.h */,
+				C891E85024B853CA00AF0019 /* AppDelegate+PushService.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C891E81024B814EA00AF0019 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				C891E81624B8176200AF0019 /* UtilsMacros.h */,
+				C8253D3F24B8844200BA4291 /* ThemeMacros.h */,
+				C891E81424B8173E00AF0019 /* CommonMacros.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		C891E85524B8550700AF0019 /* AppManager */ = {
+			isa = PBXGroup;
+			children = (
+				C8C431A124BC34B70041311C /* UserManager */,
+				C891E85624B855B000AF0019 /* AppManager.h */,
+				C891E85724B855B000AF0019 /* AppManager.m */,
+				C891E85C24B8562C00AF0019 /* UMManager.h */,
+				C891E85D24B8562C00AF0019 /* UMManager.m */,
+				C829957924C05B2600BEA200 /* ADManager.h */,
+				C829957A24C05B2600BEA200 /* ADManager.m */,
+				C8CCB0DC24C2E0A000437E0E /* DBManager.h */,
+				C8CCB0DD24C2E0A000437E0E /* DBManager.m */,
+			);
+			path = AppManager;
+			sourceTree = "<group>";
+		};
+		C891E86424B85C0900AF0019 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				C86F2D6224BD3561002F44FD /* new_feature_1.png */,
+				C86F2D6324BD3561002F44FD /* new_feature_2.png */,
+				C86F2D6124BD3560002F44FD /* new_feature_3.png */,
+				C891E86624B85C0900AF0019 /* NYSNewfeatureViewController.h */,
+				C891E86724B85C0900AF0019 /* NYSNewfeatureViewController.m */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		C891E87124B8660500AF0019 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C82DD0F52B6F48ED00FD2BD8 /* NYSHomeViewController.h */,
+				C82DD0F62B6F48ED00FD2BD8 /* NYSHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C891E87224B8661400AF0019 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C891E87324B8661E00AF0019 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C8C431A124BC34B70041311C /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				C8253D2D24B875AF00BA4291 /* UserModel */,
+				C891E86124B856DF00AF0019 /* UserManager.h */,
+				C891E86224B856DF00AF0019 /* UserManager.m */,
+			);
+			path = UserManager;
+			sourceTree = "<group>";
+		};
+		C8C58D4724B9645600CFB68F /* New */ = {
+			isa = PBXGroup;
+			children = (
+				C8C58D4824B9647500CFB68F /* NYSNewViewController.h */,
+				C8C58D4924B9647500CFB68F /* NYSNewViewController.m */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C891E7CD24B8082000AF0019 /* NYSExampleObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C891E7E724B8082000AF0019 /* Build configuration list for PBXNativeTarget "NYSExampleObjC" */;
+			buildPhases = (
+				573068785F19D72E32EEFBFB /* [CP] Check Pods Manifest.lock */,
+				C891E7CA24B8082000AF0019 /* Sources */,
+				C891E7CB24B8082000AF0019 /* Frameworks */,
+				C891E7CC24B8082000AF0019 /* Resources */,
+				B2C268FC02DCB33ABC65634D /* [CP] Embed Pods Frameworks */,
+				BC8C4F9F42CF357B36010E2F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NYSExampleObjC;
+			productName = NYSExampleObjC;
+			productReference = C891E7CE24B8082000AF0019 /* NYSExampleObjC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C891E7C624B8082000AF0019 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NYS;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = niyongsheng;
+				TargetAttributes = {
+					C891E7CD24B8082000AF0019 = {
+						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
+					};
+				};
+			};
+			buildConfigurationList = C891E7C924B8082000AF0019 /* Build configuration list for PBXProject "NYSExampleObjC" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C891E7C524B8082000AF0019;
+			productRefGroup = C891E7CF24B8082000AF0019 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C891E7CD24B8082000AF0019 /* NYSExampleObjC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C891E7CC24B8082000AF0019 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8C431A824BC351E0041311C /* themejson_day.json in Resources */,
+				C891E80724B8112200AF0019 /* NYSLoginViewController.xib in Resources */,
+				C86F2D6424BD3561002F44FD /* new_feature_3.png in Resources */,
+				C8C431A724BC351E0041311C /* themejson_night.json in Resources */,
+				C891E7E124B8082000AF0019 /* LaunchScreen.storyboard in Resources */,
+				C891E7DE24B8082000AF0019 /* Assets.xcassets in Resources */,
+				C891E7DC24B8082000AF0019 /* Main.storyboard in Resources */,
+				C86F2D6624BD3561002F44FD /* new_feature_2.png in Resources */,
+				C8C58D2C24B94A1200CFB68F /* NYSOpenViewController.xib in Resources */,
+				C86F2D6524BD3561002F44FD /* new_feature_1.png in Resources */,
+				C891E83B24B842E000AF0019 /* 04b_03b.TTF in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		573068785F19D72E32EEFBFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYSExampleObjC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2C268FC02DCB33ABC65634D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYSExampleObjC/Pods-NYSExampleObjC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYSExampleObjC/Pods-NYSExampleObjC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYSExampleObjC/Pods-NYSExampleObjC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC8C4F9F42CF357B36010E2F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYSExampleObjC/Pods-NYSExampleObjC-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYSExampleObjC/Pods-NYSExampleObjC-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYSExampleObjC/Pods-NYSExampleObjC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C891E7CA24B8082000AF0019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C884CAFD24C2CC85008774A0 /* NYSOpenPresenter.m in Sources */,
+				C891E86324B856DF00AF0019 /* UserManager.m in Sources */,
+				C8C58D5C24B9B16B00CFB68F /* NYSEstate.m in Sources */,
+				C8C58D5B24B9B16B00CFB68F /* NYSCommunity.m in Sources */,
+				C891E85E24B8562C00AF0019 /* UMManager.m in Sources */,
+				C891E80624B8112200AF0019 /* NYSLoginViewController.m in Sources */,
+				C8C58D4A24B9647500CFB68F /* NYSNewViewController.m in Sources */,
+				C8C58D5924B9B16B00CFB68F /* NYSUserInfo.m in Sources */,
+				C891E80224B8110400AF0019 /* NYSTabBarViewController.m in Sources */,
+				C8C58D5A24B9B16B00CFB68F /* NYSProfile.m in Sources */,
+				C891E7D324B8082000AF0019 /* AppDelegate.m in Sources */,
+				C829957B24C05B2600BEA200 /* ADManager.m in Sources */,
+				C891E7E424B8082000AF0019 /* main.m in Sources */,
+				C891E86824B85C0900AF0019 /* NYSNewfeatureViewController.m in Sources */,
+				C8C58D2B24B94A1200CFB68F /* NYSOpenViewController.m in Sources */,
+				C891E85124B853CA00AF0019 /* AppDelegate+PushService.m in Sources */,
+				C891E84E24B8515B00AF0019 /* AppDelegate+AppService.m in Sources */,
+				C8CCB0DE24C2E0A000437E0E /* DBManager.m in Sources */,
+				C82DD0F72B6F48ED00FD2BD8 /* NYSHomeViewController.m in Sources */,
+				C891E85824B855B000AF0019 /* AppManager.m in Sources */,
+				C8C58D5D24B9B16B00CFB68F /* NYSUpdateUserInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C891E7DA24B8082000AF0019 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C891E7DB24B8082000AF0019 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C891E7DF24B8082000AF0019 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C891E7E024B8082000AF0019 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C891E7E524B8082000AF0019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C891E7E624B8082000AF0019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C891E7E824B8082000AF0019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A88D5801D580A30C3C462B7 /* Pods-NYSExampleObjC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = NYSExampleObjC/NYSExampleObjC.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y24AM9NS72;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NYSExampleObjC/Supporting Files/PrefixHeader.pch";
+				INFOPLIST_FILE = "NYSExampleObjC/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nys.example.objc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NYSExampleObjC/Supporting Files/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C891E7E924B8082000AF0019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 909CB5CB8F276E93802BA4D8 /* Pods-NYSExampleObjC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = NYSExampleObjC/NYSExampleObjC.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y24AM9NS72;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NYSExampleObjC/Supporting Files/PrefixHeader.pch";
+				INFOPLIST_FILE = "NYSExampleObjC/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nys.example.objc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NYSExampleObjC/Supporting Files/Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C891E7C924B8082000AF0019 /* Build configuration list for PBXProject "NYSExampleObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C891E7E524B8082000AF0019 /* Debug */,
+				C891E7E624B8082000AF0019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C891E7E724B8082000AF0019 /* Build configuration list for PBXNativeTarget "NYSExampleObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C891E7E824B8082000AF0019 /* Debug */,
+				C891E7E924B8082000AF0019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C891E7C624B8082000AF0019 /* Project object */;
+}

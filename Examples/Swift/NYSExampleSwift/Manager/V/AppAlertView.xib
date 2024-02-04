@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppAlertView" customModule="NYSAppSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelBtn" destination="Zqi-OR-dic" id="RRt-sJ-pkC"/>
+                <outlet property="closeBtn" destination="hD7-rm-DOZ" id="fA6-J0-thf"/>
+                <outlet property="confirmBtn" destination="DPI-gW-YOP" id="DQ7-Yi-F0I"/>
+                <outlet property="contentL" destination="qYc-0D-t4e" id="fhD-QM-dDI"/>
+                <outlet property="iconIV" destination="Un2-iP-cdF" id="yck-Yf-fI7"/>
+                <outlet property="titleL" destination="FcZ-ev-Hqb" id="E6h-TU-e23"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="291" height="198"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD7-rm-DOZ">
+                    <rect key="frame" x="255" y="10" width="26" height="26"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="close_icon"/>
+                    <connections>
+                        <action selector="closeBtnOnclicked:" destination="-1" eventType="touchUpInside" id="Glj-Cx-pGQ"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Un2-iP-cdF">
+                    <rect key="frame" x="136" y="20.666666666666664" width="19" height="19.333333333333336"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcZ-ev-Hqb">
+                    <rect key="frame" x="15" y="55.333333333333336" width="261" height="19.333333333333336"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYc-0D-t4e">
+                    <rect key="frame" x="15" y="84.666666666666671" width="261" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="if4-nI-VZD">
+                    <rect key="frame" x="20" y="138" width="251" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqi-OR-dic">
+                            <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="NzM-IK-c6e"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" red="0.26259681579999999" green="0.53335267310000001" blue="0.99997872109999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelBtnOnclicked:" destination="-1" eventType="touchUpInside" id="vWu-3Z-Nm8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPI-gW-YOP">
+                            <rect key="frame" x="140.66666666666666" y="0.0" width="110.33333333333334" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="rsJ-gB-h9y"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="确定">
+                                <color key="titleColor" red="0.26259681579999999" green="0.53335267310000001" blue="0.99997872109999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="confirmBtnOnclicked:" destination="-1" eventType="touchUpInside" id="RCU-zq-lx3"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="DPI-gW-YOP" firstAttribute="width" secondItem="Zqi-OR-dic" secondAttribute="width" id="9uU-po-eyo"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="qYc-0D-t4e" firstAttribute="top" secondItem="FcZ-ev-Hqb" secondAttribute="bottom" constant="10" id="0ad-TG-64N"/>
+                <constraint firstItem="qYc-0D-t4e" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="3nb-LW-9bb"/>
+                <constraint firstItem="hD7-rm-DOZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="998-bD-Biy"/>
+                <constraint firstItem="Un2-iP-cdF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Cjt-o1-lCJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qYc-0D-t4e" secondAttribute="trailing" constant="15" id="Mk3-g9-4hg"/>
+                <constraint firstItem="if4-nI-VZD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="P71-c6-sfS"/>
+                <constraint firstItem="if4-nI-VZD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qYc-0D-t4e" secondAttribute="bottom" constant="10" id="c41-Ia-HxM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FcZ-ev-Hqb" secondAttribute="trailing" constant="15" id="j15-dt-6Yd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="if4-nI-VZD" secondAttribute="trailing" constant="20" id="nfH-0o-pwe"/>
+                <constraint firstItem="FcZ-ev-Hqb" firstAttribute="top" secondItem="Un2-iP-cdF" secondAttribute="bottom" constant="15" id="o7j-rY-tVp"/>
+                <constraint firstItem="FcZ-ev-Hqb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oQm-Zc-vZP"/>
+                <constraint firstItem="FcZ-ev-Hqb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="pqh-tk-2QW"/>
+                <constraint firstItem="Un2-iP-cdF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rhZ-UW-jDA"/>
+                <constraint firstAttribute="bottom" secondItem="if4-nI-VZD" secondAttribute="bottom" constant="20" id="xlF-9E-ezz"/>
+                <constraint firstAttribute="trailing" secondItem="hD7-rm-DOZ" secondAttribute="trailing" constant="10" id="yVg-zY-cvq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="61.832061068702288" y="-176.7605633802817"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bell" catalog="system" width="125" height="128"/>
+        <image name="close_icon" width="26" height="26"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
