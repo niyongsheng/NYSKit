@@ -9,6 +9,17 @@
 
 @implementation UIImage (NYS)
 
+- (UIImage *)imageByResizeToSize:(CGSize)size {
+    if (size.width <= 0 || size.height <= 0) return nil;
+    
+    UIGraphicsBeginImageContext(size);
+    [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 - (UIImage*)imageChangeColor:(UIColor*)color {
     // 获取画布
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);

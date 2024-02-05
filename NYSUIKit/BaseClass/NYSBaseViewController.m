@@ -6,15 +6,17 @@
 //
 
 #import "NYSBaseViewController.h"
+#import "LEETheme.h"
 #import "CMPopTipView.h"
 #import "WSScrollLabel.h"
 #import "NYSUIKitPublicHeader.h"
-#import "LEETheme.h"
+
+#import "UIImage+NYS.h"
 #import "UIButton+NYS.h"
 #import "NSBundle+NYSFramework.h"
 
 #import <MJRefresh/MJRefresh.h>
-#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import "UIScrollView+EmptyDataSet.h"
 
 #define NYSTopHeight [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height + self.navigationController.navigationBar.frame.size.height
 
@@ -94,7 +96,19 @@ DZNEmptyDataSetDelegate
 }
 
 #pragma mark - UI
-- (void)setupUI {}
+- (void)setupUI {
+    // 默认显示返回按钮
+    self.isShowLiftBack = YES;
+    
+    /**
+     // 关闭拓展全屏布局，等效于automaticallyAdjustsScrollViewInsets = NO;
+     self.edgesForExtendedLayout = UIRectEdgeNone;
+     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+     self.navigationController.navigationBar.translucent = YES;
+     self.automaticallyAdjustsScrollViewInsets = YES;
+     }
+     */
+}
 - (void)bindViewModel {}
 - (void)setCustomStatusBarStyle:(UIStatusBarStyle)StatusBarStyle {
     _customStatusBarStyle = StatusBarStyle;
@@ -104,33 +118,23 @@ DZNEmptyDataSetDelegate
 
 #pragma mark - Theme
 - (void)configTheme {
-    // 默认显示返回按钮
-    self.isShowLiftBack = YES;
-    
     // 默认显示状态栏样式
     self.customStatusBarStyle = UIStatusBarStyleDefault;
     
     // 控制器背景色
     self.view.lee_theme.LeeConfigBackgroundColor(@"controller_view_bg_color");
     
-    // 关闭拓展全屏布局，等效于automaticallyAdjustsScrollViewInsets = NO;
-    //    self.edgesForExtendedLayout = UIRectEdgeNone;
-    //    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
-    //        self.navigationController.navigationBar.translucent = YES;
-    //        self.automaticallyAdjustsScrollViewInsets = YES;
-    //    }
-    
-#if __has_include(<WRNavigationBar/WRNavigationBar.h>)
+#ifndef SWIFT_MODULE_NAME || __has_include(<WRNavigationBar/WRNavigationBar.h>)
     
 #else
     // 导航栏适配
-//    if (@available(iOS 13.0, *)) {
-//        UINavigationBarAppearance *barApp = [UINavigationBarAppearance new];
-//        barApp.shadowColor = [UIColor clearColor];
-//        barApp.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5]; // 背景色
-//        self.navigationController.navigationBar.scrollEdgeAppearance = barApp;
-//        self.navigationController.navigationBar.standardAppearance = barApp;
-//    }
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *barApp = [UINavigationBarAppearance new];
+        barApp.shadowColor = [UIColor clearColor];
+        barApp.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5]; // 背景色
+        self.navigationController.navigationBar.scrollEdgeAppearance = barApp;
+        self.navigationController.navigationBar.standardAppearance = barApp;
+    }
 #endif
     
 #ifdef NAppRoundStyle
@@ -216,7 +220,7 @@ DZNEmptyDataSetDelegate
             NSMutableArray *refreshingImages = [NSMutableArray array];
             for (int i = 1; i <= 7; i++) {
                 UIImage *image = [NYSUIKitUtilities imageNamed:[NSString stringWithFormat:@"an_%03d", i]];
-                [refreshingImages addObject:[self imageByResizeToSize:size withImage:image]];
+                [refreshingImages addObject:[image imageByResizeToSize:size]];
             }
             
             // header refresh
@@ -225,8 +229,8 @@ DZNEmptyDataSetDelegate
             header.lastUpdatedTimeLabel.hidden = YES;
             header.automaticallyChangeAlpha = NO;
             [header setImages:refreshingImages forState:MJRefreshStateRefreshing];
-            [header setImages:@[[self imageByResizeToSize:size withImage:[NYSUIKitUtilities imageNamed:@"icon_refresh_up"]]] duration:1.0f forState:MJRefreshStatePulling];
-            [header setImages:@[UIImage.new, [self imageByResizeToSize:size withImage:[NYSUIKitUtilities imageNamed:@"icon_refresh_dropdown"]]] duration:1.0f forState:MJRefreshStateIdle];
+            [header setImages:@[[[NYSUIKitUtilities imageNamed:@"icon_refresh_up"] imageByResizeToSize:size]] duration:1.0f forState:MJRefreshStatePulling];
+            [header setImages:@[UIImage.new, [[NYSUIKitUtilities imageNamed:@"icon_refresh_dropdown"] imageByResizeToSize:size]] duration:1.0f forState:MJRefreshStateIdle];
             _tableView.mj_header = header;
             
             // footer refresh
@@ -328,7 +332,7 @@ DZNEmptyDataSetDelegate
             NSMutableArray *refreshingImages = [NSMutableArray array];
             for (int i = 1; i <= 7; i++) {
                 UIImage *image = [NYSUIKitUtilities imageNamed:[NSString stringWithFormat:@"an_%03d", i]];
-                [refreshingImages addObject:[self imageByResizeToSize:size withImage:image]];
+                [refreshingImages addObject:[image imageByResizeToSize:size]];
             }
             
             // header refresh
@@ -337,8 +341,8 @@ DZNEmptyDataSetDelegate
             header.lastUpdatedTimeLabel.hidden = YES;
             header.automaticallyChangeAlpha = NO;
             [header setImages:refreshingImages forState:MJRefreshStateRefreshing];
-            [header setImages:@[[self imageByResizeToSize:size withImage:[NYSUIKitUtilities imageNamed:@"icon_refresh_up"]]] duration:1.0f forState:MJRefreshStatePulling];
-            [header setImages:@[UIImage.new, [self imageByResizeToSize:size withImage:[NYSUIKitUtilities imageNamed:@"icon_refresh_dropdown"]]] duration:1.0f forState:MJRefreshStateIdle];
+            [header setImages:@[[[NYSUIKitUtilities imageNamed:@"icon_refresh_up"] imageByResizeToSize:size]] duration:1.0f forState:MJRefreshStatePulling];
+            [header setImages:@[UIImage.new, [[NYSUIKitUtilities imageNamed:@"icon_refresh_dropdown"] imageByResizeToSize:size]] duration:1.0f forState:MJRefreshStateIdle];
             _collectionView.mj_header = header;
             
             // footer refresh
@@ -611,21 +615,6 @@ DZNEmptyDataSetDelegate
         default:
             break;
     }
-}
-
-/// 修改图片大小
-/// - Parameters:
-///   - size: 新尺寸
-///   - image: 需要修改的图片
-- (UIImage *)imageByResizeToSize:(CGSize)size withImage:(UIImage *)image {
-    if (size.width <= 0 || size.height <= 0) return nil;
-    
-    UIGraphicsBeginImageContext(size);
-    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
 }
 
 #pragma mark - 屏幕旋转

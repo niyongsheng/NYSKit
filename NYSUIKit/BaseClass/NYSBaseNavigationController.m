@@ -45,7 +45,7 @@
     }
 }
 
-/// theme config
+#pragma mark - Theme
 - (void)configTheme {
     
     self.navigationBar.lee_theme

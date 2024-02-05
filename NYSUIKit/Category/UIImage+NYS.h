@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param color 颜色
 - (UIImage *)imageChangeColor:(UIColor*)color;
 
+/// 修改图片尺寸
+/// @param size 尺寸
+- (UIImage *)imageByResizeToSize:(CGSize)size;
+
 /// 获取用户名头像
 /// @param name 昵称
 /// @param size 尺寸
