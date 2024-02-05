@@ -10,4 +10,13 @@
 
 @implementation NYSError
 
+- (instancetype)initWithDomain:(NSErrorDomain)domain code:(NSInteger)code {
+
+    self = [super initWithDomain:domain code:code userInfo:@{NSLocalizedDescriptionKey: @"An NYSkit error occurred."}];
+    if (self) {
+        
+    }
+    return self;
+}
+
 @end

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NYSError : NSError
 
+- (instancetype)initWithDomain:(NSErrorDomain)domain code:(NSInteger)code;
+
 @end
 
 NS_ASSUME_NONNULL_END

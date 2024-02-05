@@ -462,7 +462,8 @@ static void handelLog(NSString *remark, NSString *urlStr, NSString *type, NSDict
     [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-    [SVProgressHUD showWithStatus:@"Loading..."];
+    [SVProgressHUD setHapticsEnabled:YES];
+    [SVProgressHUD show];
 }
 
 @end

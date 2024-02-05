@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)nys_localizedStringForKey:(NSString *)key value:(nullable NSString *)value;
 + (NSString *)nys_localizedStringForKey:(NSString *)key;
 
++ (instancetype)nys_refreshBundle;
 + (instancetype)nys_refreshBundle:(NSString *)bundleName;
 @end
 

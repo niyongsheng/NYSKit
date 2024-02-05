@@ -77,9 +77,11 @@ static NSString *const NYSUserLanguageKey = @"NYSUserLanguageKey";
     return image;
 }
 
+/// 读取.bundle中图片资源
+/// - Parameter name: 图片名名称
 + (nullable UIImage *)imageBundleNamed:(NSString *)name {
-    NSBundle*bundle = [NSBundle bundleForClass:[self class]];
-    UIImage *image = [UIImage imageNamed:@"NYSUIKit.bundle/image"  inBundle:bundle compatibleWithTraitCollection:nil];
+    NSBundle*bundle = [NSBundle bundleWithPath:@"NYSUIKit.bundle/image"];
+    UIImage *image = [UIImage imageNamed:name inBundle:bundle compatibleWithTraitCollection:nil];
     return image;
 }
 

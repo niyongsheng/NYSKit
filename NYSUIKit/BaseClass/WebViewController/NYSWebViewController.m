@@ -6,9 +6,10 @@
 //
 
 #import "NYSWebViewController.h"
+#import "LEETheme.h"
 #import "NYSJSHandler.h"
 #import "NYSUIKitPublicHeader.h"
-#import "LEETheme.h"
+#import "NSBundle+NYSFramework.h"
 
 @interface NYSWebViewController () <WKNavigationDelegate, WKUIDelegate>
 @property (nonatomic,strong) NYSJSHandler * jsHandler;
@@ -147,10 +148,9 @@
 }
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
-    // 一个页面没有被完全加载之前收到下一个请求，此时迅速会出现此error,error=-999，先忽略处理
-    if (error.code != -999) {
-        [self loadHostPathURL:@"WebLoadErrorView"];
-    }
+    // 页面未完成加载前收到下一个请求，此时会触发(error=-999)
+    if (error.code != -999)
+        [self loadHostPathURL:@"load_error"];
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
@@ -225,7 +225,10 @@
 /** 加载本地error html 文件 */
 - (void)loadHostPathURL:(NSString *)html {
     // 获取html文件的路径
-    NSString *path = [[NSBundle bundleForClass:self.class] pathForResource:html ofType:@"html"];
+    NSBundle *bundle = [NSBundle bundleForClass:[NYSUIKitUtilities class]];
+    if (!bundle) bundle = [NSBundle bundleForClass:self.class];
+    NSString *path = [bundle pathForResource:html ofType:@"html"];
+
     // 获取html内容
     NSString *htmlStr = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     // 加载html

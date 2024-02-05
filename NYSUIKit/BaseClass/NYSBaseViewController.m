@@ -16,7 +16,7 @@
 #import "NSBundle+NYSFramework.h"
 
 #import <MJRefresh/MJRefresh.h>
-#import "UIScrollView+EmptyDataSet.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
 #define NYSTopHeight [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height + self.navigationController.navigationBar.frame.size.height
 
