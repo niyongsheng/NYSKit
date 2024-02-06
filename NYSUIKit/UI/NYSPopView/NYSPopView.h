@@ -1,40 +1,39 @@
 //
-//  PopView.h
-//  iPad-Education
+//  NYSPopView.h
 //
-//  Created by 李林 on 2017/10/18.
-//  Copyright © 2017年 iLaihua. All rights reserved.
+//  NYSUIKit http://github.com/niyongsheng
+//  Copyright © 2020 NYS. ALL rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 static  CGFloat   const animationDuration       = 0.25;
-static  CGFloat   const popViewInsert           = 5;
+static  CGFloat   const NYSPopViewInsert           = 5;
 
-typedef NS_ENUM(NSUInteger, PopViewDirection) {
-    PopViewDirection_PopUpLeft,
-    PopViewDirection_PopUpBottom,
-    PopViewDirection_PopUpRight,
-    PopViewDirection_PopUpTop,
-    PopViewDirection_PopUpNone,
+typedef NS_ENUM(NSUInteger, NYSPopViewDirection) {
+    NYSPopViewDirection_PopUpLeft,
+    NYSPopViewDirection_PopUpBottom,
+    NYSPopViewDirection_PopUpRight,
+    NYSPopViewDirection_PopUpTop,
+    NYSPopViewDirection_PopUpNone,
 
 
     
-    PopViewDirection_SlideFromLeft                 = 20,
-    PopViewDirection_SlideFromRight                = 21,
-    PopViewDirection_SlideFromUp                   = 22,
-    PopViewDirection_SlideFromBottom               = 23,
-    PopViewDirection_SlideInCenter                 = 24,
-    PopViewDirection_SlideBelowView                = 25,
+    NYSPopViewDirection_SlideFromLeft                 = 20,
+    NYSPopViewDirection_SlideFromRight                = 21,
+    NYSPopViewDirection_SlideFromUp                   = 22,
+    NYSPopViewDirection_SlideFromBottom               = 23,
+    NYSPopViewDirection_SlideInCenter                 = 24,
+    NYSPopViewDirection_SlideBelowView                = 25,
 };
 
-@interface PopView : UIView
+@interface NYSPopView : UIView
 @property (nonatomic ,assign) BOOL clickOutHidden;      //点击除了popContainerView的其他地方是否消失default to yes
 @property (nonatomic ,weak) UIView *responseOnView;     //设置后事件会透过去,响应该view上的事件
 @property (nonatomic ,assign) CGFloat keyBoardMargin;   //输入框与键盘的间隔,默认为10px
 @property (nonatomic ,strong) UIView *popContainerView; //包含要显示的View的父控件
 
-//popView的移除回调
+//NYSPopView的移除回调
 @property (nonatomic ,copy) void(^willRemovedFromeSuperView)(void);
 @property (nonatomic ,copy) void(^didRemovedFromeSuperView)(void);
 
@@ -59,7 +58,7 @@ typedef NS_ENUM(NSUInteger, PopViewDirection) {
  @param onView 一般是响应事件的按钮
  **/
 + (instancetype)popUpContentView:(UIView *)contentView
-                          direct:(PopViewDirection)direct
+                          direct:(NYSPopViewDirection)direct
                           onView:(UIView *)onView;
 
 /*
@@ -72,7 +71,7 @@ typedef NS_ENUM(NSUInteger, PopViewDirection) {
  @param animation 是否动画
  **/
 + (instancetype)popUpContentView:(UIView *)contentView
-                          direct:(PopViewDirection)direct
+                          direct:(NYSPopViewDirection)direct
                           onView:(UIView *)onView
                           offset:(CGFloat)offset
                     triangleView:(UIView *)triangleView
@@ -84,7 +83,7 @@ typedef NS_ENUM(NSUInteger, PopViewDirection) {
  @param contentView 方向
  **/
 + (instancetype)popSideContentView:(UIView *)contentView
-                            direct:(PopViewDirection)direction;
+                            direct:(NYSPopViewDirection)direction;
 
 /*
  5、可实现DropDownMunu类型的动画
@@ -95,10 +94,10 @@ typedef NS_ENUM(NSUInteger, PopViewDirection) {
                          belowView:(UIView *)belowView;
 
 
-//隐藏当前的popView
-+ (void)hidenPopView;
+//隐藏当前的NYSPopView
++ (void)hidenNYSPopView;
 
-//获取当前的popView
-+ (instancetype)getCurrentPopView;
+//获取当前的NYSPopView
++ (instancetype)getCurrentNYSPopView;
 @end
 

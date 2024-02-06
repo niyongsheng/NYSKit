@@ -7,7 +7,7 @@
 
 #import "ThemeManager.h"
 #import "LEETheme.h"
-#import "LEEBubble.h"
+#import "NYSBubbleButton.h"
 #import "NYSUIKitPublicHeader.h"
 
 @implementation ThemeManager
@@ -38,14 +38,14 @@
 /// 初始化气泡主题按钮
 - (void)initBubble:(UIWindow *)window {
     
-    LEEBubble *bubble = [[LEEBubble alloc] initWithFrame:CGRectMake(CGRectGetWidth(window.frame) - 58, CGRectGetHeight(window.frame) - 200, 48, 48)];
+    NYSBubbleButton *bubble = [[NYSBubbleButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(window.frame) - 58, CGRectGetHeight(window.frame) - 200, 48, 48)];
     bubble.edgeInsets = UIEdgeInsetsMake(64, 0 , 0 , 0);
     [window addSubview:bubble];
     
     bubble.lee_theme
     .LeeAddSelectorAndColor(DAY, @selector(setColor:), [UIColor grayColor])
     .LeeAddSelectorAndColor(NIGHT, @selector(setColor:), [UIColor colorWithWhite:0 alpha:0.4f])
-    .LeeThemeChangingBlock(^(NSString *tag, LEEBubble * item) {
+    .LeeThemeChangingBlock(^(NSString *tag, NYSBubbleButton * item) {
         
         if ([tag isEqualToString:DAY]) {
             item.image = [NYSUIKitUtilities imageNamed:@"day"];

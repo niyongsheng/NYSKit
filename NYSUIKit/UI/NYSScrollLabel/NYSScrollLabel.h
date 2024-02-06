@@ -1,16 +1,15 @@
 //
-//  WSScrollLabel.h
-//  滚动的文字
+//  NYSScrollLabel.h
 //
-//  Created by iMac on 16/9/21.
-//  Copyright © 2016年 zws. All rights reserved.
+//  NYSUIKit http://github.com/niyongsheng
+//  Copyright © 2020 NYS. ALL rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#define WSScrollLabelViewDidAppearNotification            @"WSScrollLabelViewDidAppearNotification"
+#define NYSScrollLabelViewDidAppearNotification            @"NYSScrollLabelViewDidAppearNotification"
 
-@interface WSScrollLabel : UIView
+@interface NYSScrollLabel : UIView
 
 @property (nonatomic, strong) NSString *text; /**< 文字*/
 @property (nonatomic, strong) UIColor *textColor; /**< 字体颜色 默认白色*/

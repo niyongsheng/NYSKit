@@ -23,10 +23,18 @@ NYSKit
 
 ## Usage
 ```ruby
-  pod 'NYSKit', :git => 'https://github.com/niyongsheng/NYSKit.git', :tag => '0.0.1'
-  pod 'NYSUIKit', :git => 'https://github.com/niyongsheng/NYSKit.git', :tag => '0.0.1'
+  pod 'NYSKit', :git => 'https://github.com/niyongsheng/NYSKit.git', :tag => '0.0.4'
+  pod 'NYSUIKit', :git => 'https://github.com/niyongsheng/NYSKit.git', :tag => '0.0.4'
 
   pod install
+```
+```objectivec
+  #import <NYSKit/NYSKit.h>
+  #import <NYSKit/NYSKit.h>
+```
+```swift
+  import NYSKit
+  import NYSUIKit
 ```
 `NYSKit Document:` https://niyongsheng.github.io/Document/NYSWS/NYSKit/index.html
 

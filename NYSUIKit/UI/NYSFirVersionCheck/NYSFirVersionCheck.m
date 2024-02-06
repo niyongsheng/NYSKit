@@ -1,14 +1,14 @@
 //
-//  FIRVersionCheck.m
+//  NYSFirVersionCheck.m
 //
 //  NYSUIKit http://github.com/niyongsheng
 //  Copyright © 2020 NYS. ALL rights reserved.
 //
 
-#import "FIRVersionCheck.h"
+#import "NYSFirVersionCheck.h"
 #import "NYSUIKitPublicHeader.h"
 
-@interface FIRVersionCheck()<UIAlertViewDelegate>
+@interface NYSFirVersionCheck()<UIAlertViewDelegate>
 
 @property (nonatomic, copy) NSString *firAppID;
 @property (nonatomic, copy) NSString *firAPIToken;
@@ -17,37 +17,41 @@
 
 @end
 
-@implementation FIRVersionCheck
+@implementation NYSFirVersionCheck
 
 + (instancetype)sharedInstance {
-    static FIRVersionCheck *sharedInstance = nil;
+    static NYSFirVersionCheck *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[FIRVersionCheck alloc] init];
+        sharedInstance = [[NYSFirVersionCheck alloc] init];
     });
     return sharedInstance;
 }
 
 + (void)setAPIToken:(NSString *)APIToken {
-    [FIRVersionCheck sharedInstance].firAPIToken = APIToken;
+    [NYSFirVersionCheck sharedInstance].firAPIToken = APIToken;
 }
 
 + (void)setTargetController:(UIViewController *)targetController {
-    [FIRVersionCheck sharedInstance].targetController = targetController;
+    [NYSFirVersionCheck sharedInstance].targetController = targetController;
 }
 
 + (void)setAppID:(NSString *)appID APIToken:(NSString *)APIToken {
-    [FIRVersionCheck sharedInstance].firAppID = appID;
-    [FIRVersionCheck sharedInstance].firAPIToken = APIToken;
+    [NYSFirVersionCheck sharedInstance].firAppID = appID;
+    [NYSFirVersionCheck sharedInstance].firAPIToken = APIToken;
 }
 
 + (void)check {
+    [self check:nil];
+}
+
++ (void)check:(NYSFirVersionCheckCompletion)completion {
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    NSString *idString = [FIRVersionCheck sharedInstance].firAppID;
+    NSString *idString = [NYSFirVersionCheck sharedInstance].firAppID;
     if (!idString) {
         idString = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleIdentifierKey];
     }
-    NSString *apiToken = [FIRVersionCheck sharedInstance].firAPIToken;
+    NSString *apiToken = [NYSFirVersionCheck sharedInstance].firAPIToken;
     if (apiToken && apiToken.length == 0) {
         [NYSTools log:self.class msg:@"FIR - 请先设置API Token"];
         return;
@@ -81,15 +85,21 @@
                 
             } else {
                 NSString *update_url = responseDictionary[@"update_url"];
-                [FIRVersionCheck sharedInstance].updateURL = update_url;
+                [NYSFirVersionCheck sharedInstance].updateURL = update_url;
                 NSString *currentBuild = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
                 
                 int relt = [self convertVersion:versionShort v2:appVersion];
-                if (relt == 1) {
-                    [self showAlert:responseDictionary];
+                if (relt == 1) { // 版本号升级
+                    if (completion) {
+                        completion(responseDictionary);
+                    } else {
+                        [self showAlert:responseDictionary];
+                    }
                     
-                } else if (relt == 0) {
-                    if ([build integerValue] > [currentBuild integerValue]) {
+                } else if (relt == 0) { // 构建号升级
+                    if (completion) {
+                        completion(responseDictionary);
+                    } else {
                         [self showAlert:responseDictionary];
                     }
                 }
@@ -101,7 +111,7 @@
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 }
 
-/// 显示弹框
+/// 显示系统样式更新弹框
 /// - Parameter urlStr: 更新信息
 + (void)showAlert:(NSDictionary *)responseDictionary {
     NSString *build = responseDictionary[@"build"];
@@ -118,8 +128,8 @@
         }];
         [alertController addAction:laterAction];
         [alertController addAction:okAction];
-        if ([FIRVersionCheck sharedInstance].targetController)
-            [[FIRVersionCheck sharedInstance].targetController presentViewController:alertController animated:YES completion:nil];
+        if ([NYSFirVersionCheck sharedInstance].targetController)
+            [[NYSFirVersionCheck sharedInstance].targetController presentViewController:alertController animated:YES completion:nil];
     });
 }
 

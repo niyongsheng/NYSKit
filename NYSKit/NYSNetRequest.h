@@ -72,4 +72,10 @@ typedef void(^NYSNetRequestFailed)(NSError * _Nullable error);
 ///   - failed: 读取失败回调
 + (void)mockRequestWithParameters:(NSString * _Nonnull)parameters isCheck:(BOOL)isCheck remark:(NSString * _Nullable)remark success:(NYSNetRequestSuccess _Nullable)success failed:(NYSNetRequestFailed _Nullable)failed;
 
+/// JSON样式编码
+/// - Parameter dict: 字典
++ (NSString *)jsonPrettyStringEncoded:(NSDictionary *)dict;
++ (void)showLoadingAnimation;
++ (void)dismiss;
+
 @end

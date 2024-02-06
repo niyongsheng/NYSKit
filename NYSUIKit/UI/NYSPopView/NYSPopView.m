@@ -1,19 +1,18 @@
 //
-//  PopView.m
-//  iPad-Education
+//  NYSPopView.m
 //
-//  Created by 李林 on 2017/10/18.
-//  Copyright © 2017年 iLaihua. All rights reserved.
+//  NYSUIKit http://github.com/niyongsheng
+//  Copyright © 2020 NYS. ALL rights reserved.
 //
 
-#import "PopView.h"
-#import "PopAnimationTool.h"
+#import "NYSPopView.h"
+#import "NYSPopAnimationTool.h"
 
-@interface PopView()<CAAnimationDelegate,UIGestureRecognizerDelegate>
+@interface NYSPopView()<CAAnimationDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic ,weak) UIView *contentView;
 @property (nonatomic ,weak) UIView *onView;
-@property (nonatomic ,assign) PopViewDirection direct;
+@property (nonatomic ,assign) NYSPopViewDirection direct;
 @property (nonatomic ,assign) BOOL animation;
 
 @property (nonatomic ,strong) UIView *triangleView;
@@ -24,10 +23,10 @@
 @property (nonatomic ,strong) CABasicAnimation *hidenAnimation;
 @end
 
-@implementation PopView
+@implementation NYSPopView
 
-static  NSInteger const popViewTag              = 364;
-+ (instancetype)getCurrentPopView{
+static  NSInteger const NYSPopViewTag              = 364;
++ (instancetype)getCurrentNYSPopView{
     UIWindow *window = nil;
     for (UIWindow *win in [UIApplication sharedApplication].windows) {
         if (win.isKeyWindow) {
@@ -35,19 +34,19 @@ static  NSInteger const popViewTag              = 364;
             break;
         }
     }
-    PopView *oldPopView = (PopView *)[window viewWithTag:popViewTag];
-    return oldPopView;
+    NYSPopView *oldNYSPopView = (NYSPopView *)[window viewWithTag:NYSPopViewTag];
+    return oldNYSPopView;
 }
 
 #pragma mark- popAnimation
 + (instancetype)popUpContentView:(UIView *)contentView
-                        direct:(PopViewDirection)direct
+                        direct:(NYSPopViewDirection)direct
                         onView:(UIView *)onView{
     return [self popUpContentView:contentView direct:direct onView:onView offset:0 triangleView:nil animation:YES];
 }
 
 + (instancetype)popUpContentView:(UIView *)contentView
-                        direct:(PopViewDirection)direct
+                        direct:(NYSPopViewDirection)direct
                         onView:(UIView *)onView
                         offset:(CGFloat)offset
                   triangleView:(UIView *)triangleView
@@ -59,64 +58,64 @@ static  NSInteger const popViewTag              = 364;
             break;
         }
     }
-    PopView *oldPopView = [self getCurrentPopView];
-    PopView *newPopView = [[PopView alloc] initWithFrame:window.bounds
+    NYSPopView *oldNYSPopView = [self getCurrentNYSPopView];
+    NYSPopView *newNYSPopView = [[NYSPopView alloc] initWithFrame:window.bounds
                                                   direct:direct
                                                   onView:onView
                                              contentView:contentView
                                                   offSet:offset
                                             triangleView:triangleView
                                                animation:animation];
-    [window addSubview:newPopView];
-    newPopView.showAnimation = [PopAnimationTool getShowPopAnimationWithType:direct contentView:contentView belowView:nil];
-    newPopView.hidenAnimation = [PopAnimationTool getHidenPopAnimationWithType:direct contentView:contentView belowView:nil];
+    [window addSubview:newNYSPopView];
+    newNYSPopView.showAnimation = [NYSPopAnimationTool getShowPopAnimationWithType:direct contentView:contentView belowView:nil];
+    newNYSPopView.hidenAnimation = [NYSPopAnimationTool getHidenPopAnimationWithType:direct contentView:contentView belowView:nil];
     
-    [newPopView setPopMenuSubViewFrame];
-    [newPopView animationPopContainerViewWithOldPopView:oldPopView];
-    [newPopView bringSubviewToFront:newPopView.popContainerView];
-    return newPopView;
+    [newNYSPopView setPopMenuSubViewFrame];
+    [newNYSPopView animationPopContainerViewWithOldNYSPopView:oldNYSPopView];
+    [newNYSPopView bringSubviewToFront:newNYSPopView.popContainerView];
+    return newNYSPopView;
 }
 
 
 #pragma mark- slideAnimation
 + (instancetype)popSideContentView:(UIView *)contentView
-                            direct:(PopViewDirection)direction{
-    CABasicAnimation *showAnimation = [PopAnimationTool getShowPopAnimationWithType:direction contentView:contentView belowView:nil];
-    CABasicAnimation *hidenAnimation = [PopAnimationTool getHidenPopAnimationWithType:direction contentView:contentView belowView:nil];
+                            direct:(NYSPopViewDirection)direction{
+    CABasicAnimation *showAnimation = [NYSPopAnimationTool getShowPopAnimationWithType:direction contentView:contentView belowView:nil];
+    CABasicAnimation *hidenAnimation = [NYSPopAnimationTool getHidenPopAnimationWithType:direction contentView:contentView belowView:nil];
     
-    PopView *popView =  [self popContentView:contentView showAnimation:showAnimation hidenAnimation:hidenAnimation];
-    popView.popContainerView.center = [showAnimation.toValue CGPointValue];
-    return popView;
+    NYSPopView *NYSPopView =  [self popContentView:contentView showAnimation:showAnimation hidenAnimation:hidenAnimation];
+    NYSPopView.popContainerView.center = [showAnimation.toValue CGPointValue];
+    return NYSPopView;
 }
 
 + (instancetype)popSideContentView:(UIView *)contentView
                          belowView:(UIView *)belowView;{
-    PopViewDirection direction = PopViewDirection_SlideBelowView;
-    CABasicAnimation *showAnimation = [PopAnimationTool getShowPopAnimationWithType:direction contentView:contentView belowView:belowView];
-    CABasicAnimation *hidenAnimation = [PopAnimationTool getHidenPopAnimationWithType:direction contentView:contentView belowView:belowView];
+    NYSPopViewDirection direction = NYSPopViewDirection_SlideBelowView;
+    CABasicAnimation *showAnimation = [NYSPopAnimationTool getShowPopAnimationWithType:direction contentView:contentView belowView:belowView];
+    CABasicAnimation *hidenAnimation = [NYSPopAnimationTool getHidenPopAnimationWithType:direction contentView:contentView belowView:belowView];
     CGRect frame = belowView.superview.bounds;
     frame.origin.y = CGRectGetMaxY(belowView.frame);
     frame.size.height -= CGRectGetMaxY(belowView.frame);
     
-    PopView *oldPopView = (PopView *)[belowView.superview viewWithTag:popViewTag];
-    PopView *newPopView = [[PopView alloc] initWithFrame:frame
+    NYSPopView *oldNYSPopView = (NYSPopView *)[belowView.superview viewWithTag:NYSPopViewTag];
+    NYSPopView *newNYSPopView = [[NYSPopView alloc] initWithFrame:frame
                                                   direct:direction
                                                   onView:nil
                                              contentView:contentView
                                                   offSet:0
                                             triangleView:nil
                                                animation:YES];
-    [belowView.superview insertSubview:newPopView belowSubview:belowView];
-    newPopView.popContainerView.frame = contentView.frame;
-    [newPopView.popContainerView addSubview:contentView];
-    newPopView.clipsToBounds = YES;
+    [belowView.superview insertSubview:newNYSPopView belowSubview:belowView];
+    newNYSPopView.popContainerView.frame = contentView.frame;
+    [newNYSPopView.popContainerView addSubview:contentView];
+    newNYSPopView.clipsToBounds = YES;
     
-    newPopView.showAnimation = showAnimation;
-    newPopView.hidenAnimation = hidenAnimation;
+    newNYSPopView.showAnimation = showAnimation;
+    newNYSPopView.hidenAnimation = hidenAnimation;
     
-    [newPopView animationPopContainerViewWithOldPopView:oldPopView];
-    newPopView.popContainerView.center = [showAnimation.toValue CGPointValue];
-    return newPopView;
+    [newNYSPopView animationPopContainerViewWithOldNYSPopView:oldNYSPopView];
+    newNYSPopView.popContainerView.center = [showAnimation.toValue CGPointValue];
+    return newNYSPopView;
 }
 
 + (instancetype)popContentView:(UIView *)contentView
@@ -129,31 +128,31 @@ static  NSInteger const popViewTag              = 364;
             break;
         }
     }
-    PopView *oldPopView = (PopView *)[window viewWithTag:popViewTag];
-    PopView *newPopView = [[PopView alloc] initWithFrame:window.bounds
-                                                  direct:PopViewDirection_PopUpNone
+    NYSPopView *oldNYSPopView = (NYSPopView *)[window viewWithTag:NYSPopViewTag];
+    NYSPopView *newNYSPopView = [[NYSPopView alloc] initWithFrame:window.bounds
+                                                  direct:NYSPopViewDirection_PopUpNone
                                                   onView:nil
                                              contentView:contentView
                                                   offSet:0
                                             triangleView:nil
                                                animation:YES];
-    [window addSubview:newPopView];
-    newPopView.popContainerView.frame = contentView.frame;
-    [newPopView.popContainerView addSubview:contentView];
-    contentView.frame = newPopView.popContainerView.bounds;
+    [window addSubview:newNYSPopView];
+    newNYSPopView.popContainerView.frame = contentView.frame;
+    [newNYSPopView.popContainerView addSubview:contentView];
+    contentView.frame = newNYSPopView.popContainerView.bounds;
 
     
-    newPopView.showAnimation = showAnimation;
-    newPopView.hidenAnimation = hidenAnimation;
+    newNYSPopView.showAnimation = showAnimation;
+    newNYSPopView.hidenAnimation = hidenAnimation;
 
-    [newPopView animationPopContainerViewWithOldPopView:oldPopView];
-    [newPopView bringSubviewToFront:newPopView.popContainerView];
-    return newPopView;
+    [newNYSPopView animationPopContainerViewWithOldNYSPopView:oldNYSPopView];
+    [newNYSPopView bringSubviewToFront:newNYSPopView.popContainerView];
+    return newNYSPopView;
 }
 
 
 - (instancetype)initWithFrame:(CGRect)frame
-                       direct:(PopViewDirection)direct
+                       direct:(NYSPopViewDirection)direct
                        onView:(UIView *)onView
                   contentView:(UIView *)contentView
                        offSet:(CGFloat)offset
@@ -161,7 +160,7 @@ static  NSInteger const popViewTag              = 364;
                     animation:(BOOL)animation{
     self = [super initWithFrame:frame];
     if (self) {
-        self.tag = popViewTag;
+        self.tag = NYSPopViewTag;
         self.direct = direct;
         self.contentView = contentView;
         self.clickOutHidden = YES;
@@ -195,7 +194,7 @@ static  NSInteger const popViewTag              = 364;
         }
     }
     switch (self.direct) {
-        case PopViewDirection_PopUpBottom:
+        case NYSPopViewDirection_PopUpBottom:
             //1、计算在window上的位置
             //1.2、计算指示器在window的位置
             triangleFrame.origin.y = CGRectGetMaxY(onViewFrame);
@@ -204,11 +203,11 @@ static  NSInteger const popViewTag              = 364;
             //1.2、计算内容在window的位置
             contentFrame.origin.y = CGRectGetMaxY(triangleFrame);
             contentFrame.origin.x = onViewFrame.origin.x + onViewFrame.size.width/2 - contentFrame.size.width/2 + self.offset;
-            if (contentFrame.origin.x<popViewInsert) {
-                contentFrame.origin.x = popViewInsert;
+            if (contentFrame.origin.x<NYSPopViewInsert) {
+                contentFrame.origin.x = NYSPopViewInsert;
             }
             if (CGRectGetMaxX(contentFrame)>window.bounds.size.width) {
-                contentFrame.origin.x = window.bounds.size.width - popViewInsert - contentFrame.size.width;
+                contentFrame.origin.x = window.bounds.size.width - NYSPopViewInsert - contentFrame.size.width;
             }
             
             popContentFrame = CGRectUnion(triangleFrame, contentFrame);
@@ -232,7 +231,7 @@ static  NSInteger const popViewTag              = 364;
             self.popContainerView.layer.anchorPoint = anchorPoint;
             self.popContainerView.layer.position = CGPointMake(onViewFrame.origin.x + onViewFrame.size.width/2, CGRectGetMaxY(onViewFrame));
             break;
-        case PopViewDirection_PopUpTop:
+        case NYSPopViewDirection_PopUpTop:
             //1、计算在window上的位置
             //1.2、计算指示器在window的位置
             triangleFrame.origin.y = onViewFrame.origin.y;
@@ -241,11 +240,11 @@ static  NSInteger const popViewTag              = 364;
             //1.2、计算内容在window的位置
             contentFrame.origin.y = triangleFrame.origin.y - contentFrame.size.height;
             contentFrame.origin.x = onViewFrame.origin.x + onViewFrame.size.width/2 - contentFrame.size.width/2 + self.offset;
-            if (contentFrame.origin.x<popViewInsert) {
-                contentFrame.origin.x = popViewInsert;
+            if (contentFrame.origin.x<NYSPopViewInsert) {
+                contentFrame.origin.x = NYSPopViewInsert;
             }
             if (CGRectGetMaxX(contentFrame)>window.bounds.size.width) {
-                contentFrame.origin.x = window.bounds.size.width - popViewInsert - contentFrame.size.width;
+                contentFrame.origin.x = window.bounds.size.width - NYSPopViewInsert - contentFrame.size.width;
             }
             
             popContentFrame = CGRectUnion(triangleFrame, contentFrame);
@@ -271,7 +270,7 @@ static  NSInteger const popViewTag              = 364;
             self.popContainerView.layer.position = CGPointMake(onViewFrame.origin.x + onViewFrame.size.width/2, onViewFrame.origin.y);
             
             break;
-        case PopViewDirection_PopUpRight:
+        case NYSPopViewDirection_PopUpRight:
             
             //1、计算在window上的位置
             //1.2、计算指示器在window的位置
@@ -283,11 +282,11 @@ static  NSInteger const popViewTag              = 364;
             contentFrame.origin.x = CGRectGetMaxX(triangleFrame);
             
             //1、3备注：适配整个屏幕
-            if (contentFrame.origin.y<popViewInsert) {
-                contentFrame.origin.y = popViewInsert;
+            if (contentFrame.origin.y<NYSPopViewInsert) {
+                contentFrame.origin.y = NYSPopViewInsert;
             }
             if (CGRectGetMaxY(contentFrame)>window.bounds.size.height) {
-                contentFrame.origin.y = window.bounds.size.height - popViewInsert - contentFrame.size.height;
+                contentFrame.origin.y = window.bounds.size.height - NYSPopViewInsert - contentFrame.size.height;
             }
             
             popContentFrame = CGRectUnion(triangleFrame, contentFrame);
@@ -315,12 +314,12 @@ static  NSInteger const popViewTag              = 364;
             //5、超出屏幕外
             if (CGRectGetMaxX(contentFrame)>window.bounds.size.width) {
                 CGPoint popContentPosition = self.popContainerView.layer.position;
-                popContentPosition.x = window.bounds.size.width - popContentFrame.size.width - popViewInsert;
+                popContentPosition.x = window.bounds.size.width - popContentFrame.size.width - NYSPopViewInsert;
                 self.popContainerView.layer.position = popContentPosition;
             }
             break;
             
-        case PopViewDirection_PopUpLeft:
+        case NYSPopViewDirection_PopUpLeft:
             
             //1、计算在window上的位置
             //1.2、计算指示器在window的位置
@@ -332,11 +331,11 @@ static  NSInteger const popViewTag              = 364;
             contentFrame.origin.x = triangleFrame.origin.x - contentFrame.size.width;
             
             //1、3备注：适配整个屏幕
-            if (contentFrame.origin.y<popViewInsert) {
-                contentFrame.origin.y = popViewInsert;
+            if (contentFrame.origin.y<NYSPopViewInsert) {
+                contentFrame.origin.y = NYSPopViewInsert;
             }
             if (CGRectGetMaxY(contentFrame)>window.bounds.size.height) {
-                contentFrame.origin.x = window.bounds.size.height - popViewInsert - contentFrame.size.height;
+                contentFrame.origin.x = window.bounds.size.height - NYSPopViewInsert - contentFrame.size.height;
             }
             
             popContentFrame = CGRectUnion(triangleFrame, contentFrame);
@@ -361,7 +360,7 @@ static  NSInteger const popViewTag              = 364;
             self.popContainerView.layer.anchorPoint = anchorPoint;
             self.popContainerView.layer.position = CGPointMake(onViewFrame.origin.x, onViewFrame.origin.y + onViewFrame.size.height/2);
             break;
-        case PopViewDirection_PopUpNone:
+        case NYSPopViewDirection_PopUpNone:
             self.contentView.frame = self.contentView.bounds;
             self.popContainerView.frame = self.contentView.bounds;
             self.popContainerView.center = window.center;
@@ -375,7 +374,7 @@ static  NSInteger const popViewTag              = 364;
 - (void)backClick{
     if (!keyboardShow){
         if (self.clickOutHidden) {
-            [PopView hidenPopView];
+            [NYSPopView hidenNYSPopView];
         }
     }
     for (UIWindow *window in [UIApplication sharedApplication].windows) {
@@ -394,7 +393,7 @@ static  NSInteger const popViewTag              = 364;
         for (UIView *view in self.responseOnView.subviews) {
             CGRect subIframe = [view convertRect:view.bounds toView:nil];
             if (CGRectContainsPoint(subIframe, point)) {
-                [PopView hidenPopView];
+                [NYSPopView hidenNYSPopView];
                 responseView = view;
             }
         }
@@ -418,12 +417,12 @@ static  NSInteger const popViewTag              = 364;
 
 
 #pragma mark - animation
-- (void)animationPopContainerViewWithOldPopView:(PopView *)oldPopView{
-    if (oldPopView) {
-        if (oldPopView.willRemovedFromeSuperView) {
-            oldPopView.willRemovedFromeSuperView();
+- (void)animationPopContainerViewWithOldNYSPopView:(NYSPopView *)oldNYSPopView{
+    if (oldNYSPopView) {
+        if (oldNYSPopView.willRemovedFromeSuperView) {
+            oldNYSPopView.willRemovedFromeSuperView();
         }
-        [oldPopView removeFromSuperview];
+        [oldNYSPopView removeFromSuperview];
     }
     UIColor *color = self.backgroundColor;
     [self.popContainerView.layer addAnimation:self.showAnimation forKey:nil];
@@ -440,7 +439,7 @@ static  NSInteger const popViewTag              = 364;
     [self.layer addAnimation:animation forKey:@"backgroundColor"];
 }
 
-+ (void)hidenPopView{
++ (void)hidenNYSPopView{
     if (keyboardShow) {
         for (UIWindow *window in [UIApplication sharedApplication].windows) {
             if (window.isKeyWindow) {
@@ -456,7 +455,7 @@ static  NSInteger const popViewTag              = 364;
                 break;
             }
         }
-        PopView *popView = (PopView *)[window viewWithTag:popViewTag];
+        NYSPopView *popView = (NYSPopView *)[window viewWithTag:NYSPopViewTag];
         if (popView && ![popView.popContainerView.layer animationForKey:@"hiddenAnimation"]) {
             if (popView.willRemovedFromeSuperView) {
                 popView.willRemovedFromeSuperView();
@@ -496,10 +495,10 @@ static  NSInteger const popViewTag              = 364;
 }
 
 static BOOL keyboardShow = NO;
-static CGRect popViewOriginRect;
+static CGRect NYSPopViewOriginRect;
 -(void)keyboardWillShow:(NSNotification *)notification{
-    if (CGRectEqualToRect(popViewOriginRect, CGRectZero)) {
-        popViewOriginRect = self.popContainerView.frame;
+    if (CGRectEqualToRect(NYSPopViewOriginRect, CGRectZero)) {
+        NYSPopViewOriginRect = self.popContainerView.frame;
     }
     keyboardShow = YES;
     NSDictionary *userInfo = [notification userInfo];
@@ -528,14 +527,14 @@ static CGRect popViewOriginRect;
 }
 
 -(void)keyboardWillHide:(NSNotification *)notification{
-    if (!CGRectEqualToRect(popViewOriginRect, CGRectZero)) {
+    if (!CGRectEqualToRect(NYSPopViewOriginRect, CGRectZero)) {
         NSDictionary *userInfo = [notification userInfo];
         CGFloat animationDuration = [[userInfo valueForKey:@"UIKeyboardAnimationDurationUserInfoKey"] floatValue];
         [UIView animateWithDuration:animationDuration animations:^{
-            self.popContainerView.frame = popViewOriginRect;
+            self.popContainerView.frame = NYSPopViewOriginRect;
         }];
     }
-    popViewOriginRect = CGRectZero;
+    NYSPopViewOriginRect = CGRectZero;
     keyboardShow = NO;
 }
 
@@ -562,25 +561,25 @@ static CGRect popViewOriginRect;
     CGPoint point3 = CGPointZero;
     CGRect triangleFrame = CGRectZero;
     switch (self.direct) {
-        case PopViewDirection_PopUpLeft:
+        case NYSPopViewDirection_PopUpLeft:
             point1 = CGPointMake(10, 10);
             point2 = CGPointMake(0, 0);
             point3 = CGPointMake(0, 20);
             triangleFrame.size = CGSizeMake(10, 20);
             break;
-        case PopViewDirection_PopUpRight:
+        case NYSPopViewDirection_PopUpRight:
             point1 = CGPointMake(0, 10);
             point2 = CGPointMake(10, 20);
             point3 = CGPointMake(10, 0);
             triangleFrame.size = CGSizeMake(10, 20);
             break;
-        case PopViewDirection_PopUpBottom:
+        case NYSPopViewDirection_PopUpBottom:
             point1 = CGPointMake(10, 0);
             point2 = CGPointMake(20, 10);
             point3 = CGPointMake(0, 10);
             triangleFrame.size = CGSizeMake(20, 10);
             break;
-        case PopViewDirection_PopUpTop:
+        case NYSPopViewDirection_PopUpTop:
             point1 = CGPointMake(0, 0);
             point2 = CGPointMake(20, 0);
             point3 = CGPointMake(10, 10);

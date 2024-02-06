@@ -1,18 +1,17 @@
 //
-//  LEEBubble.m
-//  LEEBubble
+//  NYSBubbleButton.m
 //
-//  Created by 李响 on 16/8/15.
-//  Copyright © 2016年 lee. All rights reserved.
+//  NYSUIKit http://github.com/niyongsheng
+//  Copyright © 2020 NYS. ALL rights reserved.
 //
 
-#import "LEEBubble.h"
+#import "NYSBubbleButton.h"
 
 #define kBubbleWidth 48
 
 #define kOffSet kBubbleWidth / 2
 
-@interface LEEBubble ()<UIDynamicAnimatorDelegate>
+@interface NYSBubbleButton ()<UIDynamicAnimatorDelegate>
 
 @property (nonatomic , strong ) UIView *backgroundView;//背景视图
 
@@ -28,7 +27,7 @@
 
 @end
 
-@implementation LEEBubble
+@implementation NYSBubbleButton
 
 - (void)dealloc{
     

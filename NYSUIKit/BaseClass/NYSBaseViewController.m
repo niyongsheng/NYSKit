@@ -8,15 +8,15 @@
 #import "NYSBaseViewController.h"
 #import "LEETheme.h"
 #import "CMPopTipView.h"
-#import "WSScrollLabel.h"
+#import "NYSScrollLabel.h"
 #import "NYSUIKitPublicHeader.h"
 
 #import "UIImage+NYS.h"
 #import "UIButton+NYS.h"
 #import "NSBundle+NYSFramework.h"
+#import "UIScrollView+EmptyDataSet.h"
 
 #import <MJRefresh/MJRefresh.h>
-#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
 #define NYSTopHeight [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height + self.navigationController.navigationBar.frame.size.height
 

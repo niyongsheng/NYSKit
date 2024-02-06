@@ -1,5 +1,5 @@
 //
-//  UINavigationController+NYSUIKit.h
+//  UINavigationController+NYS.h
 //
 //  NYSUIKit http://github.com/niyongsheng
 //  Copyright © 2020 NYS. ALL rights reserved.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UINavigationController (NYSUIKit)
+@interface UINavigationController (NYS)
 
 /// 回退到指定控制器
 /// - Parameters:

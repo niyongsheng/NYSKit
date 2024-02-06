@@ -1,14 +1,13 @@
 //
-//  LEEBubble.h
-//  LEEBubble
+//  NYSBubbleButton.h
 //
-//  Created by 李响 on 16/8/15.
-//  Copyright © 2016年 lee. All rights reserved.
+//  NYSUIKit http://github.com/niyongsheng
+//  Copyright © 2020 NYS. ALL rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface LEEBubble : UIView
+@interface NYSBubbleButton : UIView
 
 /**
  *  颜色

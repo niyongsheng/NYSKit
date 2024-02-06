@@ -76,9 +76,9 @@ extension AppDelegate {
         CocoaDebugSettings.shared.enableLogMonitoring = true
         CocoaDebugSettings.shared.mainColor = NAppThemeColor.toHexString()
         // 内测更新提醒
-        FIRVersionCheck.setAPIToken(FirApiToken)
-        FIRVersionCheck.setTargetController(self.window?.rootViewController)
-        FIRVersionCheck.check()
+        NYSFirVersionCheck.setAPIToken(FirApiToken)
+        NYSFirVersionCheck.setTargetController(self.window?.rootViewController)
+        NYSFirVersionCheck.check()
         #endif
     }
     

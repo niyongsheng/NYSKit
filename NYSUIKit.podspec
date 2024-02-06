@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'NYSUIKit'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.platform         = :ios, '13.0'
   s.summary          = 'iOS scaffold UI framework.'
   s.homepage         = 'https://github.com/niyongsheng/NYSKit'
@@ -16,6 +16,5 @@ Pod::Spec.new do |s|
 ]
   s.dependency       'NYSKit', '~> 0.0.1'
   s.dependency       'MJRefresh', '~> 3.7.6'
-  s.dependency       'DZNEmptyDataSet', '~> 1.8.1'
   s.requires_arc     = true
 end

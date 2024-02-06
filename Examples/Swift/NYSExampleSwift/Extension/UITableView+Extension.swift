@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import NYSUIKit
 
 extension UITableView {
     
-    func reloadData(animationType: XSTableViewAnimationType) {
+    func reloadData(animationType: NYSTableViewAnimationType) {
         self.reloadData()
         if self.window != nil {
-            TableViewAnimationKit.show(with: animationType, tableView: self)
+            NYSTableViewAnimation.show(with: animationType, tableView: self)
         }
     }
     

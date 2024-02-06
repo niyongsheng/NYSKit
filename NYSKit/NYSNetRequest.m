@@ -244,7 +244,7 @@
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     
     // 加载动画-延时执行
-    [self performSelector:@selector(delayLoadingMethod) withObject:nil afterDelay:ShowDelayLoading];
+    [self performSelector:@selector(showLoadingAnimation) withObject:nil afterDelay:ShowDelayLoading];
     
     NSString *urlStr = [[[NYSKitManager sharedNYSKitManager] host] stringByAppendingString:url];
     if ([url containsString:@"http"]) {
@@ -281,7 +281,7 @@
                                              downloadProgress:nil
                                             completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         [SVProgressHUD dismissWithDelay:1.0f];
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(delayLoadingMethod) object:nil];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingAnimation) object:nil];
         
         handelLog(remark, urlStr, @"POST", [request allHTTPHeaderFields], parameters, responseObject, YES, timeStamp);
         if (!error) {
@@ -356,6 +356,8 @@
     }
 }
 
+/// JSON样式编码
+/// - Parameter dict: 字典
 + (NSString *)jsonPrettyStringEncoded:(NSDictionary *)dict {
     if ([NSJSONSerialization isValidJSONObject:dict]) {
         NSError *error;
@@ -458,12 +460,16 @@ static void handelLog(NSString *remark, NSString *urlStr, NSString *type, NSDict
 }
 
 /// 数据加载中
-+ (void)delayLoadingMethod {
++ (void)showLoadingAnimation {
     [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setHapticsEnabled:YES];
     [SVProgressHUD show];
+}
+
++ (void)dismiss {
+    [SVProgressHUD dismiss];
 }
 
 @end

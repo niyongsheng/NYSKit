@@ -1,13 +1,13 @@
 //
-//  UINavigationController+NYSUIKit.m
+//  UINavigationController+NYS.m
 //
 //  NYSUIKit http://github.com/niyongsheng
 //  Copyright © 2020 NYS. ALL rights reserved.
 //
 
-#import "UINavigationController+NYSUIKit.h"
+#import "UINavigationController+NYS.h"
 
-@implementation UINavigationController (NYSUIKit)
+@implementation UINavigationController (NYS)
 
 /// pop到指定控制器
 /// @param aClass 类
