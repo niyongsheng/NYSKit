@@ -23,8 +23,8 @@ NYSKit
 
 ## Usage
 ```ruby
-  pod 'NYSKit', :git => 'https://github.com/niyongsheng/NYSKit.git', :tag => '0.0.4'
-  pod 'NYSUIKit', :git => 'https://github.com/niyongsheng/NYSKit.git', :tag => '0.0.4'
+  pod 'NYSKit', :git => 'https://github.com/niyongsheng/NYSKit.git'
+  pod 'NYSUIKit', :git => 'https://github.com/niyongsheng/NYSKit.git'
 
   pod install
 ```

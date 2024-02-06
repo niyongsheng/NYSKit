@@ -9,11 +9,11 @@
 
 @implementation UIColor (NYS)
 
-+ (instancetype)initWithHexString:(NSString *)hexString {
-    [self initWithHexString:hexString alpha:1];
+- (instancetype)initWithHexString:(NSString *)hexString {
+    return [self initWithHexString:hexString alpha:1];
 }
 
-+ (instancetype)initWithHexString:(NSString *)hexString alpha:(CGFloat)alpha {
+- (instancetype)initWithHexString:(NSString *)hexString alpha:(CGFloat)alpha {
     NSString *formattedHex = [hexString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     formattedHex = [formattedHex stringByReplacingOccurrencesOfString:@"#" withString:@""];
     
@@ -28,7 +28,7 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
-+ (instancetype)randomColor {
+- (instancetype)initWithRandomColor {
     CGFloat red = arc4random() % 256 / 255.0;
     CGFloat green = arc4random() % 256 / 255.0;
     CGFloat blue = arc4random() % 256 / 255.0;
@@ -36,7 +36,7 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
 
-- (NSString *)hexString {
+- (NSString *)transformHexString {
     CGFloat red, green, blue, alpha;
     [self getRed:&red green:&green blue:&blue alpha:&alpha];
     

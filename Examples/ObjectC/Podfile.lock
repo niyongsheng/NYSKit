@@ -15,7 +15,6 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - CocoaDebug (1.7.7)
-  - DZNEmptyDataSet (1.8.1)
   - FLAnimatedImage (1.0.17)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -26,14 +25,13 @@ PODS:
     - JCore (>= 2.0.0)
   - Masonry (1.1.0)
   - MJRefresh (3.7.6)
-  - NYSKit (0.0.1):
+  - NYSKit (0.0.4):
     - AFNetworking (~> 4.0)
     - SVProgressHUD (~> 2.0)
   - NYSTK (0.0.8):
     - Masonry (>= 1.0.0)
-  - NYSUIKit (0.0.1):
-    - DZNEmptyDataSet (~> 1.8)
-    - MJRefresh (~> 3.7)
+  - NYSUIKit (0.0.4):
+    - MJRefresh (~> 3.7.6)
     - NYSKit (~> 0.0.1)
   - ReactiveObjC (3.1.1)
   - SVProgressHUD (2.3.1):
@@ -85,7 +83,6 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CocoaDebug
-    - DZNEmptyDataSet
     - FLAnimatedImage
     - FMDB
     - IQKeyboardManager
@@ -113,7 +110,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   CocoaDebug: b38d31464b91a9775928f8667d114db07b136565
-  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FLAnimatedImage: bbf914596368867157cc71b38a8ec834b3eeb32b
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: 904d013844bbae0abe073f015487bfebe5476335
@@ -121,9 +117,9 @@ SPEC CHECKSUMS:
   JPush: 76668b765fcfd7c15f86b05ca0e5cdc01945ce23
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
-  NYSKit: 5de54de2720a7c4df1e4fe860d06adb34f85331c
+  NYSKit: 08ac68e14c9d273fde565d11f9ea8f561ad8918e
   NYSTK: 2a3ed92c57614cce6fc20ed21cf82db2d9146217
-  NYSUIKit: c72193bec11a1e45afd3f61444cf1f98e1e43aa9
+  NYSUIKit: d420099db3cf00652d10a93028a81c2f32ef7a6c
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   UMAPM: e69eb6542a7c98f31a0d177d31ecfa1a2ceee1c3
@@ -134,6 +130,6 @@ SPEC CHECKSUMS:
   XHLaunchAd: 6320f9c68732667323072fc3a5f104e40fbe9cfe
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: fad8bcecd9a2956818ed0792204bf10fa9682f73
+PODFILE CHECKSUM: 40d995592fa55a853c4add7142547ba92f13a88f
 
 COCOAPODS: 1.12.0
