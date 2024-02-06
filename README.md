@@ -30,7 +30,7 @@ NYSKit
 ```
 ```objectivec
   #import <NYSKit/NYSKit.h>
-  #import <NYSKit/NYSKit.h>
+  #import <NYSUIKit/NYSUIKit.h>
 ```
 ```swift
   import NYSKit
