@@ -8,7 +8,7 @@
 #import "NYSPopAnimationTool.h"
 
 @implementation NYSPopAnimationTool
-+ (CABasicAnimation *)getShowPopAnimationWithType:(NYSPopViewDirection)popDirecton contentView:(UIView *)contentView belowView:(UIView *)belowView{
++ (CABasicAnimation *)getShowPopAnimationWithType:(NYSPopViewDirection)popDirecton contentView:(UIView *)contentView belowView:(UIView *)belowView {
     CABasicAnimation *showAnima = [CABasicAnimation animation];
     showAnima.duration = animationDuration;
     showAnima.repeatCount = 1;
@@ -26,19 +26,19 @@
         case NYSPopViewDirection_PopUpRight:
         case NYSPopViewDirection_PopUpTop:
         case NYSPopViewDirection_PopUpBottom:
-        case NYSPopViewDirection_PopUpNone:{
+        case NYSPopViewDirection_PopUpNone: {
             showAnima.keyPath = @"transform";
             CATransform3D tofrom = CATransform3DMakeScale(1, 1, 1);
             CATransform3D from = CATransform3DMakeScale(0, 0, 1);
             showAnima.fromValue = [NSValue valueWithCATransform3D:from];
             showAnima.toValue =  [NSValue valueWithCATransform3D:tofrom];
-        }break;
-        case NYSPopViewDirection_SlideInCenter:{
+        } break;
+        case NYSPopViewDirection_SlideInCenter: {
             showAnima.keyPath = @"position";
             showAnima.fromValue = [NSValue valueWithCGPoint:CGPointMake(ScreenWidth/2, -height/2)];
             showAnima.toValue = [NSValue valueWithCGPoint:CGPointMake(ScreenWidth/2, ScreenHeight/2)];
             showAnima.removedOnCompletion = YES;
-        }break;
+        } break;
         case NYSPopViewDirection_SlideFromLeft:
             showAnima.keyPath = @"position";
             showAnima.fromValue = [NSValue valueWithCGPoint:CGPointMake(-width/2, ScreenHeight/2)];
@@ -70,7 +70,7 @@
     return showAnima;
 }
 
-+ (CABasicAnimation *)getHidenPopAnimationWithType:(NYSPopViewDirection)popDirecton contentView:(UIView *)contentView belowView:(UIView *)belowView{
++ (CABasicAnimation *)getHidenPopAnimationWithType:(NYSPopViewDirection)popDirecton contentView:(UIView *)contentView belowView:(UIView *)belowView {
     CABasicAnimation *hidenAnima = [CABasicAnimation animation];
     hidenAnima.duration = animationDuration;
     hidenAnima.fillMode = kCAFillModeForwards;
@@ -86,18 +86,18 @@
         case NYSPopViewDirection_PopUpRight:
         case NYSPopViewDirection_PopUpTop:
         case NYSPopViewDirection_PopUpBottom:
-        case NYSPopViewDirection_PopUpNone:{
+        case NYSPopViewDirection_PopUpNone: {
             hidenAnima.keyPath = @"transform";
             CATransform3D tofrom = CATransform3DMakeScale(0, 0, 1);
             CATransform3D from = CATransform3DMakeScale(1, 1, 1);
             hidenAnima.fromValue = [NSValue valueWithCATransform3D:from];
             hidenAnima.toValue =  [NSValue valueWithCATransform3D:tofrom];
-        }break;
-        case NYSPopViewDirection_SlideInCenter:{
+        } break;
+        case NYSPopViewDirection_SlideInCenter: {
             hidenAnima.keyPath = @"position";
             hidenAnima.fromValue = [NSValue valueWithCGPoint:CGPointMake(ScreenWidth/2, ScreenHeight/2)];
             hidenAnima.toValue = [NSValue valueWithCGPoint:CGPointMake(ScreenWidth/2, ScreenHeight+height/2)];
-        }break;
+        } break;
         case NYSPopViewDirection_SlideFromLeft:
             hidenAnima.keyPath = @"position";
             hidenAnima.fromValue = [NSValue valueWithCGPoint:CGPointMake(width/2, ScreenHeight/2)];

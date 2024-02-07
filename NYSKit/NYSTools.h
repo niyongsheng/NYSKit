@@ -147,12 +147,14 @@ typedef void (^NYSToolsDismissCompletion)(void);
 /// @param msg 内容
 + (void)showToast:(NSString *)msg;
 
++ (void)showToast:(NSString *)msg image:(UIImage *)image;
 + (void)showToast:(NSString *)msg image:(UIImage *)image offset:(UIOffset)offset;
-
++ (void)showIconToast:(NSString *)msg isSuccess:(BOOL)isSuccess;
 + (void)showIconToast:(NSString *)msg isSuccess:(BOOL)isSuccess offset:(UIOffset)offset;
-
++ (void)showLoading;
++ (void)showLoading:(NSString *)msg;
++ (void)dismiss;
 + (void)dismissWithCompletion:(NYSToolsDismissCompletion)completion;
-
 + (void)dismissWithDelay:(NSTimeInterval)delay completion:(NYSToolsDismissCompletion)completion;
 
 #pragma mark - 自动根据已安装的地图app跳转导航

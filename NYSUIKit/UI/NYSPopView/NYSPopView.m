@@ -26,7 +26,7 @@
 @implementation NYSPopView
 
 static  NSInteger const NYSPopViewTag              = 364;
-+ (instancetype)getCurrentNYSPopView{
++ (instancetype)getCurrentNYSPopView {
     UIWindow *window = nil;
     for (UIWindow *win in [UIApplication sharedApplication].windows) {
         if (win.isKeyWindow) {
@@ -41,7 +41,7 @@ static  NSInteger const NYSPopViewTag              = 364;
 #pragma mark- popAnimation
 + (instancetype)popUpContentView:(UIView *)contentView
                         direct:(NYSPopViewDirection)direct
-                        onView:(UIView *)onView{
+                        onView:(UIView *)onView {
     return [self popUpContentView:contentView direct:direct onView:onView offset:0 triangleView:nil animation:YES];
 }
 
@@ -50,7 +50,7 @@ static  NSInteger const NYSPopViewTag              = 364;
                         onView:(UIView *)onView
                         offset:(CGFloat)offset
                   triangleView:(UIView *)triangleView
-                     animation:(BOOL)animation{
+                     animation:(BOOL)animation {
     UIWindow *window = nil;
     for (UIWindow *win in [UIApplication sharedApplication].windows) {
         if (win.isKeyWindow) {
@@ -79,7 +79,7 @@ static  NSInteger const NYSPopViewTag              = 364;
 
 #pragma mark- slideAnimation
 + (instancetype)popSideContentView:(UIView *)contentView
-                            direct:(NYSPopViewDirection)direction{
+                            direct:(NYSPopViewDirection)direction {
     CABasicAnimation *showAnimation = [NYSPopAnimationTool getShowPopAnimationWithType:direction contentView:contentView belowView:nil];
     CABasicAnimation *hidenAnimation = [NYSPopAnimationTool getHidenPopAnimationWithType:direction contentView:contentView belowView:nil];
     
@@ -89,7 +89,7 @@ static  NSInteger const NYSPopViewTag              = 364;
 }
 
 + (instancetype)popSideContentView:(UIView *)contentView
-                         belowView:(UIView *)belowView;{
+                         belowView:(UIView *)belowView {
     NYSPopViewDirection direction = NYSPopViewDirection_SlideBelowView;
     CABasicAnimation *showAnimation = [NYSPopAnimationTool getShowPopAnimationWithType:direction contentView:contentView belowView:belowView];
     CABasicAnimation *hidenAnimation = [NYSPopAnimationTool getHidenPopAnimationWithType:direction contentView:contentView belowView:belowView];
@@ -120,7 +120,7 @@ static  NSInteger const NYSPopViewTag              = 364;
 
 + (instancetype)popContentView:(UIView *)contentView
                      showAnimation:(CABasicAnimation *)showAnimation
-                    hidenAnimation:(CABasicAnimation *)hidenAnimation{
+                    hidenAnimation:(CABasicAnimation *)hidenAnimation {
     UIWindow *window = nil;
     for (UIWindow *win in [UIApplication sharedApplication].windows) {
         if (win.isKeyWindow) {
@@ -157,7 +157,7 @@ static  NSInteger const NYSPopViewTag              = 364;
                   contentView:(UIView *)contentView
                        offSet:(CGFloat)offset
                  triangleView:(UIView *)triangleView
-                    animation:(BOOL)animation{
+                    animation:(BOOL)animation {
     self = [super initWithFrame:frame];
     if (self) {
         self.tag = NYSPopViewTag;
@@ -179,7 +179,7 @@ static  NSInteger const NYSPopViewTag              = 364;
     return self;
 }
 
-- (void)setPopMenuSubViewFrame{
+- (void)setPopMenuSubViewFrame {
     CGRect triangleFrame = self.triangleView.bounds;
     CGRect contentFrame = self.contentView.bounds;
     CGRect popContentFrame = CGRectZero;
@@ -371,10 +371,10 @@ static  NSInteger const NYSPopViewTag              = 364;
     }
 }
 
-- (void)backClick{
-    if (!keyboardShow){
+- (void)backClick {
+    if (!keyboardShow) {
         if (self.clickOutHidden) {
-            [NYSPopView hidenNYSPopView];
+            [NYSPopView hidenPopView];
         }
     }
     for (UIWindow *window in [UIApplication sharedApplication].windows) {
@@ -386,14 +386,14 @@ static  NSInteger const NYSPopViewTag              = 364;
 }
 
 //处理响应者链
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     UIView *responseView = nil;
     CGRect iframe = [self.responseOnView convertRect:self.responseOnView.bounds toView:nil];
     if (CGRectContainsPoint(iframe, point)) {
         for (UIView *view in self.responseOnView.subviews) {
             CGRect subIframe = [view convertRect:view.bounds toView:nil];
             if (CGRectContainsPoint(subIframe, point)) {
-                [NYSPopView hidenNYSPopView];
+                [NYSPopView hidenPopView];
                 responseView = view;
             }
         }
@@ -417,7 +417,7 @@ static  NSInteger const NYSPopViewTag              = 364;
 
 
 #pragma mark - animation
-- (void)animationPopContainerViewWithOldNYSPopView:(NYSPopView *)oldNYSPopView{
+- (void)animationPopContainerViewWithOldNYSPopView:(NYSPopView *)oldNYSPopView {
     if (oldNYSPopView) {
         if (oldNYSPopView.willRemovedFromeSuperView) {
             oldNYSPopView.willRemovedFromeSuperView();
@@ -429,7 +429,7 @@ static  NSInteger const NYSPopViewTag              = 364;
     [self animationBackGroundColor:[UIColor clearColor] toColor:color];
 }
 
-- (void)animationBackGroundColor:(UIColor*)fromeColor toColor:(UIColor *)toColor{
+- (void)animationBackGroundColor:(UIColor*)fromeColor toColor:(UIColor *)toColor {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
     animation.fromValue = (id)fromeColor.CGColor;
     animation.toValue = (id)toColor.CGColor;
@@ -439,7 +439,7 @@ static  NSInteger const NYSPopViewTag              = 364;
     [self.layer addAnimation:animation forKey:@"backgroundColor"];
 }
 
-+ (void)hidenNYSPopView{
++ (void)hidenPopView {
     if (keyboardShow) {
         for (UIWindow *window in [UIApplication sharedApplication].windows) {
             if (window.isKeyWindow) {
@@ -475,7 +475,7 @@ static  NSInteger const NYSPopViewTag              = 364;
     }
 }
 
-- (void)removeFromSuperview{
+- (void)removeFromSuperview {
     if (self.didRemovedFromeSuperView) {
         self.didRemovedFromeSuperView();
     }
@@ -485,18 +485,18 @@ static  NSInteger const NYSPopViewTag              = 364;
 
 
 #pragma mark-处理键盘
--(void)addKeyboardNotification{
+- (void)addKeyboardNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
--(void)dealloc{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 static BOOL keyboardShow = NO;
 static CGRect NYSPopViewOriginRect;
--(void)keyboardWillShow:(NSNotification *)notification{
+- (void)keyboardWillShow:(NSNotification *)notification {
     if (CGRectEqualToRect(NYSPopViewOriginRect, CGRectZero)) {
         NYSPopViewOriginRect = self.popContainerView.frame;
     }
@@ -526,7 +526,7 @@ static CGRect NYSPopViewOriginRect;
     }
 }
 
--(void)keyboardWillHide:(NSNotification *)notification{
+- (void)keyboardWillHide:(NSNotification *)notification {
     if (!CGRectEqualToRect(NYSPopViewOriginRect, CGRectZero)) {
         NSDictionary *userInfo = [notification userInfo];
         CGFloat animationDuration = [[userInfo valueForKey:@"UIKeyboardAnimationDurationUserInfoKey"] floatValue];
@@ -539,7 +539,7 @@ static CGRect NYSPopViewOriginRect;
 }
 
 //找到输入框
-- (UIView *)responsInputViewOnView:(UIView *)onView{
+- (UIView *)responsInputViewOnView:(UIView *)onView {
     for (UIView *view in onView.subviews) {
         if (([view isKindOfClass:[UITextField class]] || [view isKindOfClass:[UITextView class]]) && view.isFirstResponder) {
             return view;
@@ -555,7 +555,7 @@ static CGRect NYSPopViewOriginRect;
 
 
 #pragma mark-lazy
-- (UIView *)defaultTriangleView{
+- (UIView *)defaultTriangleView {
     CGPoint point1 = CGPointZero;
     CGPoint point2 = CGPointZero;
     CGPoint point3 = CGPointZero;
@@ -604,7 +604,7 @@ static CGRect NYSPopViewOriginRect;
     return defaultTriangleView;
 }
 
-- (UIView *)popContainerView{
+- (UIView *)popContainerView {
     if (_popContainerView == nil) {
         _popContainerView = [[UIView alloc] init];
         [self addSubview:_popContainerView];

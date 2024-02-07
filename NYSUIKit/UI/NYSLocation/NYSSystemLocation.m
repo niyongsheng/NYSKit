@@ -13,51 +13,87 @@
 <
 CLLocationManagerDelegate
 >
-@property (nonatomic, assign) BOOL isLocationUpdating;
 @property (nonatomic, assign) NYSCoordinateType coordinateType;
 @property (nonatomic, strong) CLLocationManager *sysLocationManager;
+@property (nonatomic, strong) CLGeocoder *geoCoder;
 
 @end
 
 @implementation NYSSystemLocation
 
+- (CLGeocoder *)geoCoder {
+    if (!_geoCoder) {
+        _geoCoder = [[CLGeocoder alloc] init];
+    }
+    return _geoCoder;
+}
+
+- (CLLocationManager *)sysLocationManager {
+    if (!_sysLocationManager) {
+        _sysLocationManager = [[CLLocationManager alloc] init];
+        [_sysLocationManager setDelegate:self];
+        [_sysLocationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
+    }
+    return _sysLocationManager;
+}
+
 - (instancetype)init {
     if (self = [super init]) {
-        self.sysLocationManager = [[CLLocationManager alloc] init];
-        [self.sysLocationManager setDelegate:self];
         [self.sysLocationManager requestWhenInUseAuthorization];
-        [self.sysLocationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
     }
     return self;
 }
 
-#pragma mark - 系统定位
+#pragma mark - 开始定位
+/// 单次定位
 - (void)requestLocationSystem {
     [self requestLocation:NYSLocationTypeSysMap];
 }
 
+/// 单次定位
+/// - Parameter coordinateType: 坐标类型
 - (void)requestLocation:(NYSCoordinateType)coordinateType {
     _coordinateType = coordinateType;
     
-    if (!self.isLocationUpdating) {
-        self.isLocationUpdating = YES;
-        [self.sysLocationManager startUpdatingLocation];
-    } else {
-        [NYSTools showIconToast:@"Location services disable" isSuccess:false offset:UIOffsetMake(0, 0)];
-    }
+    [self.sysLocationManager requestLocation];
+    [NYSTools showLoading];
+    __weak __typeof(self)weakSelf = self;
+    [NYSTools dismissWithDelay:10 completion:^{
+        [weakSelf.sysLocationManager stopUpdatingLocation];
+    }];
+}
+
+/// 持续定位
+- (void)startUpdatingLocationSystem {
+    [self startUpdatingLocation:NYSLocationTypeSysMap];
+}
+
+/// 持续定位
+/// - Parameter coordinateType: 坐标类型
+- (void)startUpdatingLocation:(NYSCoordinateType)coordinateType {
+    _coordinateType = coordinateType;
+    
+    [self.sysLocationManager startUpdatingLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocation *currentLocation = [locations lastObject];
     CLLocationCoordinate2D coordinate = currentLocation.coordinate;
     [NYSTools log:self.class msg:[NSString stringWithFormat:@"lat:%f-lng:%f-Accuracy:%.2fm", coordinate.latitude, coordinate.longitude, currentLocation.horizontalAccuracy]];
+    [manager stopUpdatingLocation];
     
+    [self reverseGeocodeWithLocation:currentLocation];
+}
+
+- (void)reverseGeocodeWithLocation:(CLLocation * _Nonnull)currentLocation {
+    CLLocationCoordinate2D coordinate = currentLocation.coordinate;
+    if ([self.geoCoder isGeocoding]) return;
     
     // 系统逆地理编码
     __weak typeof(self) weakSelf = self;
-    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
-    
-    [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+    [self.geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        [NYSTools dismiss];
+        
         if (error) {
             if (weakSelf.completion) {
                 weakSelf.completion(@"", kCLLocationCoordinate2DInvalid, error);
@@ -95,24 +131,25 @@ CLLocationManagerDelegate
             }
         }
     }];
-    
-    [manager stopUpdatingLocation];
-    self.isLocationUpdating = NO;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error {
-    self.isLocationUpdating = NO;
     [NYSTools log:self.class error:error];
+    [NYSTools dismiss];
     
     if (_completion) {
         self.completion(@"", kCLLocationCoordinate2DInvalid, error);
     }
+    
+    [self.geoCoder cancelGeocode];
+    [manager stopUpdatingLocation];
 }
 
 - (void)dealloc {
     [self.sysLocationManager stopUpdatingLocation];
     self.sysLocationManager.delegate = nil;
     self.sysLocationManager = nil;
+    [self.geoCoder cancelGeocode];
 }
 
 @end

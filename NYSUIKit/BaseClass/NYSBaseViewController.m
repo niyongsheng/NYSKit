@@ -514,7 +514,7 @@ DZNEmptyDataSetDelegate
     _isShowLiftBack = isShowLiftBack;
     
     NSInteger VCCount = self.navigationController.viewControllers.count;
-    // 当控制器不在导航栈顶 或者 控制器是被present出来的 -> 展示返回按钮
+    // 当控制器不在栈顶 || 控制器是被present出来的 -> 展示返回按钮
     if (isShowLiftBack && ( VCCount > 1 || self.navigationController.presentingViewController != nil || self.tabBarController == nil)) {
         
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -75,7 +75,5 @@ typedef void(^NYSNetRequestFailed)(NSError * _Nullable error);
 /// JSON样式编码
 /// - Parameter dict: 字典
 + (NSString *)jsonPrettyStringEncoded:(NSDictionary *)dict;
-+ (void)showLoadingAnimation;
-+ (void)dismiss;
 
 @end

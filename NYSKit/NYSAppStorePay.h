@@ -14,18 +14,15 @@
 @optional
 
 /**
- wct20180418 内购支付成功回调
-
+ 内购支付成功回调
  @param appStorePay 当前类
  @param dicValue 返回值
  @param error 错误信息
  */
 - (void)NYSAppStorePay:(NYSAppStorePay *)appStorePay responseAppStorePaySuccess:(NSDictionary *)dicValue error:(NSError*)error;
 
-
 /**
- wct20180423 内购支付结果回调提示
- 
+ 内购支付结果回调提示
  @param appStorePay 当前类
  @param dicValue 返回值
  @param error 错误信息
@@ -36,11 +33,10 @@
 
 @interface NYSAppStorePay : NSObject
 
-@property (nonatomic, weak)id<NYSAppStorePayDelegate> delegate;/**<wct20180418 delegate*/
+@property (nonatomic, weak) id<NYSAppStorePayDelegate> delegate;
 
 /**
-  wct20180411 点击购买
-
+ 点击购买
  @param goodsID 商品id
  */
 -(void)starBuyToAppStore:(NSString *)goodsID;

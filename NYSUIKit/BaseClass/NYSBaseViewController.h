@@ -21,11 +21,10 @@ typedef NS_ENUM(NSInteger, NYSNavItemAlignment) {
     /// tabview style. default:UITableViewStylePlain
     UITableViewStyle _tableviewStyle;
 }
-
-@property (nonatomic, assign) NSInteger pageNum;
-@property (nonatomic, strong) NSMutableArray *dataSourceArr;
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UICollectionView *collectionView;
+/// 主数据源
+@property (nonatomic, strong) NSMutableArray    *dataSourceArr;
+@property (nonatomic, strong) UITableView       *tableView;
+@property (nonatomic, strong) UICollectionView  *collectionView;
 
 /** 状态栏主题样式 */
 @property (nonatomic, assign) UIStatusBarStyle customStatusBarStyle;
@@ -39,7 +38,7 @@ typedef NS_ENUM(NSInteger, NYSNavItemAlignment) {
 /// Empty \ Error info
 @property (nonatomic, strong) NSError *emptyError;
 
-/** Theme config, allow overridden */
+/** Theme UI VM, allow overridden */
 - (void)configTheme;
 - (void)setupUI;
 - (void)bindViewModel;
@@ -52,9 +51,9 @@ typedef NS_ENUM(NSInteger, NYSNavItemAlignment) {
 /// Pull up refresh handler
 - (void)footerRereshing;
 
-/// 导航栏添加文字按钮
+/// 导航栏添加文字
 - (void)addNavigationItemWithTitles:(NSArray<NSString *> *)titles alignment:(NYSNavItemAlignment)alignment completion:(NYSNavItemCompletion)completion;
-/// 导航栏添加图标按钮
+/// 导航栏添加图标
 - (void)addNavigationItemWithImages:(NSArray<UIImage *> *)images alignment:(NYSNavItemAlignment)alignment completion:(NYSNavItemCompletion)completion;
 /// 导航栏添加按钮
 - (void)addNavigationItems:(NSArray<UIButton *> *)buttonArray alignment:(NYSNavItemAlignment)alignment completion:(NYSNavItemCompletion)completion;

@@ -10,9 +10,14 @@
 #import "NYSKitPublicHeader.h"
 #import <StoreKit/StoreKit.h>
 
-@interface NYSAppStorePay()<SKPaymentTransactionObserver,SKProductsRequestDelegate>
+@interface NYSAppStorePay()
+<
+SKPaymentTransactionObserver,
+SKProductsRequestDelegate
+>
 
-@property (nonatomic, strong) NSString *goodsId;/**<wct20180420  商品id*/
+/// 商品id
+@property (nonatomic, strong) NSString *goodsId;
 
 @end
 
@@ -34,7 +39,6 @@
 - (void)starBuyToAppStore:(NSString *)goodsID {
     if ([SKPaymentQueue canMakePayments]) {
         [self getRequestAppleProduct:goodsID];
-        
     } else {
         [NYSTools showToast:@"当前设备不支持购买"];
     }
@@ -50,7 +54,7 @@
     
     // SKProductsRequest参考链接：https://developer.apple.com/documentation/storekit/skproductsrequest
     // SKProductsRequest 一个对象，可以从App Store检索有关指定产品列表的本地化信息。
-    SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:nsset];// 8.初始化请求
+    SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:nsset]; // 初始化请求
     request.delegate = self;
     [request start];
 }
@@ -101,9 +105,9 @@
             requestProduct = pro;
         }
     }
-    // 发送购买请求，创建票据  这个时候就会有弹框了
+    // 发送购买请求，创建票据
     SKPayment *payment = [SKPayment paymentWithProduct:requestProduct];
-    [[SKPaymentQueue defaultQueue] addPayment:payment];//将票据加入到交易队列
+    [[SKPaymentQueue defaultQueue] addPayment:payment]; // 将票据加入到交易队列
 }
 
 #pragma mark - SKRequestDelegate
@@ -116,9 +120,7 @@
     DBGLog(@"信息反馈结束");
 }
 
-
 #pragma mark - SKPaymentTransactionObserver 监听购买结果
-// 监听购买结果
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transaction {
     if (self.delegate && [self.delegate respondsToSelector:@selector(NYSAppStorePay:responseAppStorePayStatusshow:error:)]) {
         [self.delegate NYSAppStorePay:self responseAppStorePayStatusshow:@{@"value":transaction} error:nil];

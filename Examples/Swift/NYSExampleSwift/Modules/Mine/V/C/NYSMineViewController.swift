@@ -228,7 +228,7 @@ class NYSMineViewController: NYSRootViewController, UIScrollViewDelegate {
                     }
                 }
             }
-            systemLocation?.requestSystem()
+            systemLocation?.startUpdatingLocationSystem()
             
 //            systemLocation?.completion = { address, latitude, longitude, error in
 //

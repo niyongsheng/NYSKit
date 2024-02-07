@@ -459,17 +459,8 @@ static void handelLog(NSString *remark, NSString *urlStr, NSString *type, NSDict
     }
 }
 
-/// 数据加载中
 + (void)showLoadingAnimation {
-    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
-    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-    [SVProgressHUD setHapticsEnabled:YES];
-    [SVProgressHUD show];
-}
-
-+ (void)dismiss {
-    [SVProgressHUD dismiss];
+    [NYSTools showLoading];
 }
 
 @end

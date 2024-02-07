@@ -389,6 +389,10 @@
     [self showToast:msg image:nil offset:UIOffsetMake(0, 0)];
 }
 
++ (void)showToast:(NSString *)msg image:(UIImage *)image {
+    [self showToast:msg image:image offset:UIOffsetMake(0, 0)];
+}
+
 + (void)showToast:(NSString *)msg image:(UIImage *)image offset:(UIOffset)offset {
     [SVProgressHUD setHapticsEnabled:YES];
     [SVProgressHUD setMinimumDismissTimeInterval:1.5];
@@ -398,6 +402,10 @@
     [SVProgressHUD setOffsetFromCenter:offset];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD showImage:image status:msg];
+}
+
++ (void)showIconToast:(NSString *)msg isSuccess:(BOOL)isSuccess {
+    [self showIconToast:msg isSuccess:isSuccess offset:UIOffsetMake(0, 0)];
 }
 
 + (void)showIconToast:(NSString *)msg isSuccess:(BOOL)isSuccess offset:(UIOffset)offset {
@@ -412,7 +420,26 @@
         [SVProgressHUD showSuccessWithStatus:msg];
     } else {
         [SVProgressHUD showInfoWithStatus:msg];
+        [[[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight] impactOccurred];
     }
+}
+
++ (void)showLoading {
+    [self showLoading:nil];
+}
+
+/// 加载中
++ (void)showLoading:(NSString *)msg {
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD setOffsetFromCenter:UIOffsetMake(0, 0)];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setHapticsEnabled:YES];
+    [SVProgressHUD showWithStatus:msg];
+}
+
++ (void)dismiss {
+    [SVProgressHUD dismiss];
 }
 
 + (void)dismissWithCompletion:(NYSToolsDismissCompletion)completion {

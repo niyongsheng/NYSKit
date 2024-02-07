@@ -16,8 +16,7 @@ typedef NS_ENUM(NSUInteger, NYSPopViewDirection) {
     NYSPopViewDirection_PopUpRight,
     NYSPopViewDirection_PopUpTop,
     NYSPopViewDirection_PopUpNone,
-
-
+    
     
     NYSPopViewDirection_SlideFromLeft                 = 20,
     NYSPopViewDirection_SlideFromRight                = 21,
@@ -95,7 +94,7 @@ typedef NS_ENUM(NSUInteger, NYSPopViewDirection) {
 
 
 //隐藏当前的NYSPopView
-+ (void)hidenNYSPopView;
++ (void)hidenPopView;
 
 //获取当前的NYSPopView
 + (instancetype)getCurrentNYSPopView;
