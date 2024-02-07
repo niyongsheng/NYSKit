@@ -1,6 +1,5 @@
 //
 //  DBManager.m
-//  NYSExampleObjC
 //
 //  Created by 倪永胜 on 2020/7/18.
 //  Copyright © 2020 niyongsheng. All rights reserved.
@@ -43,7 +42,7 @@ SINGLETON_FOR_CLASS(DBManager);
 - (void)createTableWithSQL:(NSString *)sql {
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
-        BOOL result = [db executeUpdate:sql withArgumentsInArray:nil];
+        BOOL result = [db executeUpdate:sql withArgumentsInArray:@[]];
         if (result) {
             NLog(@"创建表格成功");
         } else {
@@ -56,7 +55,7 @@ SINGLETON_FOR_CLASS(DBManager);
 - (void)dropTableWithSQL:(NSString *)sql {
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
-        BOOL result = [db executeUpdate:sql withArgumentsInArray:nil];
+        BOOL result = [db executeUpdate:sql withArgumentsInArray:@[]];
         if (result) {
             NLog(@"删除表格成功");
         } else {
@@ -69,7 +68,7 @@ SINGLETON_FOR_CLASS(DBManager);
 - (void)insertDataWithSQL:(NSString *)sql {
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
-        BOOL result = [db executeUpdate:sql withArgumentsInArray:nil];
+        BOOL result = [db executeUpdate:sql withArgumentsInArray:@[]];
         if (result) {
             NLog(@"插入数据成功");
         } else {
@@ -84,7 +83,7 @@ SINGLETON_FOR_CLASS(DBManager);
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *sql = @"select * from T_human";
         
-        FMResultSet *resultSet = [db executeQuery:sql withArgumentsInArray:nil];
+        FMResultSet *resultSet = [db executeQuery:sql withArgumentsInArray:@[]];
         
         while (resultSet.next) {
             NSString *name = [resultSet stringForColumn:@"name"];
@@ -118,8 +117,8 @@ SINGLETON_FOR_CLASS(DBManager);
         NSString *sql = @"insert into T_human(name, age, height) values('wangwu', 15, 170);insert into T_human(name, age, height) values('zhaoliu', 13, 160);";
         NSString *sql2 = @"insert into T_human(name, age, height) values('zhaoliu', 13, 160);insert into T_human(name, age, height) values('wangwu', 15, 170);";
         
-        BOOL result1 = [db executeUpdate:sql withArgumentsInArray:nil];
-        BOOL result2 = [db executeUpdate:sql2 withArgumentsInArray:nil];
+        BOOL result1 = [db executeUpdate:sql withArgumentsInArray:@[]];
+        BOOL result2 = [db executeUpdate:sql2 withArgumentsInArray:@[]];
         
         if (result1 && result2) {
             NLog(@"执行成功");

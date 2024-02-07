@@ -90,6 +90,7 @@
 		C893E3EE2B5F552F0087AB36 /* NYSTextAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C893E3ED2B5F552F0087AB36 /* NYSTextAlertView.xib */; };
 		C8958BB02B6B5FE400693DAE /* NYSPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8958BAE2B6B5FE400693DAE /* NYSPreviewViewController.swift */; };
 		C8958BB12B6B5FE400693DAE /* NYSPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8958BAF2B6B5FE400693DAE /* NYSPreviewViewController.xib */; };
+		C89E827B2B731986002BEC52 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89E827A2B731986002BEC52 /* AppDelegate+Extension.swift */; };
 		C8A00F272B464CBD00245D94 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A00F262B464CBD00245D94 /* Transform.swift */; };
 		C8A4BE292B4B99E500152E14 /* system.style in Resources */ = {isa = PBXBuildFile; fileRef = C8A4BE282B4B99E400152E14 /* system.style */; };
 		C8A4BE2B2B4B9E5600152E14 /* NYSHomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A4BE2A2B4B9E5600152E14 /* NYSHomeListCell.swift */; };
@@ -223,6 +224,7 @@
 		C893E3ED2B5F552F0087AB36 /* NYSTextAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYSTextAlertView.xib; sourceTree = "<group>"; };
 		C8958BAE2B6B5FE400693DAE /* NYSPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSPreviewViewController.swift; sourceTree = "<group>"; };
 		C8958BAF2B6B5FE400693DAE /* NYSPreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NYSPreviewViewController.xib; sourceTree = "<group>"; };
+		C89E827A2B731986002BEC52 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		C8A00F262B464CBD00245D94 /* Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
 		C8A4BE282B4B99E400152E14 /* system.style */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = system.style; sourceTree = "<group>"; };
 		C8A4BE2A2B4B9E5600152E14 /* NYSHomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSHomeListCell.swift; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				C8597AC929F522D9008BEE7F /* PrefixHeader.pch */,
 				C8621DEC2B3182EE00F90DF0 /* Bridging-Header.h */,
 				C8597A8129F5119E008BEE7F /* AppDelegate.swift */,
+				C89E827A2B731986002BEC52 /* AppDelegate+Extension.swift */,
 				C8597A8529F5119E008BEE7F /* ViewController.swift */,
 				C8597A8729F5119E008BEE7F /* Main.storyboard */,
 				C8597A8C29F511A0008BEE7F /* LaunchScreen.storyboard */,
@@ -1032,6 +1035,7 @@
 				C8474E532B43DD54001DE04A /* NYSRootViewController.swift in Sources */,
 				C8958BB02B6B5FE400693DAE /* NYSPreviewViewController.swift in Sources */,
 				C83162A72B4CE5160014CFE1 /* UIScrollView+RxSwift.swift in Sources */,
+				C89E827B2B731986002BEC52 /* AppDelegate+Extension.swift in Sources */,
 				C85D7E7C2B60F34300C4BC93 /* NYSImageItemView.swift in Sources */,
 				C8ED6DDB2B51494D000F2268 /* NYSRootWebViewController.swift in Sources */,
 				C8ED6DE02B550A61000F2268 /* NYSRootCodable.swift in Sources */,
