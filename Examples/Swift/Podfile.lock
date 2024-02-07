@@ -52,10 +52,10 @@ PODS:
   - Kingfisher (7.10.1)
   - lottie-ios (2.5.3)
   - MJRefresh (3.7.6)
-  - NYSKit (0.0.4):
+  - NYSKit (0.0.6):
     - AFNetworking (~> 4.0)
     - SVProgressHUD (~> 2.0)
-  - NYSUIKit (0.0.4):
+  - NYSUIKit (0.0.6):
     - MJRefresh (~> 3.7.6)
     - NYSKit (~> 0.0.1)
   - RxCocoa (6.6.0):
@@ -160,8 +160,8 @@ SPEC CHECKSUMS:
   Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
-  NYSKit: 08ac68e14c9d273fde565d11f9ea8f561ad8918e
-  NYSUIKit: d420099db3cf00652d10a93028a81c2f32ef7a6c
+  NYSKit: b632a9f33c4c19103f66ba3276b8d519ece9f123
+  NYSUIKit: 01e93c7f1e7482f8b2052c61dab3a4db036701f0
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632

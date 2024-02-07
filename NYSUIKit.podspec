@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'NYSUIKit'
-  s.version          = '0.0.5'
+  s.version          = '0.0.6'
   s.platform         = :ios, '13.0'
   s.summary          = 'iOS scaffold UI framework.'
   s.homepage         = 'https://github.com/niyongsheng/NYSKit'

@@ -45,6 +45,8 @@ NYSKit
 ## Architecture
 ```text
 NYSKit
+├─ NYSAppStorePay.h
+├─ NYSAppStorePay.m
 ├─ NYSError.h
 ├─ NYSError.m
 ├─ NYSKeyChain.h
@@ -78,7 +80,6 @@ NYSUIKit
 │    ├─ NYSBaseWindow.h
 │    ├─ NYSBaseWindow.m
 │    └─ WebViewController
-│           ├─ ErrorHtml
 │           ├─ NYSJSHandler.h
 │           ├─ NYSJSHandler.m
 │           ├─ NYSWebViewController.h
@@ -92,14 +93,20 @@ NYSUIKit
 │    ├─ NSDictionary+NilSafe.m
 │    ├─ NSError+NYS.h
 │    ├─ NSError+NYS.m
+│    ├─ NSString+NYS.h
+│    ├─ NSString+NYS.m
 │    ├─ UIButton+NYS.h
 │    ├─ UIButton+NYS.m
+│    ├─ UIColor+NYS.h
+│    ├─ UIColor+NYS.m
 │    ├─ UIImage+NYS.h
 │    ├─ UIImage+NYS.m
 │    ├─ UINavigationController+FDFullscreenPopGesture.h
 │    ├─ UINavigationController+FDFullscreenPopGesture.m
-│    ├─ UINavigationController+NYSUIKit.h
-│    ├─ UINavigationController+NYSUIKit.m
+│    ├─ UINavigationController+NYS.h
+│    ├─ UINavigationController+NYS.m
+│    ├─ UIScrollView+EmptyDataSet.h
+│    ├─ UIScrollView+EmptyDataSet.m
 │    ├─ UITextField+NYS.h
 │    ├─ UITextField+NYS.m
 │    ├─ UIView+NYS.h
@@ -109,11 +116,74 @@ NYSUIKit
 │           ├─ README.md
 │           ├─ ThemeManager.h
 │           └─ ThemeManager.m
-├─ NYSUIKit
 ├─ NYSUIKit.h
 ├─ NYSUIKitPublicHeader.h
-├─ Resources(资源文件:字体、图片、国际化)
-├─ UI(UI组件库)
+├─ Resources
+│    ├─ NYSUIKit.bundle
+│    │    ├─ Info.plist
+│    │    ├─ en.lproj
+│    │    ├─ lao.lproj
+│    │    ├─ zh-Hans.lproj
+│    │    └─ zh-Hant.lproj
+│    ├─ NYSUIKit.xcassets
+│    │    ├─ Contents.json
+│    │    ├─ EmptyData
+│    │    ├─ Refresh
+│    │    ├─ Theme
+│    │    └─ TopBar
+│    ├─ douyuFont.otf
+│    └─ load_error.html
+├─ UI
+│    ├─ BFPaperCheckbox
+│    │    ├─ BFPaperCheckbox.h
+│    │    └─ BFPaperCheckbox.m
+│    ├─ CMPopTipView
+│    │    ├─ CMPopTipView.h
+│    │    └─ CMPopTipView.m
+│    ├─ LEETheme
+│    │    ├─ LEETheme.h
+│    │    ├─ LEETheme.m
+│    │    └─ LEEThemeHelper.h
+│    ├─ NYSBlugeTabBar
+│    │    ├─ NYSBlugeTabBar.h
+│    │    └─ NYSBlugeTabBar.m
+│    ├─ NYSBubbleButton
+│    │    ├─ NYSBubbleButton.h
+│    │    └─ NYSBubbleButton.m
+│    ├─ NYSFirVersionCheck
+│    │    ├─ NYSFirVersionCheck.h
+│    │    └─ NYSFirVersionCheck.m
+│    ├─ NYSIconLeftButton
+│    │    ├─ NYSIconLeftButton.h
+│    │    └─ NYSIconLeftButton.m
+│    ├─ NYSLabel
+│    │    ├─ NYSLabel.h
+│    │    └─ NYSLabel.m
+│    ├─ NYSLoadingButton
+│    │    ├─ NYSLoadingButton.h
+│    │    └─ NYSLoadingButton.m
+│    ├─ NYSLocation
+│    │    ├─ NYSLocationTransform.h
+│    │    ├─ NYSLocationTransform.m
+│    │    ├─ NYSSystemLocation.h
+│    │    └─ NYSSystemLocation.m
+│    ├─ NYSMemoryLabel
+│    │    ├─ NYSMemoryLabel.h
+│    │    └─ NYSMemoryLabel.m
+│    ├─ NYSPopView
+│    │    ├─ NYSPopAnimationTool.h
+│    │    ├─ NYSPopAnimationTool.m
+│    │    ├─ NYSPopView.h
+│    │    └─ NYSPopView.m
+│    ├─ NYSScrollLabel
+│    │    ├─ NYSScrollLabel.h
+│    │    └─ NYSScrollLabel.m
+│    ├─ NYSTableViewAnimation
+│    │    ├─ NYSTableViewAnimation.h
+│    │    └─ NYSTableViewAnimation.m
+│    └─ YYFPSLabel
+│           ├─ YYFPSLabel.h
+│           └─ YYFPSLabel.m
 └─ Utilities
        ├─ NYSUIKitUtilities.h
        └─ NYSUIKitUtilities.m

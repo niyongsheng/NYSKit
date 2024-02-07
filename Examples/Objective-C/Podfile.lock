@@ -25,12 +25,12 @@ PODS:
     - JCore (>= 2.0.0)
   - Masonry (1.1.0)
   - MJRefresh (3.7.6)
-  - NYSKit (0.0.4):
+  - NYSKit (0.0.6):
     - AFNetworking (~> 4.0)
     - SVProgressHUD (~> 2.0)
   - NYSTK (0.0.8):
     - Masonry (>= 1.0.0)
-  - NYSUIKit (0.0.4):
+  - NYSUIKit (0.0.6):
     - MJRefresh (~> 3.7.6)
     - NYSKit (~> 0.0.1)
   - ReactiveObjC (3.1.1)
@@ -117,9 +117,9 @@ SPEC CHECKSUMS:
   JPush: 76668b765fcfd7c15f86b05ca0e5cdc01945ce23
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
-  NYSKit: 08ac68e14c9d273fde565d11f9ea8f561ad8918e
+  NYSKit: b632a9f33c4c19103f66ba3276b8d519ece9f123
   NYSTK: 2a3ed92c57614cce6fc20ed21cf82db2d9146217
-  NYSUIKit: d420099db3cf00652d10a93028a81c2f32ef7a6c
+  NYSUIKit: 01e93c7f1e7482f8b2052c61dab3a4db036701f0
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   UMAPM: e69eb6542a7c98f31a0d177d31ecfa1a2ceee1c3
