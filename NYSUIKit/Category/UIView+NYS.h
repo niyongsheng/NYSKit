@@ -21,10 +21,13 @@ IB_DESIGNABLE
 /// 圆角半径
 @property (nonatomic, assign) IBInspectable CGFloat cornerRadius;
 
-/// 添加加载动画
-+ (UIView*)loadingAnimation;
-/// 移除加载动画
-+ (void)removeLoadingAnimation;
+/// 显示加载动画(毛玻璃效果)
+/// - Parameter tintColor: 指示器颜色
++ (UIView*)showLoadingWithTintColor:(UIColor *)tintColor;
+
+/// 显示加载动画
+/// - Parameter image: 自定义旋转图
++ (UIView*)showLoadingWithImage:(UIImage *)image;
 
 @property (nonatomic, copy) NYSTapActionBlock tapActionBlock;
 /// 添加点击事件

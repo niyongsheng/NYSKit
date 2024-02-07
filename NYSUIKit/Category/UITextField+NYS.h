@@ -7,10 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
 @interface UITextField (NYS)
 
 /// 最大可输入位数
-@property (assign, nonatomic) NSInteger maxLength;
+@property (assign, nonatomic) IBInspectable NSInteger maxLength;
 
 @end
 

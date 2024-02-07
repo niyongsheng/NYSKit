@@ -122,6 +122,9 @@ NYSUIKit
 │    ├─ NYSUIKit.bundle
 │    │    ├─ Info.plist
 │    │    ├─ en.lproj
+│    │    ├─ es.lproj
+│    │    ├─ ja.lproj
+│    │    ├─ ko.lproj
 │    │    ├─ lao.lproj
 │    │    ├─ zh-Hans.lproj
 │    │    └─ zh-Hant.lproj

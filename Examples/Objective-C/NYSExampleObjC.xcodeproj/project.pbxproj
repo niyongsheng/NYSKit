@@ -29,6 +29,7 @@
 		C891E85E24B8562C00AF0019 /* UMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E85D24B8562C00AF0019 /* UMManager.m */; };
 		C891E86324B856DF00AF0019 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E86224B856DF00AF0019 /* UserManager.m */; };
 		C891E86824B85C0900AF0019 /* NYSNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C891E86724B85C0900AF0019 /* NYSNewfeatureViewController.m */; };
+		C89E827E2B733B28002BEC52 /* NYSNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89E827D2B733B28002BEC52 /* NYSNoticeViewController.m */; };
 		C8C431A724BC351E0041311C /* themejson_night.json in Resources */ = {isa = PBXBuildFile; fileRef = C8C431A424BC351E0041311C /* themejson_night.json */; };
 		C8C431A824BC351E0041311C /* themejson_day.json in Resources */ = {isa = PBXBuildFile; fileRef = C8C431A624BC351E0041311C /* themejson_day.json */; };
 		C8C58D2B24B94A1200CFB68F /* NYSOpenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C58D2924B94A1200CFB68F /* NYSOpenViewController.m */; };
@@ -88,6 +89,8 @@
 		C891E86224B856DF00AF0019 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		C891E86624B85C0900AF0019 /* NYSNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSNewfeatureViewController.h; sourceTree = "<group>"; };
 		C891E86724B85C0900AF0019 /* NYSNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSNewfeatureViewController.m; sourceTree = "<group>"; };
+		C89E827C2B733B28002BEC52 /* NYSNoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSNoticeViewController.h; sourceTree = "<group>"; };
+		C89E827D2B733B28002BEC52 /* NYSNoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYSNoticeViewController.m; sourceTree = "<group>"; };
 		C8C431A424BC351E0041311C /* themejson_night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = themejson_night.json; sourceTree = "<group>"; };
 		C8C431A624BC351E0041311C /* themejson_day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = themejson_day.json; sourceTree = "<group>"; };
 		C8C58D2824B94A1200CFB68F /* NYSOpenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYSOpenViewController.h; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 			children = (
 				C82DD0F52B6F48ED00FD2BD8 /* NYSHomeViewController.h */,
 				C82DD0F62B6F48ED00FD2BD8 /* NYSHomeViewController.m */,
+				C89E827C2B733B28002BEC52 /* NYSNoticeViewController.h */,
+				C89E827D2B733B28002BEC52 /* NYSNoticeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				C891E85E24B8562C00AF0019 /* UMManager.m in Sources */,
 				C891E80624B8112200AF0019 /* NYSLoginViewController.m in Sources */,
 				C8C58D4A24B9647500CFB68F /* NYSNewViewController.m in Sources */,
+				C89E827E2B733B28002BEC52 /* NYSNoticeViewController.m in Sources */,
 				C8C58D5924B9B16B00CFB68F /* NYSUserInfo.m in Sources */,
 				C891E80224B8110400AF0019 /* NYSTabBarViewController.m in Sources */,
 				C8C58D5A24B9B16B00CFB68F /* NYSProfile.m in Sources */,

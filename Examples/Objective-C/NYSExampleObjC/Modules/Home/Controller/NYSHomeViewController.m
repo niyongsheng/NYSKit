@@ -7,6 +7,7 @@
 //
 
 #import "NYSHomeViewController.h"
+#import "NYSNoticeViewController.h"
 
 @interface NYSHomeViewController ()
 
@@ -24,16 +25,11 @@
     
     [self.view addSubview:self.tableView];
     
-    [self initNavItem];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"notification_icon"] imageWithRenderingMode:UIImageRenderingModeAutomatic] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemOnclicked)];
 }
 
-- (void)initNavItem {
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"notification_icon"] imageWithRenderingMode:UIImageRenderingModeAutomatic] style:UIBarButtonItemStyleDone target:self action:nil];
-    WS(weakSelf);
-    [rightItem setActionBlock:^(id _Nonnull sender) {
-        [weakSelf.navigationController pushViewController:NYSBaseViewController.new animated:YES];
-    }];
-    self.navigationItem.rightBarButtonItem = rightItem;
+- (void)rightItemOnclicked {
+    [self.navigationController pushViewController:NYSNoticeViewController.new animated:YES];
 }
 
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
