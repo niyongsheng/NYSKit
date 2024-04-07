@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   'NYSUIKit/Resources/load_error.html',
   'NYSUIKit/Resources/douyuFont.otf'
 ]
-  s.dependency       'NYSKit', '~> 0.0.7'
+  s.dependency       'NYSKit', '0.0.7'
   s.dependency       'MJRefresh', '~> 3.7.6'
   s.requires_arc     = true
 end
