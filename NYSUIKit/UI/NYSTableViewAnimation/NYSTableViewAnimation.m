@@ -11,18 +11,16 @@
 
 @interface NYSTableViewAnimation ()
 
-
 @end
 
 @implementation NYSTableViewAnimation
 
-
-+ (void)showWithAnimationType:(NYSTableViewAnimationType)animationType tableView:(UITableView *)tableView{
++ (void)show:(NYSTableViewAnimationType)animationType tableView:(UITableView *)tableView {
     unsigned int count = 0;
 
     // Get Class Method
     Method *methodlist = class_copyMethodList(object_getClass(self.class), &count);
-    int tag= 0;
+    int tag = 0;
     for (int i = 0; i < count; i++) {
         Method method = methodlist[i];
         SEL selector = method_getName(method);
@@ -40,21 +38,43 @@
     free(methodlist);
 }
 
-+ (void)moveAnimationWithTableView:(UITableView *)tableView {
-    
-    NSArray *cells = tableView.visibleCells;
-    for (int i = 0; i < cells.count; i++) {
-        CGFloat totalTime = 0.3;
-        UITableViewCell *cell = [tableView.visibleCells objectAtIndex:i];
-        cell.transform = CGAffineTransformMakeTranslation(-[[UIScreen mainScreen] bounds].size.width, 0);
-        [UIView animateWithDuration:0.25 delay:i*(totalTime/cells.count) options:0 animations:^{
-            cell.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            
-        }];
-        
++ (void)showWithAnimationType:(NYSTableViewAnimationType)animationType tableView:(UITableView *)tableView {
+    switch (animationType) {
+        case NYSTableViewAnimationTypeMoveSpring:
+            [self moveSpringAnimationWithTableView:tableView];
+            break;
+        case NYSTableViewAnimationTypeAlpha:
+            [self alphaAnimationWithTableView:tableView];
+            break;
+        case NYSTableViewAnimationTypeFall:
+            [self fallAnimationWithTableView:tableView];
+            break;
+        case NYSTableViewAnimationTypeShake:
+            [self shakeAnimationWithTableView:tableView];
+            break;
+        case NYSTableViewAnimationTypeOverTurn:
+            [self overTurnAnimationWithTableView:tableView];
+            break;
+        case NYSTableViewAnimationTypeToTop:
+            [self toTopAnimationWithTableView:tableView];
+            break;
+        case NYSTableViewAnimationTypeSpringList:
+            [self springListAnimationWithTableView:tableView];
+            break;
+        case NYSTableViewAnimationTypeShrinkToTop:
+            [self shrinkToTopAnimationWithTableView:tableView];
+            break;
+        case NYSTableViewAnimationTypeLayDown:
+            [self layDownAnimationWithTableView:tableView];
+            break;
+        case NYSTableViewAnimationTypeRote:
+            [self roteAnimationWithTableView:tableView];
+            break;
+        default:
+            break;
     }
 }
+
 + (void)moveSpringAnimationWithTableView:(UITableView *)tableView {
     
     NSArray *cells = tableView.visibleCells;
@@ -69,6 +89,7 @@
         }];
     }
 }
+
 + (void)alphaAnimationWithTableView:(UITableView *)tableView {
     
     NSArray *cells = tableView.visibleCells;
@@ -82,7 +103,6 @@
         }];
     }
 }
-
 
 + (void)fallAnimationWithTableView:(UITableView *)tableView {
  
@@ -100,7 +120,6 @@
         }];
     }
 }
-
 
 + (void)shakeAnimationWithTableView:(UITableView *)tableView {
     
@@ -139,7 +158,6 @@
 }
 
 + (void)toTopAnimationWithTableView:(UITableView *)tableView {
-    
     
     NSArray *cells = tableView.visibleCells;
     
@@ -214,8 +232,6 @@
     
 }
 
-
-
 + (void)roteAnimationWithTableView:(UITableView *)tableView {
     
     NSArray *cells = tableView.visibleCells;
@@ -239,6 +255,5 @@
         }];
     }
 }
-
 
 @end

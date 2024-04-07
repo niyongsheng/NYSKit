@@ -75,7 +75,7 @@ class NYSAccountViewController: NYSRootViewController, UITextViewDelegate {
         protocolT.delegate = self
         protocolT.attributedText = attString
         
-        self.view.addSubview(self.checkBox)
+        self.contenView.addSubview(self.checkBox)
     }
     
     override func configTheme() {
@@ -92,7 +92,7 @@ class NYSAccountViewController: NYSRootViewController, UITextViewDelegate {
             NYSTools.shakeAnimation(self.checkBox.layer)
             tipV.message = "请勾选"
             tipV.autoDismiss(animated: true, atTimeInterval: 2)
-            tipV.presentPointing(at: self.checkBox, in: view, animated: true)
+            tipV.presentPointing(at: self.checkBox, in: contenView, animated: true)
             return
         }
         self.navigationController?.pushViewController(NYSLoginViewController(), animated: true)

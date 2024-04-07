@@ -4,5 +4,6 @@ NetErr="Network Error";
 Retry="Retry";
 Loading="Loading...";
 
-TipsAppUpdate="New test version";
+TipsAppUpdate="New Test Version";
 AppUpdate="Update";
+Cancel="Cancel";

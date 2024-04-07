@@ -46,4 +46,18 @@
     return _msgKey;
 }
 
+- (NSString *)dataKey {
+    if (!_dataKey) {
+        _dataKey = @"";
+    }
+    return _dataKey;
+}
+
+- (NSString *)tokenInvalidMessage {
+    if (!_tokenInvalidMessage) {
+        _tokenInvalidMessage = @"";
+    }
+    return _tokenInvalidMessage;
+}
+
 @end

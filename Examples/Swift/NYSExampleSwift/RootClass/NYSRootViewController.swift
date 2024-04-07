@@ -44,6 +44,14 @@ class NYSRootViewController: NYSBaseViewController {
         super.bindViewModel()
     }
     
+    override func headerRereshing() {
+        self.emptyError = NSError(code: .codeUnKnow, description: "加载中...", reason: "", suggestion: "重试", placeholderImg: "icon_loading_nys")
+    }
+    
+    override func footerRereshing() {
+        self.emptyError = NSError(code: .codeUnKnow, description: "加载中...", reason: "", suggestion: "重试", placeholderImg: "icon_loading_nys")
+    }
+    
 }
 
 extension NYSRootViewController {

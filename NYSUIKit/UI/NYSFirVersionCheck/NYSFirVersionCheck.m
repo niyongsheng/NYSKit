@@ -7,6 +7,33 @@
 
 #import "NYSFirVersionCheck.h"
 #import "NYSUIKitPublicHeader.h"
+#import "NSBundle+NYSFramework.h"
+
+@implementation NYSFirVersionCheckModel
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (self) {
+        _build = dictionary[@"build"];
+        _installUrl = dictionary[@"installUrl"];
+        _versionShort = dictionary[@"versionShort"];
+        _direct_install_url = dictionary[@"direct_install_url"];
+        _install_url = dictionary[@"install_url"];
+        _update_url = dictionary[@"update_url"];
+        _updated_at = dictionary[@"updated_at"];
+        _versionBuild = dictionary[@"version"];
+        _name = dictionary[@"name"];
+        id changelogValue = dictionary[@"changelog"];
+        if (changelogValue != [NSNull null]) {
+            _changelog = changelogValue;
+        } else {
+            _changelog = @"";
+        }
+    }
+    return self;
+}
+
+@end
 
 @interface NYSFirVersionCheck()<UIAlertViewDelegate>
 
@@ -74,6 +101,7 @@
         } else {
             NSError *parseError = nil;
             NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+            NYSFirVersionCheckModel *checkModel = [[NYSFirVersionCheckModel alloc] initWithDictionary:responseDictionary];
             [NYSTools log:self.class msg:[NSString stringWithFormat:@"FIR － 更新内容: \n%@ ", responseDictionary]];
             
             NSString *code = responseDictionary[@"code"];
@@ -89,16 +117,16 @@
                 NSString *currentBuild = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
                 
                 int relt = [self convertVersion:versionShort v2:appVersion];
-                if (relt == 1) { // 版本号升级
+                if (relt == 1) { // 版本号比较
                     if (completion) {
-                        completion(responseDictionary);
+                        completion(responseDictionary, checkModel);
                     } else {
                         [self showAlert:responseDictionary];
                     }
                     
-                } else if (relt == 0) { // 构建号升级
+                } else if (build.intValue > currentBuild.intValue) { // 构建号比较
                     if (completion) {
-                        completion(responseDictionary);
+                        completion(responseDictionary, checkModel);
                     } else {
                         [self showAlert:responseDictionary];
                     }
@@ -117,12 +145,12 @@
     NSString *build = responseDictionary[@"build"];
     NSString *version = [self nullToString:responseDictionary[@"versionShort"]];
     NSString *changelog = [self nullToString:responseDictionary[@"changelog"]];
-    NSString *title = NSLocalizedStringFromTable(@"TipsAppUpdate", @"InfoPlist", nil);
+    NSString *title = [NSBundle nys_localizedStringForKey:@"TipsAppUpdate"];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@:%@(%@)", title, version, build] message:changelog preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *laterAction = [UIAlertAction actionWithTitle:NSLocalizedStringFromTable(@"Cancel", @"InfoPlist", nil) style:UIAlertActionStyleCancel handler:nil];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedStringFromTable(@"AppUpdate", @"InfoPlist", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction*action) {
+        UIAlertAction *laterAction = [UIAlertAction actionWithTitle:[NSBundle nys_localizedStringForKey:@"Cancel"] style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:[NSBundle nys_localizedStringForKey:@"AppUpdate"] style:UIAlertActionStyleDestructive handler:^(UIAlertAction*action) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:responseDictionary[@"update_url"]] options:@{} completionHandler:nil];
             
         }];
@@ -145,7 +173,7 @@
  比较版本号
  @param v1 版本1
  @param v2 版本2
- @return 返回0:相等 1:v1>v2 -1:v1<v2
+ @return v1==v2返回0     v1>v2返回1      v1<v2返回-1
  */
 + (int)convertVersion:(NSString *)v1 v2:(NSString *)v2 {
     // 去除杂质，只留下数字和点
@@ -172,7 +200,7 @@
         
         // 按顺序比较大小
         if (v1_i != v2_i) {
-            return v1_i>v2_i?1:-1;
+            return v1_i>v2_i ? 1 : -1;
         }
     }
     // 循环结束，返回相等

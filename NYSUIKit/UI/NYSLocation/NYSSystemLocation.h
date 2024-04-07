@@ -26,6 +26,7 @@ typedef void (^NYSLocationCompletion)(NSString * _Nonnull address, CLLocationCoo
 /// 持续定位
 - (void)startUpdatingLocationSystem;
 - (void)startUpdatingLocation:(NYSCoordinateType)coordinateType;
+- (void)stopUpdatingLocationSystem;
 
 /// 逆地理编码
 /// - Parameter currentLocation: 当前位置

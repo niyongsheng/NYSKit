@@ -9,6 +9,7 @@
 #import "NSError+NYS.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
 /// 导航栏按钮回调
 typedef void(^NYSNavItemCompletion)(UIButton *sender, NSInteger index);
 typedef NS_ENUM(NSInteger, NYSNavItemAlignment) {
@@ -17,12 +18,11 @@ typedef NS_ENUM(NSInteger, NYSNavItemAlignment) {
 };
 
 @interface NYSBaseViewController : UIViewController
-{
-    /// tabview style. default:UITableViewStylePlain
-    UITableViewStyle _tableviewStyle;
-}
+
 /// 主数据源
 @property (nonatomic, strong) NSMutableArray    *dataSourceArr;
+@property (nonatomic, assign) NSInteger         pageNum;
+@property (nonatomic, assign) UITableViewStyle  tableviewStyle;
 @property (nonatomic, strong) UITableView       *tableView;
 @property (nonatomic, strong) UICollectionView  *collectionView;
 
@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, NYSNavItemAlignment) {
 @property (nonatomic, assign) BOOL isUseUIRefreshControl;
 /// Empty \ Error info
 @property (nonatomic, strong) NSError *emptyError;
+@property (nonatomic, strong) UIImageView *backgroundImageView;
 
 /** Theme UI VM, allow overridden */
 - (void)configTheme;
@@ -59,6 +60,10 @@ typedef NS_ENUM(NSInteger, NYSNavItemAlignment) {
 - (void)addNavigationItems:(NSArray<UIButton *> *)buttonArray alignment:(NYSNavItemAlignment)alignment completion:(NYSNavItemCompletion)completion;
 
 #pragma mark - tableview delegate / dataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section;
+- (nullable NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;

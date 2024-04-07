@@ -18,20 +18,15 @@ typedef void (^ButtonBlock)(UIButton *button);
 /// @param edge 范围
 - (void)enlargeTouchEdge:(UIEdgeInsets)edge;
 
-/// 设置点击时间间隔
+/// 按钮点击时间间隔
 @property (nonatomic, assign) NSTimeInterval timeInterval;
-/// 用于设置单个按钮不需要被hook
+/// 按钮不需要被hook时传YES
 @property (nonatomic, assign) BOOL isIgnore;
 
-@property (nonatomic, copy) ButtonBlock tapBlock;
-/// 按钮block回调
-/// - Parameters:
-///   - event: 事件
-///   - block: 回调
-- (void)handleControlEvent:(UIControlEvents)event withBlock:(ButtonBlock)block;
-
-/// 设置是否执行点UI方法  YES 不允许点击   NO 允许点击
-@property (nonatomic, assign) BOOL isIgnoreEvent;
+/// 开始加载动画
+- (void)startLoading;
+/// 停止加载动画
+- (void)stopLoading;
 
 @end
 

@@ -9,8 +9,8 @@
 #import "NYSUIKitPublicHeader.h"
 
 @interface NYSLoadingButton()
-@property (assign,readonly) CGFloat percentFilled;
-@property (assign,readonly) BOOL isloadingShowing;
+@property (assign, readonly) CGFloat percentFilled;
+@property (assign, readonly) BOOL isloadingShowing;
 @property (readonly) CAShapeLayer *filledLoadingLayer;
 @property CAShapeLayer *circleStrokeLoadingLayer;
 

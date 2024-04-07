@@ -77,11 +77,13 @@ extension AppManager {
     
     /// 登入
     func loginHandler(loginType: AppLoginType, params: [String: Any], completion: AppManagerCompletion) {
-        NYSNetRequest.mockRequest(withParameters: "login_data.json",
-                                  isCheck: true,
+        NYSNetRequest.mockRequest(with: .GET,
+                                  url: "login_data.json",
+                                  parameters: nil,
                                   remark: "登录",
                                   success: { [weak self] response in
-            if let token = response?["token"] as? String {
+            let respDict = response as? [String: Any]
+            if let token = respDict?["token"] as? String {
                 self?.token = token
                 completion?(true, nil, nil)
             } else {
@@ -124,13 +126,15 @@ extension AppManager {
             return
         }
         
-        NYSNetRequest.mockRequest(withParameters: "userinfo_data.json",
-                                  isCheck: true,
+        NYSNetRequest.mockRequest(with: .GET,
+                                  url: "userinfo_data.json",
+                                  parameters: nil,
                                   remark: "重载用户信息",
                                   success: { [weak self] response in
             
             do {
-                let userinfo = try response?.decoded() as NYSUserInfo?
+                let respDict = response as? [String: Any]
+                let userinfo = try respDict?.decoded() as NYSUserInfo?
                 self?.userInfo = userinfo ?? NYSUserInfo()
     
                 let tagSet: Set<String> = Set(userinfo!.tagArr)

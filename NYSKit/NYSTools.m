@@ -8,6 +8,8 @@
 #import "NYSTools.h"
 #import "NYSKitPublicHeader.h"
 #import <MapKit/MapKit.h>
+#import <Security/Security.h>
+#import <AdSupport/AdSupport.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 
 @implementation NYSTools
@@ -309,7 +311,7 @@
 
 /// YES null    NO !null
 /// @param string   str
-+ (BOOL)stringIsNull:(id)string {
++ (BOOL)isBlankString:(id)string {
     if ([string isEqual:@"NULL"] || [string isKindOfClass:[NSNull class]] || [string isEqual:[NSNull null]] || [string isEqual:NULL] || [[string class] isSubclassOfClass:[NSNull class]] || string == nil || string == NULL || [string isKindOfClass:[NSNull class]] || [[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]==0 || [string isEqualToString:@"<null>"] || [string isEqualToString:@"(null)"]) {
         return YES;
     } else {
@@ -329,7 +331,7 @@
 /// 姓名加*
 /// @param string 姓名
 + (NSString *)nameStringAsteriskHandle:(NSString *)string {
-    if ([self stringIsNull:string]) {
+    if ([self isBlankString:string]) {
         return @"*";
     }
     
@@ -351,24 +353,15 @@
 /// 号码加*
 /// @param string 号码
 + (NSString *)phoneStringAsteriskHandle:(NSString *)string {
-    if ([self stringIsNull:string]) {
+    if ([self isBlankString:string]) {
         return @"*";
-    }
-    
-    if (string.length < 7) {
-        NSString *preStr = [string substringToIndex:4];
-        return [preStr stringByAppendingString:@"***"];
-    }
-    
-    if (6 < string.length && string.length <= 11) {
-        NSString *preStr = [string substringToIndex:3];
-        NSString *sufStr = [string substringFromIndex:7];
-        return [NSString stringWithFormat:@"%@****%@", preStr, sufStr];
-        
+    } else if (string.length <= 6) {
+        return string;
     } else {
-//        NSString *mStr = [string substringWithRange:NSMakeRange(2, 4)];
-        NSString *preStr = [string substringToIndex:4];
-        return [preStr stringByAppendingString:@"****"];
+        NSRange middleRange = NSMakeRange(3, string.length - 6);
+        NSString *middleString = [@"" stringByPaddingToLength:middleRange.length withString:@"*" startingAtIndex:0];
+        NSString *result = [string stringByReplacingCharactersInRange:middleRange withString:middleString];
+        return result;
     }
 }
 
@@ -395,6 +388,7 @@
 
 + (void)showToast:(NSString *)msg image:(UIImage *)image offset:(UIOffset)offset {
     [SVProgressHUD setHapticsEnabled:YES];
+    [SVProgressHUD setShouldTintImages:NO];
     [SVProgressHUD setMinimumDismissTimeInterval:1.5];
     [SVProgressHUD setFont:[UIFont systemFontOfSize:12]];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
@@ -410,6 +404,7 @@
 
 + (void)showIconToast:(NSString *)msg isSuccess:(BOOL)isSuccess offset:(UIOffset)offset {
     [SVProgressHUD setHapticsEnabled:YES];
+    [SVProgressHUD setShouldTintImages:YES];
     [SVProgressHUD setMinimumDismissTimeInterval:1.5];
     [SVProgressHUD setFont:[UIFont systemFontOfSize:12]];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
@@ -487,7 +482,49 @@
     [viewController.navigationController presentViewController:alert animated:YES completion:nil];
 }
 
++ (void)openAppSettings {
+    NSURL *appSettingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    if ([[UIApplication sharedApplication] canOpenURL:appSettingsURL]) {
+        [[UIApplication sharedApplication] openURL:appSettingsURL options:@{} completionHandler:nil];
+    }
+}
+
++ (void)openURL:(NSString *)url {
+    NSURL *URL = [NSURL URLWithString:url];
+    if ([[UIApplication sharedApplication] canOpenURL:URL]) {
+        [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
+    }
+}
+
++ (void)callPhoneWithNumber:(NSString *)number {
+    NSString *phoneNumber = [@"tel:" stringByAppendingString:number];
+    NSURL *phoneURL = [NSURL URLWithString:phoneNumber];
+    if ([[UIApplication sharedApplication] canOpenURL:phoneURL]) {
+        [[UIApplication sharedApplication] openURL:phoneURL options:@{} completionHandler:nil];
+    }
+}
+
++ (void)sendEmailWithAddress:(NSString *)address {
+    NSString *emailAddress = [@"mailto:" stringByAppendingString:address];
+    NSURL *emailURL = [NSURL URLWithString:emailAddress];
+    if ([[UIApplication sharedApplication] canOpenURL:emailURL]) {
+        [[UIApplication sharedApplication] openURL:emailURL options:@{} completionHandler:nil];
+    }
+}
+
 #pragma mark - 其他
+/// 获取设备唯一标识（APP重装会改变）
++ (NSString *)getDeviceIdentifier {
+    UIDevice *device = [UIDevice currentDevice];
+    return [device identifierForVendor].UUIDString;
+}
+
+/// 获取IDFA
++ (NSString *)getIDFA {
+    NSString *idfaStr = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    return idfaStr;
+}
+
 /**
  系统分享
  @param items 需要分享的类目，可以包括文字，图片，网址

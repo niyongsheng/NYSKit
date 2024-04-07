@@ -23,8 +23,8 @@ NSString *const NSNYSErrorDomain = @"NSNYSErrorDomain";
                 @{
                     NSLocalizedDescriptionKey:@"Unknow Error",
                     NSLocalizedFailureReasonErrorKey:@"no reason",
-                    NSLocalizedRecoverySuggestionErrorKey:@"重试",
-                    @"NSCustomInfoKey": @"Easy case.",
+                    NSLocalizedRecoverySuggestionErrorKey:@"Retry",
+                    @"NSCustomInfoKey": @"",
                 }];
     }
 }
@@ -38,13 +38,13 @@ NSString *const NSNYSErrorDomain = @"NSNYSErrorDomain";
             }];
 }
 
-+ (NSError*)errorCode:(NSNYSErrorCode)code description:(NSString *)description reason:(NSString *)reason suggestion:(NSString *)suggestion placeholderImg:(NSString *)imageName {
++ (NSError*)errorCode:(NSNYSErrorCode)code description:(NSString *)description reason:(NSString *)reason suggestion:(NSString *)suggestion placeholderImg:(id)image {
     return [NSError errorWithDomain:NSNYSErrorDomain code:code userInfo:
             @{
                 NSLocalizedDescriptionKey:description,
                 NSLocalizedFailureReasonErrorKey:reason,
                 NSLocalizedRecoverySuggestionErrorKey:suggestion,
-                @"NSLocalizedPlaceholderImageName": imageName
+                @"NSLocalizedPlaceholderImage": image
             }];
 }
 

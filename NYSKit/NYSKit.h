@@ -22,5 +22,6 @@ FOUNDATION_EXPORT const unsigned char NYSKitVersionString[];
 #import <NYSKit/NYSNetRequest.h>
 #import <NYSKit/NYSKitManager.h>
 #import <NYSKit/NYSKeyChain.h>
+#import <NYSKit/NYSRSAObjC.h>
 #import <NYSKit/NYSError.h>
 #import <NYSKit/NYSTools.h>

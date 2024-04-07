@@ -20,13 +20,14 @@ class NYSMissionViewModel: NYSRootViewModel {
     /// - Parameter headerRefresh: 是否头部刷新
     func fetchWeatherData(headerRefresh: Bool, parameters: [String: Any]?) {
         NYSNetRequest.jsonNoCheckNetworkRequest(
-            with: NYSNetRequestType(GET.rawValue),
+            with: .GET,
             url: Api_Weather_Url,
             parameters: parameters,
             remark: "天气数据",
             success: { [weak self] response in
-                if response!["errcode"] as? Int == 100 {
-                    let msg = response!["errmsg"] as! String
+                let respDict = response as? [String: Any]
+                if respDict!["errcode"] as? Int == 100 {
+                    let msg = respDict!["errmsg"] as! String
                     AlertManager.shared.showAlert(title: msg)
                     self?.errorSubject.onNext(NYSError(domain: msg, code: -1, userInfo: nil))
                     return
@@ -50,8 +51,9 @@ class NYSMissionViewModel: NYSRootViewModel {
     
     /// Mock天气数据
     func mockWeatherData(headerRefresh: Bool, parameters: String) {
-        NYSNetRequest.mockRequest(withParameters: parameters,
-                                  isCheck: false,
+        NYSNetRequest.mockRequest(with: .GET,
+                                  url: parameters,
+                                  parameters: nil,
                                   remark: "天气数据",
                                   success: { [weak self] response in
             do {

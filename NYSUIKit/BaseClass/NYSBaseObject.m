@@ -28,7 +28,7 @@
 - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
     // 处理字符串为null 改为@""
     for (NSString * key in [self bk_properties_string]) {
-        if ([NYSTools stringIsNull:[self valueForKey:key]]) {
+        if ([NYSTools isBlankString:[self valueForKey:key]]) {
             [self setValue:@"" forKey:key];
         }
     }

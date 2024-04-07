@@ -17,14 +17,14 @@ class NYSServiceViewModel: NYSRootViewModel {
     
     /// Mock数据
     func mockServiceData(headerRefresh: Bool, parameters: String) {
-        NYSNetRequest.mockRequest(withParameters: parameters,
-                                  isCheck: true,
+        NYSNetRequest.mockRequest(with: .GET,
+                                  url: parameters,
+                                  parameters: nil,
                                   remark: nil,
                                   success: { [weak self] response in
             do {
-//                let jsonData = try JSONSerialization.data(withJSONObject: response?["list"] as Any, options: [])
-//                let items = try [NYSService].decoded(from: jsonData)
-                let items = try [NYSService].decoded(from: response?["list"] as! [Any])
+                let respDict = response as? [String: Any]
+                let items = try [NYSService].decoded(from: respDict?["list"] as! [Any])
                 if headerRefresh {
                     self?.serviceItems.onNext(items)
                     self?.serviceRefresh.onNext(.stopRefresh)

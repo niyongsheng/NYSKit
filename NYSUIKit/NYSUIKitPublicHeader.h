@@ -14,6 +14,7 @@
 #define NAppThemeColor              [LEETheme getValueWithTag:[LEETheme currentThemeTag] Identifier:@"app_theme_color"]
 
 #import <NYSKit/NYSKit.h>
+#import <MJRefresh/MJRefresh.h>
 #import "NYSUIKitUtilities.h"
 
 #endif /* PublicHeader_h */

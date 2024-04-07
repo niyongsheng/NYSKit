@@ -23,8 +23,8 @@ NYSKit
 
 ## Usage
 ```ruby
-  pod 'NYSKit', :git => 'https://github.com/niyongsheng/NYSKit.git'
-  pod 'NYSUIKit', :git => 'https://github.com/niyongsheng/NYSKit.git'
+  pod 'NYSKit', '~> 0.0.7'
+  pod 'NYSUIKit', '~> 0.0.7'
 
   pod install
 ```
@@ -39,6 +39,8 @@ NYSKit
 `NYSKit Document:` https://niyongsheng.github.io/Document/NYSWS/NYSKit/index.html
 
 `NYSUIKit Document:` https://niyongsheng.github.io/Document/NYSWS/NYSUIKit/index.html
+
+`Json Transition:`[JsonModelFactory](https://github.com/niyongsheng/JsonModelFactory)
 
 `Example Project:`[NYSWS](https://github.com/niyongsheng/NYSWS)
 
@@ -57,6 +59,8 @@ NYSKit
 ├─ NYSKitPublicHeader.h
 ├─ NYSNetRequest.h
 ├─ NYSNetRequest.m
+├─ NYSRSAObjC.h
+├─ NYSRSAObjC.m
 ├─ NYSRegularCheck.h
 ├─ NYSRegularCheck.m
 ├─ NYSTools.h
@@ -99,6 +103,8 @@ NYSUIKit
 │    ├─ UIButton+NYS.m
 │    ├─ UIColor+NYS.h
 │    ├─ UIColor+NYS.m
+│    ├─ UIControl+NYS.h
+│    ├─ UIControl+NYS.m
 │    ├─ UIImage+NYS.h
 │    ├─ UIImage+NYS.m
 │    ├─ UINavigationController+FDFullscreenPopGesture.h
@@ -198,9 +204,6 @@ NYSUIKit
 ③ `iPhone\iPad`<br>
 ④ `iOS >= 13.0`<br>
 ⑤ `Xcode >= 14.0`<br>
-
-## Contribution
-Reward[:lollipop:](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Beg/README.md)  Encourage[:heart:](https://github.com/niyongsheng/NYSKit/stargazers)
 
 ## Contact Me
 * E-mail: niyongsheng@Outlook.com

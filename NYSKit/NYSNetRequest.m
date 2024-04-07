@@ -9,11 +9,10 @@
 #import "NYSKitPublicHeader.h"
 #import "NYSTools.h"
 #import <SVProgressHUD/SVProgressHUD.h>
-#import <AFNetworking/AFNetworking.h>
 
 #define isShowTimes NO
 #define TimeoutInterval 15
-#define ShowDelayLoading 4.5f
+#define ShowDelayLoading 1.5f
 #define MockDelayLoading 0.5f
 
 @interface NYSNetRequest ()
@@ -35,7 +34,6 @@
         [contentTypes addObject:@"application/json"];
         [contentTypes addObject:@"application/octet-stream"];
         manager.responseSerializer.acceptableContentTypes = contentTypes;
-        manager.responseSerializer = [AFJSONResponseSerializer serializer];
         [manager.requestSerializer setTimeoutInterval:TimeoutInterval];
         
         [[AFNetworkReachabilityManager sharedManager] startMonitoring];
@@ -48,10 +46,15 @@
 
 + (NSDictionary *)headers {
     NSMutableDictionary *headerDic = [NSMutableDictionary dictionary];
-    NSString *identifierStr = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSString *uuid = [NYSTools getDeviceIdentifier];
+    [headerDic setValue:uuid forKey:@"x-device-imei"];
+    NSString *language = [[NSBundle mainBundle] preferredLocalizations].firstObject; // @"zh_CN"
+    [headerDic setValue:language forKey:@"Accept-hips-Language"];
     
-    [headerDic setValue:identifierStr forKey:@"identifier"];
-    [headerDic setValue:[[NYSKitManager sharedNYSKitManager] token] forKey:@"token"];
+    NSString *tokenStr = [[NYSKitManager sharedNYSKitManager] token];
+    if (![NYSTools isBlankString:tokenStr]) {
+        [headerDic setValue:[NSString stringWithFormat:@"Bearer %@", tokenStr] forKey:@"Authorization"];
+    }
     [headerDic setValue:[[UIDevice currentDevice] systemName] forKey:@"deviceSystemName"];
     [headerDic setValue:[[UIDevice currentDevice] systemVersion] forKey:@"systemVersion"];
     [headerDic setValue:[[UIDevice currentDevice] localizedModel] forKey:@"localizedModel"];
@@ -61,8 +64,40 @@
 }
 
 #pragma mark - Form表单网络请求
-+ (void)requestNetworkWithType:(NYSNetRequestType)type url:(NSString * _Nonnull)url parameters:(id)parameters remark:(NSString *)remark success:(NYSNetRequestSuccess _Nullable )success failed:(NYSNetRequestFailed _Nullable )failed {
++ (void)requestNetworkWithType:(NYSNetRequestType)type
+                           url:(NSString * _Nonnull)url
+                    parameters:(id)parameters
+                        remark:(NSString *)remark
+                       success:(NYSNetRequestSuccess _Nullable )success
+                        failed:(NYSNetRequestFailed _Nullable )failed {
+    [self requestNetworkWithType:type url:url parameters:parameters isCheck:YES remark:remark success:success failed:failed];
+}
+
++ (void)requestNoCheckNetworkWithType:(NYSNetRequestType)type
+                                  url:(NSString * _Nonnull)url
+                           parameters:(id)parameters
+                               remark:(NSString *)remark
+                              success:(NYSNetRequestSuccess _Nullable )success
+                               failed:(NYSNetRequestFailed _Nullable )failed {
+    [self requestNetworkWithType:type url:url parameters:parameters isCheck:NO remark:remark success:success failed:failed];
+}
+
++ (void)requestNetworkWithType:(NYSNetRequestType)type
+                           url:(NSString * _Nonnull)url
+                    parameters:(id)parameters
+                       isCheck:(BOOL)isCheck
+                        remark:(NSString *)remark
+                       success:(NYSNetRequestSuccess _Nullable )success
+                        failed:(NYSNetRequestFailed _Nullable )failed {
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
+    
+    AFHTTPResponseSerializer *serializer = [AFJSONResponseSerializer serializer];
+    /**
+     NSMutableIndexSet *acceptableStatusCodes = [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 2)];
+     [acceptableStatusCodes addIndex:401]; // 添加需要认为是成功的状态码，即使状态码出错也继续解析数据
+     serializer.acceptableStatusCodes = acceptableStatusCodes;
+     */
+    [self sharedManager].responseSerializer = serializer;
     
     NSDictionary *header = [self headers];
     NSString *urlStr = [[[NYSKitManager sharedNYSKitManager] host] stringByAppendingString:url];
@@ -74,12 +109,16 @@
         case GET: {
             [[self sharedManager] GET:urlStr parameters:parameters headers:header progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 handelLog(remark, urlStr, @"GET", header, parameters, responseObject, NO, timeStamp);
-                handelResponse(parameters, failed, remark, responseObject, success, urlStr);
+                if (isCheck) {
+                    handelResponse(parameters, failed, remark, responseObject, success, urlStr);
+                } else {
+                    if (success) success(responseObject);
+                }
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if (failed) {
                     failed(error);
-                    handelError(error);
+                    handelError(task, error);
                 }
             }];
         }
@@ -88,12 +127,16 @@
         case POST: {
             [[self sharedManager] POST:urlStr parameters:parameters headers:header progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 handelLog(remark, urlStr, @"POST", header, parameters, responseObject, NO, timeStamp);
-                handelResponse(parameters, failed, remark, responseObject, success, urlStr);
+                if (isCheck) {
+                    handelResponse(parameters, failed, remark, responseObject, success, urlStr);
+                } else {
+                    if (success) success(responseObject);
+                }
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if (failed) {
                     failed(error);
-                    handelError(error);
+                    handelError(task, error);
                 }
             }];
         }
@@ -102,12 +145,16 @@
         case PUT: {
             [[self sharedManager] PUT:urlStr parameters:parameters headers:header success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 handelLog(remark, urlStr, @"PUT", header, parameters, responseObject, NO, timeStamp);
-                handelResponse(parameters, failed, remark, responseObject, success, urlStr);
+                if (isCheck) {
+                    handelResponse(parameters, failed, remark, responseObject, success, urlStr);
+                } else {
+                    if (success) success(responseObject);
+                }
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if (failed) {
                     failed(error);
-                    handelError(error);
+                    handelError(task, error);
                 }
             }];
         }
@@ -116,12 +163,16 @@
         case DELETE: {
             [[self sharedManager] DELETE:urlStr parameters:parameters headers:header success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 handelLog(remark, urlStr, @"DELETE", header, parameters, responseObject, NO, timeStamp);
-                handelResponse(parameters, failed, remark, responseObject, success, urlStr);
+                if (isCheck) {
+                    handelResponse(parameters, failed, remark, responseObject, success, urlStr);
+                } else {
+                    if (success) success(responseObject);
+                }
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if (failed) {
                     failed(error);
-                    handelError(error);
+                    handelError(task, error);
                 }
             }];
         }
@@ -134,22 +185,24 @@
 
 #pragma mark - 文件上传
 + (void)uploadImagesWithType:(NYSNetRequestType)type
-                       url:(NSString * _Nonnull)url
+                         url:(NSString * _Nonnull)url
                   parameters:(id)parameters
-                      name:(NSString *)name
-                    files:(NSArray *)files
-                 fileNames:(NSArray<NSString *> *)fileNames
-                imageScale:(CGFloat)imageScale
-                 imageType:(NSString *)imageType
-                    remark:(id)remark
-                  progress:(nullable void (^)(NSProgress * _Nonnull))process
-                   success:(NYSNetRequestSuccess _Nullable )success
-                    failed:(NYSNetRequestFailed _Nullable )failed {
+                        name:(NSString *)name
+                       files:(NSArray *)files
+                   fileNames:(NSArray<NSString *> *)fileNames
+                  imageScale:(CGFloat)imageScale
+                   imageType:(NSString *)imageType
+                      remark:(NSString *)remark
+          responseSerializer:(id <AFURLResponseSerialization> _Nonnull)responseSerializer
+                    progress:(nullable void (^)(NSProgress * _Nonnull))process
+                     success:(NYSNetRequestSuccess _Nullable )success
+                      failed:(NYSNetRequestFailed _Nullable )failed {
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     
     NSDictionary *header = [self headers];
     NSString *urlStr = [[[NYSKitManager sharedNYSKitManager] host] stringByAppendingString:url];
     
+    [self sharedManager].responseSerializer = responseSerializer;
     [[self sharedManager] POST:urlStr parameters:parameters headers:header constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         for (NSUInteger i = 0; i < files.count; i++) {
             // 图片经过等比压缩后得到的二进制文件
@@ -164,7 +217,7 @@
                                         name:name
                                     fileName:fileNames ? [NSString stringWithFormat:@"%@.%@",fileNames[i],imageType?:@"png"] : imageFileName
                                     mimeType:[NSString stringWithFormat:@"image/%@",imageType ?: @"png"]];
-        
+            
         }
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
@@ -182,36 +235,36 @@
         [SVProgressHUD dismiss];
         if (failed) {
             failed(error);
-            handelError(error);
+            handelError(task, error);
         }
     }];
 }
 
 #pragma mark - 阿里云OSS图片上传
 + (void)ossUploadImageWithuUrlStr:(NSString *)urlStr
-                         parameters:(id)parameters
-                      name:(NSString *)name
-                    image:(UIImage *)image
-                 imageName:(NSString *)imageName
-                imageScale:(CGFloat)imageScale
-                 imageType:(NSString *)imageType
-                    remark:(id)remark
-                  progress:(nullable void (^)(NSProgress * _Nonnull))process
-                   success:(NYSNetRequestSuccess _Nullable )success
-                    failed:(NYSNetRequestFailed _Nullable )failed {
+                       parameters:(id)parameters
+                             name:(NSString *)name
+                            image:(UIImage *)image
+                        imageName:(NSString *)imageName
+                       imageScale:(CGFloat)imageScale
+                        imageType:(NSString *)imageType
+                           remark:(id)remark
+                         progress:(nullable void (^)(NSProgress * _Nonnull))process
+                          success:(NYSNetRequestSuccess _Nullable )success
+                           failed:(NYSNetRequestFailed _Nullable )failed {
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     
     [[self sharedManager] POST:urlStr parameters:parameters headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            formatter.dateFormat = @"yyyy_MM_ddHH:mm:ss";
-            NSString *tempName = [formatter stringFromDate:[NSDate date]];
-            
-            NSData *imageData = UIImageJPEGRepresentation(image, 0.65f);
-            [formData appendPartWithFileData:imageData
-                                        name:name
-                                    fileName:imageName ? [NSString stringWithFormat:@"%@.%@", imageName, imageType ?:@"png"] : [NSString stringWithFormat:@"%@.%@", tempName, imageType]
-                                    mimeType:[NSString stringWithFormat:@"image/%@",imageType ?: @"png"]];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyy_MM_ddHH:mm:ss";
+        NSString *tempName = [formatter stringFromDate:[NSDate date]];
+        
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.65f);
+        [formData appendPartWithFileData:imageData
+                                    name:name
+                                fileName:imageName ? [NSString stringWithFormat:@"%@.%@", imageName, imageType ?:@"png"] : [NSString stringWithFormat:@"%@.%@", tempName, imageType]
+                                mimeType:[NSString stringWithFormat:@"image/%@",imageType ?: @"png"]];
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         //上传进度
@@ -225,21 +278,38 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failed) {
             failed(error);
-            handelError(error);
+            handelError(task, error);
         }
     }];
 }
 
 #pragma mark - JSON传参网络请求
-+ (void)jsonNetworkRequestWithType:(NYSNetRequestType)type url:(NSString * _Nonnull)url parameters:(id)parameters remark:(NSString * _Nullable)remark success:(NYSNetRequestSuccess)success failed:(NYSNetRequestFailed)failed {
-    [self jsonRequestWithType:type url:url parameters:parameters isCheck:YES remark:remark success:success failed:failed];
++ (void)jsonNetworkRequestWithType:(NYSNetRequestType)type
+                               url:(NSString * _Nonnull)url
+                        parameters:(id)parameters
+                            remark:(NSString * _Nullable)remark
+                           success:(NYSNetRequestSuccess)success
+                            failed:(NYSNetRequestFailed)failed {
+    [self jsonRequestWithType:type url:url parameters:parameters responseSerializer:[AFJSONResponseSerializer serializer] isCheck:YES remark:remark success:success failed:failed];
 }
 
-+ (void)jsonNoCheckNetworkRequestWithType:(NYSNetRequestType)type url:(NSString * _Nonnull)url parameters:(id)parameters remark:(NSString * _Nullable)remark success:(NYSNetRequestSuccess)success failed:(NYSNetRequestFailed)failed {
-    [self jsonRequestWithType:type url:url parameters:parameters isCheck:NO remark:remark success:success failed:failed];
++ (void)jsonNoCheckNetworkRequestWithType:(NYSNetRequestType)type
+                                      url:(NSString * _Nonnull)url
+                               parameters:(id)parameters
+                                   remark:(NSString * _Nullable)remark
+                                  success:(NYSNetRequestSuccess)success
+                                   failed:(NYSNetRequestFailed)failed {
+    [self jsonRequestWithType:type url:url parameters:parameters responseSerializer:[AFJSONResponseSerializer serializer] isCheck:NO remark:remark success:success failed:failed];
 }
 
-+ (void)jsonRequestWithType:(NYSNetRequestType)type url:(NSString * _Nonnull)url parameters:(id)parameters isCheck:(BOOL)isCheck remark:(NSString * _Nullable)remark success:(NYSNetRequestSuccess)success failed:(NYSNetRequestFailed)failed {
++ (void)jsonRequestWithType:(NYSNetRequestType)type
+                        url:(NSString * _Nonnull)url
+                 parameters:(id)parameters
+         responseSerializer:(id <AFURLResponseSerialization> _Nonnull)responseSerializer
+                    isCheck:(BOOL)isCheck
+                     remark:(NSString * _Nullable)remark
+                    success:(NYSNetRequestSuccess)success
+                     failed:(NYSNetRequestFailed)failed {
     [self sharedManager];
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     
@@ -273,9 +343,13 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     // 设置cookie
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [request setValue:[NSString stringWithFormat:@"%@=%@", [defaults objectForKey:@"cookie.name"], [defaults objectForKey:@"cookie.value"]] forHTTPHeaderField:@"Cookie"];
+    NSString *cookie = [defaults objectForKey:@"cookie.name"];
+    NSString *cookieValue = [defaults objectForKey:@"cookie.value"];
+    if (cookie && cookieValue)
+        [request setValue:[NSString stringWithFormat:@"%@=%@", cookie, cookieValue] forHTTPHeaderField:@"Cookie"];
     
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    manager.responseSerializer = responseSerializer;
     NSURLSessionDataTask *task = [manager dataTaskWithRequest:request
                                                uploadProgress:nil
                                              downloadProgress:nil
@@ -283,7 +357,7 @@
         [SVProgressHUD dismissWithDelay:1.0f];
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLoadingAnimation) object:nil];
         
-        handelLog(remark, urlStr, @"POST", [request allHTTPHeaderFields], parameters, responseObject, YES, timeStamp);
+        handelLog(remark, urlStr, method, [request allHTTPHeaderFields], parameters, responseObject, YES, timeStamp);
         if (!error) {
             // 获取cookie
             NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
@@ -299,16 +373,14 @@
             if (isCheck) {
                 handelResponse(parameters, failed, remark, responseObject, success, urlStr);
             } else {
-                if (success) {
-                    success(responseObject);
-                }
+                if (success) success(responseObject);
             }
             
         } else {
             DBGLog(@"\n[%@]\n%@", @"❌错误", error.localizedDescription);
             if (failed) {
                 failed(error);
-                handelError(error);
+                handelError(task, error);
             }
         }
     }];
@@ -317,15 +389,16 @@
 }
 
 #pragma mark - Mock
-+ (void)mockRequestWithParameters:(NSString * _Nonnull)parameters isCheck:(BOOL)isCheck remark:(NSString * _Nullable)remark success:(NYSNetRequestSuccess _Nullable)success failed:(NYSNetRequestFailed _Nullable)failed {
++ (void)mockRequestWithType:(NYSNetRequestType)type url:(NSString * _Nonnull)url parameters:(id)parameters remark:(NSString * _Nullable)remark success:(NYSNetRequestSuccess _Nullable)success failed:(NYSNetRequestFailed _Nullable)failed {
+    // url: 路径：文件名xxx.json || 路径xx/xx/xxx.json
     NSString *pattern = @"/|\\"; // 使用正则表达式判断是否包含斜杠或反斜杠
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
-    NSTextCheckingResult *isPath = [regex firstMatchInString:parameters options:0 range:NSMakeRange(0, parameters.length)];
+    NSTextCheckingResult *isPath = [regex firstMatchInString:url options:0 range:NSMakeRange(0, url.length)];
     NSString *filePath = nil;
     if (isPath) {
-        filePath = parameters;
+        filePath = url;
     } else {
-        NSArray<NSString *> *file =  [parameters componentsSeparatedByString:@"."];
+        NSArray<NSString *> *file =  [url componentsSeparatedByString:@"."];
         filePath = [[NSBundle mainBundle] pathForResource:file.firstObject ofType:file.lastObject];
     }
     NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
@@ -336,17 +409,11 @@
             DBGLog(@"\n[%@]\n%@", @"❌错误", error.localizedDescription);
             if (failed) {
                 failed(error);
-                handelError(error);
+                handelError(nil, error);
             }
         } else {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MockDelayLoading * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                if (isCheck) {
-                    handelResponse(parameters, failed, remark, jsonDictionary, success, @"Mock");
-                } else {
-                    DBGLog(@"%@->📩:\nMock参数:\n%@\n[Data]:\n%@", remark, parameters, [NYSNetRequest jsonPrettyStringEncoded:jsonDictionary]);
-                    if (success)
-                        success(jsonDictionary);
-                }
+                handelResponse(parameters, failed, remark, jsonDictionary, success, @"Mock");
             });
         }
     } else {
@@ -370,39 +437,54 @@
 
 #pragma mark - 响应体处理
 static void handelResponse(id parameters, NYSNetRequestFailed  _Nullable failed, NSString *remark, id  _Nullable responseObject, NYSNetRequestSuccess  _Nullable success, NSString * _Nonnull url) {
-    if ([responseObject isKindOfClass:NSData.class]) {
-        success(responseObject);
+    // 非字典类型不作合法性校验
+    if (![responseObject isKindOfClass:NSDictionary.class]) {
+        if (success) success(responseObject);
         return;
     }
-    NSInteger code = [[responseObject objectForKey:@"code"] integerValue];
+    
     NSString *msg = @"unknown error"; // 错误信息
     for (NSString *key in [[[NYSKitManager sharedNYSKitManager] msgKey] componentsSeparatedByString:@","]) {
         NSString *message = [responseObject objectForKey:key];
-        if (![NYSTools stringIsNull:message]) {
+        if (![NYSTools isBlankString:message]) {
             msg = message;
             break;
         }
     }
     
+    // 通过判断字典keys获取api状态值
+    NSInteger code = -1;
+    if ([[(NSDictionary *)responseObject allKeys] containsObject:@"failed"]) {
+        code = [[responseObject objectForKey:@"failed"] boolValue] ? -1 : 0;
+    } else if ([[(NSDictionary *)responseObject allKeys] containsObject:@"code"]) {
+        code = [[responseObject objectForKey:@"code"] integerValue];
+    } else if ([[(NSDictionary *)responseObject allKeys] containsObject:@"status"]) {
+        code = [[responseObject objectForKey:@"status"] integerValue];
+    } else {
+        if (success) success(responseObject);
+        return;
+    }
+    
     NSArray *normalCodeArray = [[[NYSKitManager sharedNYSKitManager] normalCode] componentsSeparatedByString:@","];
     BOOL isNormal = [normalCodeArray containsObject:[NSString stringWithFormat:@"%ld", code]];
     if (isNormal) { // 正常返回
-        NSDictionary *data = [responseObject objectForKey:@"data"];
         if (success) {
-            success(data);
-            return;
+            NSString *dataKey = [[NYSKitManager sharedNYSKitManager] dataKey];
+            [NYSTools isBlankString:dataKey] ? success(responseObject) : success(responseObject[dataKey]);
         }
+        return;
+        
     } else if (code == [[[NYSKitManager sharedNYSKitManager] kickedCode] integerValue]) { // 强制下线
         [[NSNotificationCenter defaultCenter] postNotificationName:NNotificationOnKick object:msg];
         
     } else if (code == [[[NYSKitManager sharedNYSKitManager] tokenInvalidCode] integerValue]) { // token失效
-        if ([msg containsString:[[NYSKitManager sharedNYSKitManager] tokenInvalidMessage]]) { // 防止后端token失效的code不唯一
+        NSString *tokenInvalidMessage = [[NYSKitManager sharedNYSKitManager] tokenInvalidMessage];
+        if ([msg containsString:tokenInvalidMessage] || [NYSTools isBlankString:tokenInvalidMessage]) { // 防止后端token失效的code不唯一
             [[NSNotificationCenter defaultCenter] postNotificationName:NNotificationTokenInvalidation object:msg];
         }
-//        [NYSTools showBottomToast:msg];
         
     } else {
-        // 错误Toast
+        // Err Msg Toast
         if ([[NYSKitManager sharedNYSKitManager] isAlwaysShowErrorMsg])
             [NYSTools showBottomToast:msg];
     }
@@ -414,25 +496,34 @@ static void handelResponse(id parameters, NYSNetRequestFailed  _Nullable failed,
 }
 
 #pragma mark - 错误码处理
-static void handelError(NSError * _Nullable error) {
+static void handelError(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+    NSInteger statusCode = httpResponse.statusCode;
+    
     NSString *msg = nil;
     switch (error.code) {
         case -1001:
-            msg = @"请求超时，请检查网络！";
+            msg = @"Time Out";
             break;
         case -1004:
-            msg = @"无法连接到服务器";
+            msg = @"Unable Connect To Server";
             break;
         case -1009:
-            msg = @"网络不可用";
+            msg = @"Network Unavailable";
             break;
         case -1011:
-            msg = @"服务暂时不可用";
+            msg = @"Server Unavailable";
             break;
         default:
             msg = error.localizedDescription;
     }
-    [NYSTools showBottomToast:msg];
+    
+    if (statusCode == 401 || [error.localizedDescription containsString:@"401"]) { // unauthorized
+        [[NSNotificationCenter defaultCenter] postNotificationName:NNotificationTokenInvalidation object:msg];
+        
+    } else {
+        [NYSTools showBottomToast:msg];
+    }
 #ifdef DEBUG
     NSLog(@"❌%@", error);
 #endif

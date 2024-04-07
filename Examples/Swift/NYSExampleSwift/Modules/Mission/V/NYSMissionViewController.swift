@@ -155,7 +155,7 @@ extension NYSMissionViewController {
         vm.weatherRefresh.bind(to: self.tableView.rx.refreshAction).disposed(by: bag)
         vm.weatherSubject.subscribe(onNext: { [weak self] (item: NYSWeater) in
             self?.dataSourceArr.insert(item, at: 0)
-            self?.tableView.reloadData(animationType: .rote)
+            self?.tableView.reloadData(animationType: .moveSpring)
         }, onError: { (error) in
             print("Error: \(error)")
         }).disposed(by: bag)

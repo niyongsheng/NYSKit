@@ -85,6 +85,7 @@ extension AppDelegate {
     func initNetwork() {
         NYSKitManager.shared().host = Api_Base_Url
         NYSKitManager.shared().token = AppManager.shared.token
+        NYSKitManager.shared().dataKey = "data"
         NYSKitManager.shared().normalCode = "200,0"
         NYSKitManager.shared().tokenInvalidCode = "500"
         NYSKitManager.shared().msgKey = "msg"

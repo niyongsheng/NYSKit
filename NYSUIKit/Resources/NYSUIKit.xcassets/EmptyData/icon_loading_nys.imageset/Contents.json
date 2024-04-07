@@ -15,7 +15,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "linkedin_binding_magnifier@2x.png",
+      "filename" : "icon_loading_nys@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -26,12 +26,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "linkedin_binding_magnifier_dark@2x.png",
+      "filename" : "icon_loading_nys_dark@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "linkedin_binding_magnifier@3x.png",
+      "filename" : "icon_loading_nys@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -42,7 +42,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "linkedin_binding_magnifier_dark@3x.png",
+      "filename" : "icon_loading_nys_dark@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

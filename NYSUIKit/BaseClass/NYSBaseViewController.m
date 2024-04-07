@@ -12,11 +12,9 @@
 #import "NYSUIKitPublicHeader.h"
 
 #import "UIImage+NYS.h"
-#import "UIButton+NYS.h"
+#import "UIControl+NYS.h"
 #import "NSBundle+NYSFramework.h"
 #import "UIScrollView+EmptyDataSet.h"
-
-#import <MJRefresh/MJRefresh.h>
 
 #define NYSTopHeight [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height + self.navigationController.navigationBar.frame.size.height
 
@@ -33,6 +31,7 @@ DZNEmptyDataSetDelegate
 
 @end
 
+
 @implementation NYSBaseViewController
 
 #pragma mark - Life cycle
@@ -45,20 +44,19 @@ DZNEmptyDataSetDelegate
     // 默认使用系统刷新样式
     [self setIsUseUIRefreshControl:YES];
     
-    // 默认tableview样式
-    _tableviewStyle = UITableViewStylePlain;
-    
     // 默认占位信息
     [self addObserver:self forKeyPath:@"dataSource" options:NSKeyValueObservingOptionNew context:nil]; // KVO
     self.emptyError = [NSError errorCode:NSNYSErrorCodeUnKnow
                              description:[NSBundle nys_localizedStringForKey:@"NoData"]
                                   reason:@""
                               suggestion:[NSBundle nys_localizedStringForKey:@"Retry"]
-                          placeholderImg:@"error"];
-    // VM
-    [self bindViewModel];
+                          placeholderImg:@"icon_error_nys"];
+    self.pageNum = 1;
+    
     // UI
     [self setupUI];
+    // VM
+    [self bindViewModel];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -92,7 +90,7 @@ DZNEmptyDataSetDelegate
                                  description:[NSBundle nys_localizedStringForKey:@"NoData"]
                                       reason:@""
                                   suggestion:[NSBundle nys_localizedStringForKey:@"Retry"]
-                              placeholderImg:@"error"];
+                              placeholderImg:@"icon_error_nys"];
 }
 
 #pragma mark - UI
@@ -101,13 +99,13 @@ DZNEmptyDataSetDelegate
     self.isShowLiftBack = YES;
     
     /**
-     // 关闭拓展全屏布局，等效于automaticallyAdjustsScrollViewInsets = NO;
-     self.edgesForExtendedLayout = UIRectEdgeNone;
-     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
-     self.navigationController.navigationBar.translucent = YES;
-     self.automaticallyAdjustsScrollViewInsets = YES;
-     }
-     */
+    // 关闭拓展全屏布局，等效于automaticallyAdjustsScrollViewInsets = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.navigationController.navigationBar.translucent = YES;
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
+    */
 }
 - (void)bindViewModel {}
 - (void)setCustomStatusBarStyle:(UIStatusBarStyle)StatusBarStyle {
@@ -173,8 +171,9 @@ DZNEmptyDataSetDelegate
         if (@available(iOS 15.0, *)) {
             _tableView.sectionHeaderTopPadding = 0;
         }
+        if (_backgroundImageView) _tableView.backgroundColor = [UIColor clearColor];
         
-        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedRowHeight = 1;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.rowHeight = UITableViewAutomaticDimension;
@@ -259,6 +258,10 @@ DZNEmptyDataSetDelegate
     return 1;
 }
 
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return nil;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataSourceArr.count;
 }
@@ -292,6 +295,7 @@ DZNEmptyDataSetDelegate
             _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
             _collectionView.contentInset = UIEdgeInsetsMake(NYSTopHeight, 0, 0, 0);
         }
+        if (_backgroundImageView) _collectionView.backgroundColor = [UIColor clearColor];
         
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
@@ -378,6 +382,10 @@ DZNEmptyDataSetDelegate
     return nil;
 }
 
+- (nullable NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return nil;
+}
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:true];
 }
@@ -388,7 +396,7 @@ DZNEmptyDataSetDelegate
                              description:[NSBundle nys_localizedStringForKey:@"Loading"]
                                   reason:@""
                               suggestion:@""
-                          placeholderImg:@"linkedin_binding_magnifier"];
+                          placeholderImg:@"icon_loading_nys"];
     
     __weak __typeof(self)weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -406,7 +414,7 @@ DZNEmptyDataSetDelegate
                                  description:[NSBundle nys_localizedStringForKey:@"NoData"]
                                       reason:@""
                                   suggestion:[NSBundle nys_localizedStringForKey:@"Retry"]
-                              placeholderImg:@"error"];
+                              placeholderImg:@"icon_error_nys"];
     });
 }
 
@@ -415,7 +423,7 @@ DZNEmptyDataSetDelegate
                              description:[NSBundle nys_localizedStringForKey:@"Loading"]
                                   reason:@""
                               suggestion:@""
-                          placeholderImg:@"linkedin_binding_magnifier"];
+                          placeholderImg:@"icon_loading_nys"];
     
     __weak __typeof(self)weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -429,17 +437,19 @@ DZNEmptyDataSetDelegate
                                  description:[NSBundle nys_localizedStringForKey:@"NoData"]
                                       reason:@""
                                   suggestion:[NSBundle nys_localizedStringForKey:@"Retry"]
-                              placeholderImg:@"error"];
+                              placeholderImg:@"icon_error_nys"];
     });
 }
 
 #pragma mark - DZNEmptyDataSetSource
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
-    NSString *placeholderStr = self.emptyError.userInfo[@"NSLocalizedPlaceholderImageName"];
-    if ([NYSTools stringIsNull:placeholderStr]) {
-        return [NYSUIKitUtilities imageNamed:@"error"];
+    id image = self.emptyError.userInfo[@"NSLocalizedPlaceholderImage"];
+    if (image && [image isKindOfClass:UIImage.class]) {
+        return image;
+    } else if (image && [image isKindOfClass:NSString.class]) {
+        return [NYSUIKitUtilities imageNamed:image];
     } else {
-        return [NYSUIKitUtilities imageNamed:placeholderStr];
+        return [NYSUIKitUtilities imageNamed:@"error"];
     }
 }
 
@@ -463,7 +473,7 @@ DZNEmptyDataSetDelegate
 }
 
 - (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
-    NSString *str = self.emptyError.localizedRecoverySuggestion;    
+    NSString *str = self.emptyError.localizedRecoverySuggestion;
     NSMutableAttributedString *buttonAttStr = [[NSMutableAttributedString alloc] initWithString:str];
     [buttonAttStr addAttribute:NSForegroundColorAttributeName value:NAppThemeColor range:NSMakeRange(0, str.length)];
     [buttonAttStr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:17] range:NSMakeRange(0, str.length)];
@@ -494,7 +504,7 @@ DZNEmptyDataSetDelegate
     } else if (scrollView.mj_footer) {
         [self footerRereshing];
     } else {
-        [NYSTools showBottomToast:@"没有实现刷新方法"];
+        [NYSTools log:@"没有实现刷新方法"];
     }
 }
 
@@ -506,6 +516,16 @@ DZNEmptyDataSetDelegate
         [self.tableView reloadEmptyDataSet];
     } else if (_collectionView) {
         [self.collectionView reloadEmptyDataSet];
+    }
+}
+
+- (void)setBackgroundImageView:(UIImageView *)backgroundImageView {
+    _backgroundImageView = backgroundImageView;
+    
+    if (_backgroundImageView) {
+        [self.view insertSubview:_backgroundImageView atIndex:0];
+        if (_tableView) _tableView.backgroundColor = [UIColor clearColor];
+        if (_collectionView) _collectionView.backgroundColor = [UIColor clearColor];
     }
 }
 
@@ -538,10 +558,10 @@ DZNEmptyDataSetDelegate
 }
 
 - (void)backBtnOnclicked:(UIButton *)sender {
-    if (self.presentingViewController) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
+    if (self.navigationController.childViewControllers.count > 1) {
         [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -595,7 +615,7 @@ DZNEmptyDataSetDelegate
     NSMutableArray<UIBarButtonItem *> *items = [[NSMutableArray alloc] init];
     for (int i = 0; i < buttonArray.count; i ++) {
         UIButton *button = buttonArray[i];
-        [button handleControlEvent:UIControlEventTouchUpInside withBlock:^(UIButton *button) {
+        [button addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
             if (completion)
                 completion(button, button.tag);
         }];

@@ -18,13 +18,12 @@ static NSString * const NYSMaxLengthKey = @"NYSMaxLengthKey";
     [self addTarget:self action:@selector(NYSTextFieldTextChanged:)
    forControlEvents:UIControlEventEditingChanged];
 }
+
 - (NSInteger)maxLength {
     return [objc_getAssociatedObject(self, &NYSMaxLengthKey) integerValue];
 }
 
-
 - (void)NYSTextFieldTextChanged:(UITextField *)textField {
-    self.clearButtonMode = UITextFieldViewModeWhileEditing;
     if (textField.text.length > self.maxLength) {
         textField.text = [textField.text substringToIndex:textField.text.length -1];
     }

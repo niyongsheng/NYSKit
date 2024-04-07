@@ -39,7 +39,6 @@
 		C82F2FC32B6E28A900A8F816 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82F2FC22B6E28A900A8F816 /* UIButton+Extension.swift */; };
 		C82F2FC82B6E39FC00A8F816 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82F2FC72B6E39FC00A8F816 /* String+Extension.swift */; };
 		C83162A42B4CE2750014CFE1 /* TypeNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83162A32B4CE2750014CFE1 /* TypeNameProtocol.swift */; };
-		C83162A72B4CE5160014CFE1 /* UIScrollView+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83162A62B4CE5160014CFE1 /* UIScrollView+RxSwift.swift */; };
 		C83C18692B33E438002FD985 /* bill.json in Resources */ = {isa = PBXBuildFile; fileRef = C83C18652B33E438002FD985 /* bill.json */; };
 		C83C186A2B33E438002FD985 /* service.json in Resources */ = {isa = PBXBuildFile; fileRef = C83C18662B33E438002FD985 /* service.json */; };
 		C83C186B2B33E438002FD985 /* goods.json in Resources */ = {isa = PBXBuildFile; fileRef = C83C18672B33E438002FD985 /* goods.json */; };
@@ -76,6 +75,7 @@
 		C86DB21A2B3E8DBC002126F5 /* NYSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DB2162B3E8DBC002126F5 /* NYSLoginViewController.swift */; };
 		C86DB21F2B3E9E22002126F5 /* WRNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DB21D2B3E9E22002126F5 /* WRNavigationBar.swift */; };
 		C86DB2202B3E9E22002126F5 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DB21E2B3E9E22002126F5 /* WRCustomNavigationBar.swift */; };
+		C87021042BC278C60056A806 /* UIView+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87021032BC278C60056A806 /* UIView+RxSwift.swift */; };
 		C8713F4A2B69E5690090B289 /* PullUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8713F492B69E5690090B289 /* PullUpController.swift */; };
 		C8713F4E2B69EC420090B289 /* NYSPullerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8713F4C2B69EC420090B289 /* NYSPullerViewController.swift */; };
 		C8713F4F2B69EC420090B289 /* NYSPullerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8713F4D2B69EC420090B289 /* NYSPullerViewController.xib */; };
@@ -169,7 +169,6 @@
 		C82F2FC22B6E28A900A8F816 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		C82F2FC72B6E39FC00A8F816 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C83162A32B4CE2750014CFE1 /* TypeNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeNameProtocol.swift; sourceTree = "<group>"; };
-		C83162A62B4CE5160014CFE1 /* UIScrollView+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+RxSwift.swift"; sourceTree = "<group>"; };
 		C83C18652B33E438002FD985 /* bill.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bill.json; sourceTree = "<group>"; };
 		C83C18662B33E438002FD985 /* service.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = service.json; sourceTree = "<group>"; };
 		C83C18672B33E438002FD985 /* goods.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goods.json; sourceTree = "<group>"; };
@@ -210,6 +209,7 @@
 		C86DB2162B3E8DBC002126F5 /* NYSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYSLoginViewController.swift; sourceTree = "<group>"; };
 		C86DB21D2B3E9E22002126F5 /* WRNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
 		C86DB21E2B3E9E22002126F5 /* WRCustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCustomNavigationBar.swift; sourceTree = "<group>"; };
+		C87021032BC278C60056A806 /* UIView+RxSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RxSwift.swift"; sourceTree = "<group>"; };
 		C8713F492B69E5690090B289 /* PullUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullUpController.swift; sourceTree = "<group>"; };
 		C8713F4C2B69EC420090B289 /* NYSPullerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSPullerViewController.swift; sourceTree = "<group>"; };
 		C8713F4D2B69EC420090B289 /* NYSPullerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NYSPullerViewController.xib; sourceTree = "<group>"; };
@@ -384,7 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				C87CAB742B46773600C84E8E /* Rx+Operators.swift */,
-				C83162A62B4CE5160014CFE1 /* UIScrollView+RxSwift.swift */,
+				C87021032BC278C60056A806 /* UIView+RxSwift.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -989,6 +989,7 @@
 				C8ED6DE92B551939000F2268 /* NYSServiceCollectionViewCell.swift in Sources */,
 				C8C5D2432B3E628600117F58 /* NYSBannerCollectionViewCell.swift in Sources */,
 				C821AAB72B46B2CA003C0968 /* NYSToolBar.m in Sources */,
+				C87021042BC278C60056A806 /* UIView+RxSwift.swift in Sources */,
 				C82F2FC12B6E265F00A8F816 /* UIImageView+Extension.swift in Sources */,
 				C816B6662B4F7B6F00256E58 /* NYSWeaterData.swift in Sources */,
 				C87CAB7D2B467C8E00C84E8E /* NYSUserInfo.swift in Sources */,
@@ -1034,7 +1035,6 @@
 				C8A4BE312B4BBA1800152E14 /* UITableView+Extension.swift in Sources */,
 				C8474E532B43DD54001DE04A /* NYSRootViewController.swift in Sources */,
 				C8958BB02B6B5FE400693DAE /* NYSPreviewViewController.swift in Sources */,
-				C83162A72B4CE5160014CFE1 /* UIScrollView+RxSwift.swift in Sources */,
 				C89E827B2B731986002BEC52 /* AppDelegate+Extension.swift in Sources */,
 				C85D7E7C2B60F34300C4BC93 /* NYSImageItemView.swift in Sources */,
 				C8ED6DDB2B51494D000F2268 /* NYSRootWebViewController.swift in Sources */,
@@ -1222,7 +1222,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = F9J739W8Y4;
+				DEVELOPMENT_TEAM = Y24AM9NS72;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NYSExampleSwift/Supporting Files/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1237,7 +1237,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nys.example.swift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nys.example.swiftDEV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/NYSExampleSwift/Supporting Files/Bridging-Header.h";
@@ -1256,7 +1256,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = F9J739W8Y4;
+				DEVELOPMENT_TEAM = Y24AM9NS72;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NYSExampleSwift/Supporting Files/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1271,7 +1271,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nys.example.swift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nys.example.swiftDEV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/NYSExampleSwift/Supporting Files/Bridging-Header.h";

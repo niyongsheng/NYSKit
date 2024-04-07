@@ -31,7 +31,7 @@ class NYSThirdPartyViewController: NYSRootViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        self.tableView.reloadData(animationType: .alpha)
+//        self.tableView.reloadData(animationType: .moveSpring)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -35,6 +35,7 @@ static const char *NYSTapActionKey = "NYSTapActionKey";
 
 - (void)setCornerRadius:(CGFloat)cornerRadius {
     self.layer.cornerRadius = cornerRadius;
+    self.layer.masksToBounds = YES;
 }
 
 - (CGFloat)cornerRadius {

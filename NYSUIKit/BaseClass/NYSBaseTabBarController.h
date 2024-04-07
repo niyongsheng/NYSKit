@@ -24,6 +24,8 @@ typedef NS_ENUM(NSInteger, NYSBaseTabBarInteractionEffectStyle) {
 /// 是否重置tabBarItem样式
 @property (nonatomic, assign) BOOL isResetTabBarItemStyle;
 
+- (void)setRoundedCornerWithCorners:(UIRectCorner)corners cornerRadius:(CGFloat)cornerRadius;
+
 @end
 
 NS_ASSUME_NONNULL_END

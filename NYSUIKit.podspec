@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'NYSUIKit'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.platform         = :ios, '13.0'
   s.summary          = 'iOS scaffold UI framework.'
   s.homepage         = 'https://github.com/niyongsheng/NYSKit'
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   'NYSUIKit/Resources/load_error.html',
   'NYSUIKit/Resources/douyuFont.otf'
 ]
-  s.dependency       'NYSKit', '~> 0.0.1'
+  s.dependency       'NYSKit', '~> 0.0.7'
   s.dependency       'MJRefresh', '~> 3.7.6'
   s.requires_arc     = true
 end

@@ -119,7 +119,7 @@ typedef void (^NYSToolsDismissCompletion)(void);
 
 /// YES null    NO !null
 /// @param string   str
-+ (BOOL)stringIsNull:(id)string;
++ (BOOL)isBlankString:(id)string;
 
 /// 拼音转换
 /// @param str content
@@ -158,9 +158,27 @@ typedef void (^NYSToolsDismissCompletion)(void);
 + (void)dismissWithDelay:(NSTimeInterval)delay completion:(NYSToolsDismissCompletion)completion;
 
 #pragma mark - 自动根据已安装的地图app跳转导航
+/*
+<key>LSApplicationQueriesSchemes</key>
+<array>
+   <string>iosamap</string>
+   <string>baidumap</string>
+</array>
+*/
 + (void)navigateToAddress:(NSString *)address coordinate:(CLLocationCoordinate2D)coordinate viewController:(UIViewController *)viewController;
 
++ (void)openAppSetting;
++ (void)openURL:(NSString *)url;
++ (void)callPhoneWithNumber:(NSString *)number;
++ (void)sendEmailWithAddress:(NSString *)address;
+
 #pragma mark - 其他
+/// 获取设备唯一标识（APP重装会改变）
++ (NSString *)getDeviceIdentifier;
+
+/// 获取IDFA
++ (NSString *)getIDFA;
+
 /**
  系统分享
  @param items 需要分享的类目，可以包括文字，图片，网址

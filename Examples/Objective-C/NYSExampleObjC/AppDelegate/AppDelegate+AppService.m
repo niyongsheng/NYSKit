@@ -50,6 +50,7 @@
 - (void)initNetwork {
     [[NYSKitManager sharedNYSKitManager] setHost:APP_BaseURL];
     [[NYSKitManager sharedNYSKitManager] setToken:NUserInfo.token];
+    [[NYSKitManager sharedNYSKitManager] setDataKey:@"data"];
     [[NYSKitManager sharedNYSKitManager] setNormalCode:@"200,0"];
     [[NYSKitManager sharedNYSKitManager] setTokenInvalidCode:@"500"];
     [[NYSKitManager sharedNYSKitManager] setTokenInvalidMessage:@"验证失败，请先登录"];

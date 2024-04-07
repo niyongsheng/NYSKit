@@ -37,6 +37,11 @@ class NYSLoginViewController: NYSRootViewController {
         self.loginBtn.backgroundColor = NAppThemeColor
         self.accountView.addCornerRadius(NAppRadius/2, borderWidth: 1, borderColor: NAppThemeColor)
         self.passwordView.addCornerRadius(NAppRadius/2, borderWidth: 1, borderColor: NAppThemeColor)
+        
+#if DEBUG
+        accountTF.text = "18888888888"
+        passwordTF.text = "123456"
+#endif
     }
     
     override func configTheme() {
@@ -50,7 +55,7 @@ class NYSLoginViewController: NYSRootViewController {
     }
 
     @IBAction func loginBtnOnclicked(_ sender: NYSLoadingButton) {
-        sender.start(LoadingType(rawValue: 2))
+        sender.start(.INDICATOR)
         
         AppManager.shared.loginHandler(loginType: .unknown, params: ["": ""]) { isSuccess, userInfo, error in
             if isSuccess {

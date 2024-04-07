@@ -64,6 +64,17 @@
     return image;
 }
 
+- (void)setRoundedCornerWithCorners:(UIRectCorner)corners cornerRadius:(CGFloat)cornerRadius {
+    if (!self.tabBar) {
+        return;
+    }
+    
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.tabBar.bounds byRoundingCorners:cornerRadius cornerRadii:CGSizeMake(cornerRadius, cornerRadius)].CGPath;
+    self.tabBar.layer.mask = maskLayer;
+}
+
+
 #pragma mark - UITabBarControllerDelegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     

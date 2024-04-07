@@ -42,6 +42,7 @@ FOUNDATION_EXPORT const unsigned char NYSUIKitVersionString[];
 #import <NYSUIKit/NSString+NYS.h>
 #import <NYSUIKit/UIImage+NYS.h>
 #import <NYSUIKit/UIButton+NYS.h>
+#import <NYSUIKit/UIControl+NYS.h>
 #import <NYSUIKit/UITextField+NYS.h>
 #import <NYSUIKit/NSDictionary+NilSafe.h>
 #import <NYSUIKit/UIScrollView+EmptyDataSet.h>

@@ -57,10 +57,6 @@ CLLocationManagerDelegate
     
     [self.sysLocationManager requestLocation];
     [NYSTools showLoading];
-    __weak __typeof(self)weakSelf = self;
-    [NYSTools dismissWithDelay:10 completion:^{
-        [weakSelf.sysLocationManager stopUpdatingLocation];
-    }];
 }
 
 /// 持续定位
@@ -92,11 +88,12 @@ CLLocationManagerDelegate
     // 系统逆地理编码
     __weak typeof(self) weakSelf = self;
     [self.geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         [NYSTools dismiss];
-        
+
         if (error) {
-            if (weakSelf.completion) {
-                weakSelf.completion(@"", kCLLocationCoordinate2DInvalid, error);
+            if (strongSelf.completion) {
+                strongSelf.completion(@"", kCLLocationCoordinate2DInvalid, error);
             }
             [NYSTools log:self.class error:error];
             return;
@@ -104,25 +101,25 @@ CLLocationManagerDelegate
         if (placemarks.count > 0) {
             CLPlacemark *placemark = [placemarks firstObject];
             NSString *address = [NSString stringWithFormat:@"%@%@%@%@", placemark.administrativeArea, placemark.locality, placemark.subLocality, placemark.thoroughfare];
-            if (weakSelf.completion) {
-                switch (weakSelf.coordinateType) {
+            if (strongSelf.completion) {
+                switch (strongSelf.coordinateType) {
                     case NYSLocationTypeBaiDuMap: {
                         NYSLocationTransform *beforeTransform = [[NYSLocationTransform alloc] initWithLatitude:coordinate.latitude andLongitude:coordinate.longitude];
                         NYSLocationTransform *afterTransform = [beforeTransform transformFromGPSToGD];
                         NYSLocationTransform *lastTransform = [afterTransform transformFromGDToBD];
-                        weakSelf.completion(address, CLLocationCoordinate2DMake(lastTransform.latitude, lastTransform.longitude), error);
+                        strongSelf.completion(address, CLLocationCoordinate2DMake(lastTransform.latitude, lastTransform.longitude), error);
                     }
                         break;
                         
                     case NYSLocationTypeAMap: {
                         NYSLocationTransform *beforeTransform = [[NYSLocationTransform alloc] initWithLatitude:coordinate.latitude andLongitude:coordinate.longitude];
                         NYSLocationTransform *afterTransform = [beforeTransform transformFromGPSToGD];
-                        weakSelf.completion(address, CLLocationCoordinate2DMake(afterTransform.latitude, afterTransform.longitude), error);
+                        strongSelf.completion(address, CLLocationCoordinate2DMake(afterTransform.latitude, afterTransform.longitude), error);
                     }
                         break;
                         
                     case NYSLocationTypeSysMap:
-                        weakSelf.completion(address, coordinate, error);
+                        strongSelf.completion(address, coordinate, error);
                         break;
                         
                     default:
@@ -145,11 +142,16 @@ CLLocationManagerDelegate
     [manager stopUpdatingLocation];
 }
 
-- (void)dealloc {
+- (void)stopUpdatingLocationSystem {
+    [NYSTools dismiss];
     [self.sysLocationManager stopUpdatingLocation];
     self.sysLocationManager.delegate = nil;
     self.sysLocationManager = nil;
     [self.geoCoder cancelGeocode];
+}
+
+- (void)dealloc {
+    [self stopUpdatingLocationSystem];
 }
 
 @end
